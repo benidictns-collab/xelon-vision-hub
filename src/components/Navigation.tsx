@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.png";
@@ -7,12 +8,12 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: "О компании", href: "#about", hasSubmenu: true },
-    { name: "Продукция", href: "#products", hasSubmenu: true },
-    { name: "Решения", href: "#solutions" },
-    { name: "Поддержка", href: "#support" },
-    { name: "Новости", href: "#news" },
-    { name: "Контакты", href: "#contacts" },
+    { name: "О компании", href: "/about", hasSubmenu: false },
+    { name: "Продукция", href: "/products", hasSubmenu: false },
+    { name: "Решения", href: "/solutions", hasSubmenu: false },
+    { name: "Поддержка", href: "/support", hasSubmenu: false },
+    { name: "Новости", href: "/news", hasSubmenu: false },
+    { name: "Контакты", href: "/contacts", hasSubmenu: false },
   ];
 
   return (
@@ -20,21 +21,21 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <img src={logo} alt="КСEЛОН" className="h-8" />
-          </div>
+          <Link to="/" className="flex items-center space-x-2">
+            <img src={logo} alt="КСEЛОН" className="h-12" />
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <div key={item.name} className="relative group">
-                <a
-                  href={item.href}
+                <Link
+                  to={item.href}
                   className="flex items-center space-x-1 text-foreground hover:text-accent fast-transition font-medium"
                 >
                   <span>{item.name}</span>
                   {item.hasSubmenu && <ChevronDown className="h-4 w-4" />}
-                </a>
+                </Link>
               </div>
             ))}
           </div>
@@ -65,15 +66,15 @@ const Navigation = () => {
           <div className="md:hidden pb-4 animate-fade-in">
             <div className="flex flex-col space-y-3 pt-4 border-t border-border">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className="flex items-center justify-between py-2 text-foreground hover:text-accent fast-transition"
                   onClick={() => setIsOpen(false)}
                 >
                   <span>{item.name}</span>
                   {item.hasSubmenu && <ChevronDown className="h-4 w-4" />}
-                </a>
+                </Link>
               ))}
               <div className="flex flex-col space-y-2 pt-4 border-t border-border">
                 <Button variant="ghost" size="sm" className="justify-start">
