@@ -8,35 +8,61 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* XELON Corporate Brand Colors - Technological Clarity */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 210 100% 12%;
 
+    /* Corporate Dark Blue - Primary Brand Color */
+    --primary: 210 100% 12%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 210 100% 20%;
+
+    /* Innovation Teal - Accent Color */
+    --accent: 180 85% 35%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 180 85% 45%;
+    --accent-subtle: 180 85% 95%;
+
+    /* Precision Green - Secondary Accent */
+    --success: 150 70% 40%;
+    --success-foreground: 0 0% 100%;
+
+    /* Clean Grays */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 210 100% 12%;
+    
+    --muted: 210 15% 92%;
+    --muted-foreground: 210 20% 45%;
+
+    /* Interactive Elements */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 100% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 100% 12%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --border: 210 15% 90%;
+    --input: 210 15% 95%;
+    --ring: 180 85% 35%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --radius: 0.75rem;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Corporate Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 12%), hsl(210 100% 20%));
+    --gradient-accent: linear-gradient(135deg, hsl(180 85% 35%), hsl(180 85% 45%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 15% 98%));
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Shadows */
+    --shadow-corporate: 0 10px 40px -10px hsl(210 100% 12% / 0.15);
+    --shadow-accent: 0 10px 30px -10px hsl(180 85% 35% / 0.25);
+    --shadow-subtle: 0 4px 20px -4px hsl(210 20% 20% / 0.08);
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +82,48 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode for XELON - maintaining brand consistency */
+    --background: 210 100% 8%;
+    --foreground: 0 0% 100%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 210 100% 12%;
+    --primary-light: 210 50% 90%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --accent: 180 85% 45%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 180 85% 55%;
+    --accent-subtle: 180 85% 15%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --success: 150 70% 50%;
+    --success-foreground: 210 100% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 50% 15%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 210 30% 20%;
+    --muted-foreground: 210 15% 70%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --card: 210 50% 10%;
+    --card-foreground: 0 0% 100%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --popover: 210 50% 10%;
+    --popover-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 85% 65%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 210 30% 25%;
+    --input: 210 30% 20%;
+    --ring: 180 85% 45%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 8%), hsl(210 50% 15%));
+    --gradient-accent: linear-gradient(135deg, hsl(180 85% 45%), hsl(180 85% 55%));
+    --gradient-subtle: linear-gradient(180deg, hsl(210 100% 8%), hsl(210 50% 10%));
+
+    --shadow-corporate: 0 10px 40px -10px hsl(0 0% 0% / 0.4);
+    --shadow-accent: 0 10px 30px -10px hsl(180 85% 45% / 0.3);
+    --shadow-subtle: 0 4px 20px -4px hsl(0 0% 0% / 0.2);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -101,5 +142,79 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  /* Corporate Component Styles */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .accent-gradient {
+    background: var(--gradient-accent);
+  }
+  
+  .subtle-gradient {
+    background: var(--gradient-subtle);
+  }
+
+  .corporate-shadow {
+    box-shadow: var(--shadow-corporate);
+  }
+  
+  .accent-shadow {
+    box-shadow: var(--shadow-accent);
+  }
+  
+  .subtle-shadow {
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .smooth-transition {
+    transition: var(--transition-smooth);
+  }
+  
+  .fast-transition {
+    transition: var(--transition-fast);
+  }
+
+  /* Typography Hierarchy */
+  .hero-title {
+    @apply text-5xl md:text-7xl font-bold leading-tight tracking-tight;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold leading-tight;
+  }
+  
+  .card-title {
+    @apply text-xl md:text-2xl font-semibold leading-tight;
+  }
+
+  /* Interactive Elements */
+  .hover-lift {
+    @apply transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-accent;
+  }
+
+  /* Industry Cards */
+  .industry-card {
+    @apply relative overflow-hidden rounded-xl bg-card cursor-pointer;
+    @apply transform transition-all duration-500 hover:scale-105;
+  }
+  
+  .industry-card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0;
+    @apply transition-opacity duration-500;
+  }
+  
+  .industry-card:hover::before {
+    @apply opacity-100;
   }
 }
