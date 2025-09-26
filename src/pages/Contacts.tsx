@@ -80,9 +80,8 @@ const Contacts = () => {
                     <div>
                       <h3 className="font-semibold mb-2">Головной офис</h3>
                       <p className="text-muted-foreground">
-                        115162, г. Москва<br/>
-                        ул. Шаболовка, д. 34, стр. 3<br/>
-                        БЦ "Конкорд"
+                        344006, г. Ростов-на-Дону<br/>
+                        ул. Обороны, д. 49,<br/>
                       </p>
                     </div>
                   </div>
@@ -98,9 +97,8 @@ const Contacts = () => {
                     <div>
                       <h3 className="font-semibold mb-2">Телефоны</h3>
                       <div className="space-y-1 text-muted-foreground">
-                        <p>+7 (495) 123-45-67 (общий)</p>
-                        <p>+7 (495) 123-45-68 (продажи)</p>
-                        <p>+7 (495) 123-45-69 (поддержка)</p>
+                        <p>+7 (928) 459-38-00 (общий)</p>
+                        <p>+7 (965) 477-59-39 (поддержка)</p>
                       </div>
                     </div>
                   </div>
