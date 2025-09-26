@@ -20,7 +20,7 @@ const HeroSection = () => {
           <div className="text-white animate-fade-in-up">
             <div className="mb-6">
               <span className="inline-block bg-accent/20 backdrop-blur-sm text-accent-light px-4 py-2 rounded-full text-sm font-medium border border-accent/30">
-                Российский лидер в производстве Цифровых плоскопанельных детекторов
+                Российский лидер в производстве ЦППД
               </span>
             </div>
             

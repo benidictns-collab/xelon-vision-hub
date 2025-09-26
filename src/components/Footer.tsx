@@ -59,10 +59,11 @@ const Footer = () => {
           {/* Company info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
+              <img src={logo} alt="КСEЛОН" className="h-8 brightness-0 invert" />
             </div>
             
             <p className="text-white/80 mb-6 leading-relaxed">
-              Российский лидер в производстве цифровых плоскопанельных детекторов 
+              Мировой лидер в производстве цифровых плоскопанельных детекторов 
               для медицинской, промышленной и специализированной визуализации.
             </p>
 
@@ -70,15 +71,15 @@ const Footer = () => {
             <div className="space-y-3 mb-6">
               <div className="flex items-center space-x-3 text-white/80">
                 <Phone className="h-4 w-4 flex-shrink-0" />
-                <span>+7 (928) 459-38-00</span>
+                <span>+7 (495) 123-45-67</span>
               </div>
               <div className="flex items-center space-x-3 text-white/80">
                 <Mail className="h-4 w-4 flex-shrink-0" />
-                <span>info@xelon-technology.ru</span>
+                <span>info@xelon.ru</span>
               </div>
               <div className="flex items-center space-x-3 text-white/80">
                 <MapPin className="h-4 w-4 flex-shrink-0" />
-                <span>Ростов-на-Дону, Россия</span>
+                <span>Москва, Россия</span>
               </div>
             </div>
 
@@ -144,7 +145,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-6">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm text-white/70">
-            <span>© 2025 ООО «КСEЛОН». Все права защищены.</span>
+            <span>© 2024 ООО «КСEЛОН». Все права защищены.</span>
             <div className="flex space-x-4">
               <a href="#" className="hover:text-white fast-transition">Политика конфиденциальности</a>
               <a href="#" className="hover:text-white fast-transition">Условия использования</a>
