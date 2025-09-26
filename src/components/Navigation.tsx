@@ -22,7 +22,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img src={logo} alt="КСEЛОН" className="h-12" />
+            <img src={logo} alt="КСEЛОН" className="h-16 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
