@@ -21,7 +21,7 @@ const IndustriesSection = () => {
         "Интраоральная стоматология",
         "Ветеринарная визуализация"
       ],
-      stats: { installations: "500+", countries: "30+" },
+      stats: { installations: "300+", countries: "25+" },
       iconColor: "text-red-500",
     },
     {
