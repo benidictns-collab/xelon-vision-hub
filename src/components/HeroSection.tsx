@@ -76,7 +76,7 @@ const HeroSection = () => {
               <div className="absolute -inset-4 bg-accent/20 rounded-2xl blur-2xl animate-pulse-glow"></div>
               
               {/* Product image */}
-              <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+              <div className="relative backdrop-blur-sm rounded-2xl p-8 border border-white/20">
                 <img 
                   src={detectorImage} 
                   alt="XELON Digital Detector" 
