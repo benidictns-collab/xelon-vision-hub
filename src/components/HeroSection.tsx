@@ -45,7 +45,7 @@ const HeroSection = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-white/30 text-white hover:bg-accent-light/20 backdrop-blur-sm px-8 py-4 h-auto group"
+                className="border-accent/50 text-accent-light hover:bg-accent/20 backdrop-blur-sm px-8 py-4 h-auto group"
               >
                 <Play className="mr-2 h-5 w-5 group-hover:scale-110 fast-transition" />
                 О технологии
