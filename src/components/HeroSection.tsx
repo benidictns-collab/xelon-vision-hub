@@ -20,7 +20,7 @@ const HeroSection = () => {
           <div className="text-white animate-fade-in-up">
             <div className="mb-6">
               <span className="inline-block bg-accent/20 backdrop-blur-sm text-accent-light px-4 py-2 rounded-full text-sm font-medium border border-accent/30">
-                Мировой лидер в производстве ЦПД
+                Российский лидер в производстве ЦППД
               </span>
             </div>
             
@@ -55,15 +55,15 @@ const HeroSection = () => {
             {/* Key metrics */}
             <div className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-white/20">
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent-light mb-1">1</div>
-                <div className="text-sm text-white/70">собственный завод</div>
+                <div className="text-3xl font-bold text-accent-light mb-1">30+</div>
+                <div className="text-sm text-white/70">стандартных моделей</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent-light mb-1">100+</div>
+                <div className="text-3xl font-bold text-accent-light mb-1">20+</div>
                 <div className="text-sm text-white/70">инженеров</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent-light mb-1">90%</div>
+                <div className="text-3xl font-bold text-accent-light mb-1">70%</div>
                 <div className="text-sm text-white/70">отечественных компонентов</div>
               </div>
             </div>
@@ -85,7 +85,7 @@ const HeroSection = () => {
                 
                 {/* Product highlights */}
                 <div className="absolute -top-4 -right-4 bg-success text-white px-3 py-1 rounded-full text-sm font-medium">
-                  Новинка 2024
+                  Новинка 2025
                 </div>
               </div>
             </div>
