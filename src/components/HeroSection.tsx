@@ -55,16 +55,16 @@ const HeroSection = () => {
             {/* Key metrics */}
             <div className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-white/20">
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent-light mb-1">15+</div>
-                <div className="text-sm text-white/70">лет опыта</div>
+                <div className="text-3xl font-bold text-accent-light mb-1">1</div>
+                <div className="text-sm text-white/70">собственный завод</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent-light mb-1">50+</div>
-                <div className="text-sm text-white/70">стран</div>
+                <div className="text-3xl font-bold text-accent-light mb-1">100+</div>
+                <div className="text-sm text-white/70">инженеров</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent-light mb-1">1000+</div>
-                <div className="text-sm text-white/70">установок</div>
+                <div className="text-3xl font-bold text-accent-light mb-1">90%</div>
+                <div className="text-sm text-white/70">отечественных компонентов</div>
               </div>
             </div>
           </div>
