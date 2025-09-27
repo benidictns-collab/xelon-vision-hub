@@ -165,11 +165,6 @@ const Solutions = () => {
                     </div>
                   </div>
 
-                  {/* Case Study */}
-                  <div className="mb-6 p-4 bg-muted/50 rounded-lg">
-                    <h5 className="font-semibold text-sm mb-1">Кейс клиента:</h5>
-                    <p className="text-sm text-muted-foreground">{solution.caseStudy}</p>
-                  </div>
 
                   {/* Actions */}
                   <div className="flex gap-3">

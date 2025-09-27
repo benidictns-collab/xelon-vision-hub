@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock, Building } from "lucide-react";
+import QuoteRequestForm from "@/components/QuoteRequestForm";
 
 const Contacts = () => {
   return (
@@ -80,9 +81,9 @@ const Contacts = () => {
                     <div>
                       <h3 className="font-semibold mb-2">Головной офис</h3>
                       <p className="text-muted-foreground">
-                        115162, г. Москва<br/>
-                        ул. Шаболовка, д. 34, стр. 3<br/>
-                        БЦ "Конкорд"
+                        344006, г. Ростов-на-Дону<br/>
+                        ул. Обороны, д. 49<br/>
+                        Технопарк Бештау
                       </p>
                     </div>
                   </div>
@@ -98,9 +99,9 @@ const Contacts = () => {
                     <div>
                       <h3 className="font-semibold mb-2">Телефоны</h3>
                       <div className="space-y-1 text-muted-foreground">
-                        <p>+7 (495) 123-45-67 (общий)</p>
-                        <p>+7 (495) 123-45-68 (продажи)</p>
-                        <p>+7 (495) 123-45-69 (поддержка)</p>
+                        <p>+7 (928) 459-38-00 (общий)</p>
+                        <p>+7 (928) 459-38-00 (продажи)</p>
+                        <p>+7 (928) 459-38-00 (поддержка)</p>
                       </div>
                     </div>
                   </div>
@@ -116,9 +117,9 @@ const Contacts = () => {
                     <div>
                       <h3 className="font-semibold mb-2">Email</h3>
                       <div className="space-y-1 text-muted-foreground">
-                        <p>info@xelon.ru</p>
-                        <p>sales@xelon.ru</p>
-                        <p>support@xelon.ru</p>
+                        <p>info@xelon-technology.ru</p>
+                        <p>sales@xelon-technology.ru</p>
+                        <p>support@xelon-technology.ru</p>
                       </div>
                     </div>
                   </div>
@@ -143,6 +144,15 @@ const Contacts = () => {
                 </CardContent>
               </Card>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quote Request Form */}
+      <section className="py-20 bg-subtle-gradient">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <QuoteRequestForm />
           </div>
         </div>
       </section>
