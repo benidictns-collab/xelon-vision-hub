@@ -83,6 +83,27 @@ const AdvantagesSection = () => {
           ))}
         </div>
 
+        {/* Statistics */}
+        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          {[
+            { value: "15+", label: "лет опыта" },
+            { value: "50+", label: "патентов" },
+            { value: "1000+", label: "установок" },
+            { value: "50+", label: "стран" },
+          ].map((stat, index) => (
+            <div 
+              key={stat.label} 
+              className="animate-fade-in-up"
+              style={{ animationDelay: `${600 + index * 100}ms` }}
+            >
+              <div className="text-3xl md:text-4xl font-bold text-accent mb-2">
+                {stat.value}
+              </div>
+              <div className="text-muted-foreground">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

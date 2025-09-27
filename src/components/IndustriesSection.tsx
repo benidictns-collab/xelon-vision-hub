@@ -21,7 +21,7 @@ const IndustriesSection = () => {
         "Интраоральная стоматология",
         "Ветеринарная визуализация"
       ],
-      stats: { installations: "300+", countries: "25+" },
+      stats: { installations: "500+", countries: "30+" },
       iconColor: "text-red-500",
     },
     {
@@ -94,6 +94,13 @@ const IndustriesSection = () => {
                   <p className="text-white/90 text-sm">{industry.subtitle}</p>
                 </div>
                 
+                {/* Stats overlay */}
+                <div className="absolute top-4 right-4 text-right text-white">
+                  <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2">
+                    <div className="text-xl font-bold">{industry.stats.installations}</div>
+                    <div className="text-xs text-white/90">установок</div>
+                  </div>
+                </div>
               </div>
 
               <CardContent className="p-6">
@@ -109,6 +116,17 @@ const IndustriesSection = () => {
                       <span className="text-sm text-muted-foreground">{app}</span>
                     </div>
                   ))}
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-muted/50 rounded-lg">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-accent">{industry.stats.installations}</div>
+                    <div className="text-xs text-muted-foreground">установок</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-accent">{industry.stats.countries}</div>
+                    <div className="text-xs text-muted-foreground">стран</div>
+                  </div>
                 </div>
 
                 <Button 
