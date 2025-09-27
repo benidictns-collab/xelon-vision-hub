@@ -173,7 +173,7 @@ const Solutions = () => {
 
                   {/* Actions */}
                   <div className="flex gap-3">
-                    <Button className="flex-1 bg-accent hover:bg-accent-light">
+                    <Button className="flex-1 bg-accent hover:bg-accent-light relative z-20 pointer-events-auto">
                       Подробнее
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>

@@ -131,7 +131,7 @@ const IndustriesSection = () => {
 
                 <Button 
                   variant="outline" 
-                  className="w-full group hover:bg-accent hover:text-white hover:border-accent"
+                  className="w-full group hover:bg-accent hover:text-white hover:border-accent relative z-20 pointer-events-auto"
                 >
                   Подробнее о решениях
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 fast-transition" />

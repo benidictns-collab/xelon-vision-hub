@@ -218,7 +218,11 @@ const News = () => {
                     </div>
                   </div>
                   
-                  <Button variant="outline" size="sm" className="w-full">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="w-full relative z-20 pointer-events-auto"
+                  >
                     Подробнее
                     <ArrowRight className="ml-2 h-3 w-3" />
                   </Button>
