@@ -33,7 +33,7 @@ const Products = () => {
   const products = {
     medical: [
       {
-        name: "XELON-RF",
+        name: "XELON XRAY RF-35",
         category: "Рентгенография",
         description: "Цифровой детектор для общей рентгенографии с высоким разрешением",
         specs: {
@@ -46,7 +46,7 @@ const Products = () => {
         isNew: true
       },
       {
-        name: "XELON-MAMMO",
+        name: "XELON XRAY MAMMO-24",
         category: "Маммография",
         description: "Специализированный детектор для цифровой маммографии",
         specs: {
@@ -59,7 +59,7 @@ const Products = () => {
         isNew: false
       },
       {
-        name: "XELON-MOBILE",
+        name: "XELON XRAY MOBILE-35",
         category: "Мобильные системы",
         description: "Беспроводной детектор для мобильной рентгенографии",
         specs: {
@@ -74,20 +74,20 @@ const Products = () => {
     ],
     industrial: [
       {
-        name: "XELON-NDT",
+        name: "XELON XRAY NDT-40",
         category: "Дефектоскопия",
         description: "Промышленный детектор для неразрушающего контроля",
         specs: {
           size: "40x40 см",
           resolution: "100 мкм",
           energy: "До 450 кВ",
-          protection: "IP65"
+          protection: "IP67"
         },
         applications: ["Контроль сварных швов", "Инспекция отливок", "Авиакосмическая отрасль"],
         isNew: false
       },
       {
-        name: "XELON-SECURITY",
+        name: "XELON XRAY SECURITY-60",
         category: "Безопасность",
         description: "Детектор для систем досмотра и безопасности",
         specs: {
@@ -102,7 +102,7 @@ const Products = () => {
     ],
     scientific: [
       {
-        name: "XELON-SYNC",
+        name: "XELON XRAY SYNC-20",
         category: "Синхротрон",
         description: "Высокочувствительный детектор для синхротронных исследований",
         specs: {
@@ -115,7 +115,7 @@ const Products = () => {
         isNew: false
       },
       {
-        name: "XELON-MICRO",
+        name: "XELON XRAY MICRO-10",
         category: "Микротомография",
         description: "Детектор для высокоразрешающей микротомографии",
         specs: {
