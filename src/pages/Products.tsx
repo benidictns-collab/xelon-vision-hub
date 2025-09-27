@@ -33,12 +33,12 @@ const Products = () => {
   const products = {
     medical: [
       {
-        name: "XELON-RF",
+        name: "XELON XRAY-3543",
         category: "Рентгенография",
         description: "Цифровой детектор для общей рентгенографии с высоким разрешением",
         specs: {
           size: "35x43 см",
-          resolution: "150 мкм",
+          resolution: "100 мкм",
           sensitivity: "4000:1",
           interface: "Gigabit Ethernet"
         },
@@ -46,7 +46,7 @@ const Products = () => {
         isNew: true
       },
       {
-        name: "XELON-MAMMO",
+        name: "XELON XRAY-2530",
         category: "Маммография",
         description: "Специализированный детектор для цифровой маммографии",
         specs: {
@@ -59,13 +59,13 @@ const Products = () => {
         isNew: false
       },
       {
-        name: "XELON-MOBILE",
+        name: "XELON XRAY-3543MD",
         category: "Мобильные системы",
         description: "Беспроводной детектор для мобильной рентгенографии",
         specs: {
           size: "35x43 см",
-          resolution: "150 мкм",
-          battery: "4 часа работы",
+          resolution: "140 мкм",
+          battery: "12 часов работы",
           interface: "WiFi 6"
         },
         applications: ["Палатная рентгенография", "Операционная", "Реанимация"],
@@ -74,12 +74,12 @@ const Products = () => {
     ],
     industrial: [
       {
-        name: "XELON-NDT",
+        name: "XELON XRAY-4343",
         category: "Дефектоскопия",
         description: "Промышленный детектор для неразрушающего контроля",
         specs: {
-          size: "40x40 см",
-          resolution: "100 мкм",
+          size: "43x43 см",
+          resolution: "140 мкм",
           energy: "До 450 кВ",
           protection: "IP65"
         },
@@ -87,11 +87,11 @@ const Products = () => {
         isNew: false
       },
       {
-        name: "XELON-SECURITY",
+        name: "XELON XRAY-3025D",
         category: "Безопасность",
         description: "Детектор для систем досмотра и безопасности",
         specs: {
-          size: "60x45 см",
+          size: "30x25 см",
           resolution: "400 мкм",
           speed: "0.5 м/с",
           interface: "Dual Gigabit"
@@ -102,20 +102,20 @@ const Products = () => {
     ],
     scientific: [
       {
-        name: "XELON-SYNC",
+        name: "XELON XRAY 55",
         category: "Синхротрон",
         description: "Высокочувствительный детектор для синхротронных исследований",
         specs: {
-          size: "20x20 см",
+          size: "52x52 см",
           resolution: "50 мкм",
-          framerate: "1000 fps",
+          framerate: "120 fps",
           sensitivity: "Высокоэнергетические фотоны"
         },
         applications: ["Структурная биология", "Материаловедение", "Физика высоких энергий"],
         isNew: false
       },
       {
-        name: "XELON-MICRO",
+        name: "XELON MICRO ",
         category: "Микротомография",
         description: "Детектор для высокоразрешающей микротомографии",
         specs: {
