@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, ArrowRight, Download } from "lucide-react";
+import { CircleCheck as CheckCircle, ArrowRight, Download } from "lucide-react";
 
 const Solutions = () => {
   const solutions = [
