@@ -225,6 +225,7 @@ const Support = () => {
                       </div>
                     </div>
                     <p className="text-lg">support@xelon.ru</p>
+                    <p className="text-lg">support@xelon-technology.ru</p>
                   </CardContent>
                 </Card>
 
@@ -279,50 +280,6 @@ const Support = () => {
         </div>
       </section>
 
-      {/* Downloads */}
-      <section className="py-20 bg-subtle-gradient">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12 animate-fade-in-up">
-              <h2 className="section-title mb-6">Документация и загрузки</h2>
-              <p className="text-lg text-muted-foreground">
-                Руководства, драйверы и техническая документация
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-4">
-              {downloads.map((download, index) => (
-                <Card 
-                  key={download.name}
-                  className="hover-lift corporate-shadow animate-fade-in-up"
-                  style={{ animationDelay: `${index * 50}ms` }}
-                >
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                          <Download className="h-6 w-6 text-accent" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-sm">{download.name}</h3>
-                          <div className="flex items-center space-x-2 text-xs text-muted-foreground">
-                            <span>{download.type}</span>
-                            <span>•</span>
-                            <span>{download.size}</span>
-                          </div>
-                        </div>
-                      </div>
-                      <Button variant="outline" size="sm">
-                        Скачать
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

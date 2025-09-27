@@ -28,7 +28,7 @@ const AdvantagesSection = () => {
     {
       icon: Globe,
       title: "Глобальная поддержка",
-      description: "Техническая поддержка и сервис в более чем 50 странах мира с локальными партнерами",
+      description: "Техническая поддержка и сервис во всех странах СНГ, БРИКС, ЕАЭС",
       features: ["24/7 поддержка", "Локальные партнеры", "Обучение персонала"],
       color: "bg-accent-light/10 text-accent-light",
     },
@@ -86,10 +86,10 @@ const AdvantagesSection = () => {
         {/* Statistics */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { value: "15+", label: "лет опыта" },
-            { value: "50+", label: "патентов" },
-            { value: "1000+", label: "установок" },
-            { value: "50+", label: "стран" },
+            { value: "20+", label: "опытных инженеров" },
+            { value: "10+", label: "патентов" },
+            { value: "40+", label: "моделей детекторов" },
+            { value: "5+", label: "офисов" },
           ].map((stat, index) => (
             <div 
               key={stat.label} 
