@@ -2,15 +2,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, ArrowRight, ExternalLink } from "lucide-react";
+import logoImage from "@/assets/logo.png";
 
 const News = () => {
   const newsItems = [
     {
       id: 1,
-      title: "КСЕЛОН будет строить завод цифровых детекторов в Новочеркасске",
+      title: "КСЕЛОН будет строить завод цифровых детекторов в Технопарке \"БЕШТАУ\"",
       excerpt: "На международной выставке «Иннопром-2025» в Екатеринбурге подписано соглашение о строительстве производства цифровых плоскопанельных детекторов нового поколения",
-      content: "ООО «КСЕЛОН» намерена реализовать в особой экономической зоне «Ростовская» проект по производству цифровых плоскопанельных детекторов нового поколения для промышленности и медицины. Компания планирует постепенно переходить на отечественные компоненты, чтобы к 2030 году полностью локализовать производство. Инвестиции в проект составят более 2,5 млрд рублей, будет создано более 250 рабочих мест.",
-      date: "2025-07-08",
+      content: "ООО «КСЕЛОН» намерена реализовать в Технопарке \"Бештау\" проект по производству цифровых плоскопанельных детекторов нового поколения для промышленности и медицины. КСЕЛОН получил статус резидента Технопарка Бештау. Компания планирует постепенно переходить на отечественные компоненты, чтобы к 2030 году полностью локализовать производство. Инвестиции в проект составят более 2,5 млрд рублей, будет создано более 250 рабочих мест.",
+      date: "2025-09-25",
       author: "Пресс-служба КСEЛОН",
       category: "Бизнес",
       image: "/api/placeholder/400/250",
@@ -30,7 +31,7 @@ const News = () => {
     {
       id: 3,
       title: "Запуск серийного производства детекторов XELON XRAY",
-      excerpt: "Начато массовое производство новой линейки цифровых плоскопанельных детекторов с использованием 70% отечественных компонентов",
+      excerpt: "Планируется запуск серийного производства 01.03.2027",
       content: "Детекторы XELON XRAY обеспечивают высочайшее качество изображения при минимальной дозе облучения и полностью соответствуют российским и международным стандартам качества.",
       date: "2025-07-20",
       author: "Производственный департамент",
@@ -38,73 +39,118 @@ const News = () => {
       image: "/api/placeholder/400/250",
       featured: false
     },
-    {
-      id: 4,
-      title: "Инвестиции в R&D центр составили 1.5 млрд рублей",
-      excerpt: "Создание современного исследовательского центра для разработки технологий следующего поколения",
-      content: "Новый R&D центр в Ростове-на-Дону оснащен современным оборудованием для разработки и тестирования цифровых детекторов нового поколения.",
-      date: "2025-06-10",
-      author: "Департамент R&D",
-      category: "Инновации",
-      image: "/api/placeholder/400/250",
-      featured: false
-    },
-    {
-      id: 5,
-      title: "Достигнута локализация 70% компонентов производства",
-      excerpt: "КСEЛОН достиг значительного прогресса в импортозамещении ключевых компонентов детекторов",
-      content: "Благодаря сотрудничеству с российскими поставщиками и собственным разработкам удалось локализовать производство критически важных компонентов.",
-      date: "2025-05-25",
-      author: "Отдел закупок",
-      category: "Производство",
-      image: "/api/placeholder/400/250",
-      featured: false
-    },
-    {
-      id: 6,
-      title: "Подписание первых контрактов на поставку детекторов",
-      excerpt: "Заключены соглашения с ведущими медицинскими учреждениями Южного федерального округа",
-      content: "Первые заказы на детекторы XELON XRAY поступили от крупных медицинских центров Ростова-на-Дону, Краснодара и Волгограда.",
-      date: "2025-04-15",
-      author: "Отдел продаж",
-      category: "Бизнес",
-      image: "/api/placeholder/400/250",
-      featured: false
-    }
   ];
 
   const categories = ["Все", "Продукты", "Бизнес", "Инновации", "Партнерство", "Сертификация", "Награды"];
 
   const events = [
+    // Россия
     {
-      title: "Microwave & RF Week 2025",
-      date: "15-20 июня 2025",
-      location: "Сан-Диего, США",
-      description: "Международная выставка микроволновых и радиочастотных технологий"
+      title: "Российский форум «Микроэлектроника 2025»",
+      date: "21–27 сентября 2025",
+      location: "Сочи, Россия",
+      description: "Российский форум по микроэлектронике",
+      website: "https://microelectronica.pro/"
     },
     {
-      title: "MEDICA 2025",
-      date: "17-20 ноября 2025", 
-      location: "Дюссельдорф, Германия",
-      description: "Крупнейшая медицинская выставка в мире"
+      title: "ExpoElectronica 2026",
+      date: "14–16 апреля 2026",
+      location: "Москва, Россия",
+      description: "Выставка электроники и компонентов",
+      website: "https://expoelectronica.ru/"
     },
     {
-      title: "SEMICON Europa 2025",
-      date: "11-14 ноября 2025",
-      location: "Мюнхен, Германия",
-      description: "Ведущая выставка микроэлектроники и полупроводников"
+      title: "NDT Russia",
+      date: "21–23 октября 2025",
+      location: "Москва, Россия", 
+      description: "Выставка неразрушающего контроля",
+      website: "https://www.ndt-russia.ru/"
     },
     {
-      title: "RSNA 2025",
-      date: "30 ноября - 5 декабря 2025",
-      location: "Чикаго, США",
-      description: "Международная конференция по медицинской визуализации"
+      title: "Дефектоскопия / NDT",
+      date: "28–29 апреля 2026",
+      location: "Санкт-Петербург, Россия",
+      description: "Выставка по дефектоскопии",
+      website: "https://www.ndt-defectoscopy.ru/"
     },
     {
-      title: "ECR 2026",
-      date: "4-8 марта 2026", 
-      location: "Вена, Австрия",
-      description: "Европейский конгресс радиологов"
+      title: "RADEL",
+      date: "ежегодно",
+      location: "Санкт-Петербург, Россия",
+      description: "Выставка радиоэлектроники",
+      website: "https://radelexpo.ru/"
+    },
+    {
+      title: "«Электроника России»",
+      date: "25–27 ноября 2025",
+      location: "Москва, Россия",
+      description: "Выставка российской электроники",
+      website: "https://rus-elektronika.ru"
+    },
+    {
+      title: "ICEE 2026",
+      date: "7–10 апреля 2026",
+      location: "Москва, Россия",
+      description: "Международная выставка электроники",
+      website: "https://icee-expo.ru"
+    },
+    // Китай
+    {
+      title: "NEPCON China 2026 (Shanghai)",
+      date: "21–23 апреля 2026",
+      location: "Шанхай, Китай",
+      description: "Выставка электроники в Китае",
+      website: "https://www.nepconchina.com/"
+    },
+    {
+      title: "ICET 2026",
+      date: "8–11 мая 2026",
+      location: "Чэнду, Китай",
+      description: "Международная выставка технологий",
+      website: "http://icet.net/"
+    },
+    // СНГ
+    {
+      title: "Electronica Expo Kazakhstan",
+      date: "16–18 июня 2026",
+      location: "Астана, Казахстан",
+      description: "Выставка электроники в Казахстане",
+      website: "https://electronica-expo.com/"
+    },
+    {
+      title: "Consumer / Electronica Expo Kazakhstan",
+      date: "16–18 июня 2026",
+      location: "Астана, Казахстан",
+      description: "Потребительская электроника",
+      website: "https://expobeds.com"
+    },
+    {
+      title: "TIHE 2026",
+      date: "28–30 апреля 2026",
+      location: "Ташкент, Узбекистан",
+      description: "Выставка здравоохранения",
+      website: "https://tihe.uz/"
+    },
+    {
+      title: "KIHE 2026",
+      date: "20–22 мая 2026",
+      location: "Алматы, Казахстан",
+      description: "Казахстанская выставка здравоохранения",
+      website: "https://kihe.kz"
+    },
+    {
+      title: "Eurasian Pharmaceutical Forum 2026",
+      date: "26–28 января 2026",
+      location: "Алматы, Казахстан",
+      description: "Евразийский фармацевтический форум",
+      website: "https://eurasian-pharma.com"
+    },
+    {
+      title: "Automation. Electronics",
+      date: "17–19 марта 2026",
+      location: "Минск, Беларусь",
+      description: "Автоматизация и электроника",
+      website: "https://automation.minskexpo.com"
     }
   ];
 
@@ -134,7 +180,13 @@ const News = () => {
           {newsItems.filter(item => item.featured).map((item) => (
             <Card key={item.id} className="corporate-shadow mb-12 overflow-hidden animate-fade-in-up">
               <div className="grid lg:grid-cols-2">
-                <div className="h-64 lg:h-auto bg-gradient-to-br from-accent/20 to-primary/20"></div>
+                <div className="h-64 lg:h-auto bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
+                  <img 
+                    src={logoImage} 
+                    alt="КСЕЛОН логотип" 
+                    className="w-32 h-32 object-contain"
+                  />
+                </div>
                 <CardContent className="p-8 flex flex-col justify-center">
                   <div className="mb-4">
                     <Badge className="mb-3 bg-accent text-white">{item.category}</Badge>
@@ -277,9 +329,23 @@ const News = () => {
                         </p>
                       </div>
                       
-                      <Button className="bg-accent hover:bg-accent-light">
-                        Встретиться с нами
-                      </Button>
+                      <div className="flex gap-2">
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => window.open(event.website, '_blank')}
+                        >
+                          Подробнее
+                          <ExternalLink className="ml-2 h-3 w-3" />
+                        </Button>
+                        <Button 
+                          className="bg-accent hover:bg-accent-light"
+                          size="sm"
+                          onClick={() => window.open(event.website, '_blank')}
+                        >
+                          Встретиться с нами
+                        </Button>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>

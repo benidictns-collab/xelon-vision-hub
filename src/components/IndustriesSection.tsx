@@ -21,7 +21,7 @@ const IndustriesSection = () => {
         "Интраоральная стоматология",
         "Ветеринарная визуализация"
       ],
-      stats: { installations: "500+", countries: "30+" },
+      
       iconColor: "text-red-500",
     },
     {
@@ -37,7 +37,7 @@ const IndustriesSection = () => {
         "Контроль композитов",
         "Безопасность и досмотр"
       ],
-      stats: { installations: "300+", countries: "25+" },
+      
       iconColor: "text-blue-500",
     },
     {
@@ -53,7 +53,7 @@ const IndustriesSection = () => {
         "Высокоэнергетическая физика",
         "Материаловедение"
       ],
-      stats: { installations: "200+", countries: "20+" },
+      
       iconColor: "text-purple-500",
     },
   ];
@@ -78,28 +78,20 @@ const IndustriesSection = () => {
           {industries.map((industry, index) => (
             <Card 
               key={industry.title}
-              className="industry-card corporate-shadow animate-fade-in-up"
+              className="industry-card corporate-shadow animate-fade-in-up group hover:scale-105 transition-transform duration-300"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <div 
-                className="h-48 relative overflow-hidden bg-cover bg-center"
+                className="h-48 relative overflow-hidden bg-cover bg-center group-hover:brightness-110 transition-all duration-300"
                 style={{ backgroundImage: `url(${industry.backgroundImage})` }}
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent group-hover:from-black/50 group-hover:via-black/20 transition-all duration-300"></div>
                 <div className="absolute bottom-4 left-4 text-white">
                   <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-2">
                     <industry.icon className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold">{industry.title}</h3>
                   <p className="text-white/90 text-sm">{industry.subtitle}</p>
-                </div>
-                
-                {/* Stats overlay */}
-                <div className="absolute top-4 right-4 text-right text-white">
-                  <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2">
-                    <div className="text-xl font-bold">{industry.stats.installations}</div>
-                    <div className="text-xs text-white/90">установок</div>
-                  </div>
                 </div>
               </div>
 
@@ -118,16 +110,6 @@ const IndustriesSection = () => {
                   ))}
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-muted/50 rounded-lg">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-accent">{industry.stats.installations}</div>
-                    <div className="text-xs text-muted-foreground">установок</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-accent">{industry.stats.countries}</div>
-                    <div className="text-xs text-muted-foreground">стран</div>
-                  </div>
-                </div>
 
                 <Button 
                   variant="outline" 
