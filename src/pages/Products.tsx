@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Heart, Wrench, Microscope, Download, Eye, ShoppingCart } from "lucide-react";
 import detectorImage from "@/assets/detector-hero.png";
+import QuoteModal from "@/components/QuoteModal";
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState("medical");
@@ -331,10 +332,12 @@ const Products = () => {
 
                         {/* Actions */}
                         <div className="flex gap-2">
-                          <Button size="sm" className="flex-1 bg-accent hover:bg-accent-light">
-                            <ShoppingCart className="h-4 w-4 mr-2" />
-                            Запросить КП
-                          </Button>
+                          <QuoteModal>
+                            <Button size="sm" className="flex-1 bg-accent hover:bg-accent-light">
+                              <ShoppingCart className="h-4 w-4 mr-2" />
+                              Запросить КП
+                            </Button>
+                          </QuoteModal>
                           <Button variant="outline" size="sm">
                             <Download className="h-4 w-4" />
                           </Button>
@@ -361,9 +364,11 @@ const Products = () => {
             для ваших задач и предоставят техническую поддержку
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-accent hover:bg-accent-light">
-              Получить консультацию
-            </Button>
+            <QuoteModal>
+              <Button size="lg" className="bg-accent hover:bg-accent-light">
+                Получить консультацию
+              </Button>
+            </QuoteModal>
             <Button variant="outline" size="lg">
               Скачать полный каталог
             </Button>
