@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.png";
+import QuoteModal from "@/components/QuoteModal";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,9 +46,11 @@ const Navigation = () => {
             <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
               RU / EN
             </Button>
-            <Button variant="default" size="sm" className="bg-accent hover:bg-accent-light">
-              Запросить КП
-            </Button>
+            <QuoteModal>
+              <Button variant="default" size="sm" className="bg-accent hover:bg-accent-light">
+                Запросить КП
+              </Button>
+            </QuoteModal>
           </div>
 
           {/* Mobile menu button */}
@@ -80,9 +83,11 @@ const Navigation = () => {
                 <Button variant="ghost" size="sm" className="justify-start">
                   RU / EN
                 </Button>
-                <Button variant="default" size="sm" className="bg-accent hover:bg-accent-light">
-                  Запросить КП
-                </Button>
+                <QuoteModal>
+                  <Button variant="default" size="sm" className="bg-accent hover:bg-accent-light">
+                    Запросить КП
+                  </Button>
+                </QuoteModal>
               </div>
             </div>
           </div>
