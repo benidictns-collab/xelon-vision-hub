@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Products from "./pages/Products";
+import ProductDetail from "./pages/ProductDetail";
 import Solutions from "./pages/Solutions";
 import Support from "./pages/Support";
 import News from "./pages/News";
@@ -29,6 +30,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
               <Route path="/products" element={<Products />} />
+              <Route path="/products/:category/:productId" element={<ProductDetail />} />
               <Route path="/solutions" element={<Solutions />} />
               <Route path="/support" element={<Support />} />
               <Route path="/news" element={<News />} />

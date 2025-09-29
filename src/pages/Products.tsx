@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -34,6 +35,7 @@ const Products = () => {
   const products = {
     medical: [
       {
+        id: "xelon-xray-1515",
         name: "XELON X-RAY-1515",
         category: "Рентгенография",
         description: "Активная область 153×153 мм, шаг пикселя 135 мкм",
@@ -47,6 +49,7 @@ const Products = () => {
         isNew: true
       },
       {
+        id: "xelon-xray-1923",
         name: "XELON X-RAY-1923",
         category: "Рентгенография",
         description: "Активная область 190×230 мм, шаг пикселя 131 мкм",
@@ -60,6 +63,7 @@ const Products = () => {
         isNew: false
       },
       {
+        id: "xelon-xray-2020",
         name: "XELON X-RAY-2020",
         category: "Рентгенография",
         description: "Активная область 204×204 мм, шаг пикселя 150 мкм",
@@ -73,6 +77,7 @@ const Products = () => {
         isNew: true
       },
       {
+        id: "xelon-xray-2430",
         name: "XELON X-RAY-2430",
         category: "Рентгенография",
         description: "Активная область 247×307 мм, шаг пикселя 139 мкм",
@@ -86,6 +91,7 @@ const Products = () => {
         isNew: false
       },
       {
+        id: "xelon-xray-2530",
         name: "XELON X-RAY-2530",
         category: "Рентгенография",
         description: "Активная область 250×300 мм, шаг пикселя 99 мкм",
@@ -99,6 +105,7 @@ const Products = () => {
         isNew: true
       },
       {
+        id: "xelon-xray-3543",
         name: "XELON X-RAY-3543",
         category: "Рентгенография",
         description: "Активная область 358×430 мм, шаг пикселя 140 мкм",
@@ -114,6 +121,7 @@ const Products = () => {
     ],
     industrial: [
       {
+        id: "xelon-xray-55",
         name: "XELON X-RAY-55",
         category: "Микродефектоскопия",
         description: "Активная область 52.8×52.8 мм, шаг пикселя 50 мкм",
@@ -127,6 +135,7 @@ const Products = () => {
         isNew: true
       },
       {
+        id: "xelon-xray-1212",
         name: "XELON X-RAY-1212",
         category: "Дефектоскопия",
         description: "Активная область 120×120 мм, шаг пикселя 50 мкм",
@@ -140,6 +149,7 @@ const Products = () => {
         isNew: false
       },
       {
+        id: "xelon-xray-1723",
         name: "XELON X-RAY-1723",
         category: "Дефектоскопия",
         description: "Активная область 172.8×230.4 мм, шаг пикселя 75 мкм",
@@ -153,6 +163,7 @@ const Products = () => {
         isNew: true
       },
       {
+        id: "xelon-xray-2222",
         name: "XELON X-RAY-2222",
         category: "Тяжелая промышленность",
         description: "Активная область 229.1×229.1 мм, высокоэнергетический",
@@ -168,6 +179,7 @@ const Products = () => {
     ],
     scientific: [
       {
+        id: "xelon-xray-1723-scientific",
         name: "XELON X-RAY-1723",
         category: "Специализированная визуализация",
         description: "Активная область 172.8×230.4 мм, динамический тип",
@@ -181,6 +193,7 @@ const Products = () => {
         isNew: true
       },
       {
+        id: "xelon-xray-4343",
         name: "XELON X-RAY-4343",
         category: "Досмотр транспорта",
         description: "Активная область 430×430 мм, для досмотра грузов",
@@ -194,6 +207,7 @@ const Products = () => {
         isNew: false
       },
       {
+        id: "xelon-xray-3025",
         name: "XELON X-RAY-3025",
         category: "Досмотр багажа",
         description: "Активная область 300×250 мм, оптимизирован для багажа",
@@ -207,6 +221,7 @@ const Products = () => {
         isNew: true
       },
       {
+        id: "xelon-xray-5252",
         name: "XELON X-RAY-5252",
         category: "Микродосмотр",
         description: "Активная область 52.8×52.8 мм, для микродосмотра",
@@ -341,8 +356,14 @@ const Products = () => {
                           <Button variant="outline" size="sm">
                             <Download className="h-4 w-4" />
                           </Button>
-                          <Button variant="outline" size="sm">
-                            <Eye className="h-4 w-4" />
+                          <Button 
+                            variant="outline" 
+                            size="sm"
+                            asChild
+                          >
+                            <Link to={`/products/${selectedCategory}/${product.id}`}>
+                              <Eye className="h-4 w-4" />
+                            </Link>
                           </Button>
                         </div>
                       </CardContent>
