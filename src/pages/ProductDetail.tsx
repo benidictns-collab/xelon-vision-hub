@@ -4,9 +4,9 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Download, Heart, Wrench, Microscope } from "lucide-react";
 import detectorImage from "@/assets/detector-hero.png";
-import industrialImage from "@/assets/industrial-ndt.jpg";
-import medicalImage from "@/assets/medical-industry.jpg";
-import scientificImage from "@/assets/scientific-research.jpg";
+import industrialImage from "@/assets/XELON DET FINAL.png";
+import medicalImage from "@/assets/XELON DET FINAL.png";
+import scientificImage from "@/assets/XELON DET FINAL.png";
 import QuoteModal from "@/components/QuoteModal";
 
 const ProductDetail = () => {
