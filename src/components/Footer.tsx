@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Phone, MapPin, Linkedin, Youtube, ArrowUp } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
@@ -12,41 +13,41 @@ const Footer = () => {
     {
       title: "Продукция",
       links: [
-        "Медицинские детекторы",
-        "Промышленные решения",
-        "Спецвизуализация",
-        "Запчасти и аксессуары",
-        "Программное обеспечение"
+        { name: "Медицинские детекторы", href: "/products" },
+        { name: "Промышленные решения", href: "/products" },
+        { name: "Спецвизуализация", href: "/products" },
+        { name: "Запчасти и аксессуары", href: "/products" },
+        { name: "Программное обеспечение", href: "/products" }
       ]
     },
     {
       title: "Компания",
       links: [
-        "О нас",
-        "История",
-        "Команда",
-        "Карьера",
-        "Сертификаты"
+        { name: "О нас", href: "/company" },
+        { name: "История", href: "/company/history" },
+        { name: "Команда", href: "/company/team" },
+        { name: "Карьера", href: "/company/careers" },
+        { name: "Сертификаты", href: "/company/certificates" }
       ]
     },
     {
       title: "Поддержка",
       links: [
-        "База знаний",
-        "Документация",
-        "Техподдержка",
-        "Обучение",
-        "Гарантия"
+        { name: "База знаний", href: "/support/knowledge-base" },
+        { name: "Документация", href: "/support/documentation" },
+        { name: "Техподдержка", href: "/support" },
+        { name: "Обучение", href: "/support/training" },
+        { name: "Гарантия", href: "/support/warranty" }
       ]
     },
     {
       title: "Медиа",
       links: [
-        "Новости",
-        "Пресс-релизы",
-        "Видео",
-        "Отзывы клиентов",
-        "Кейсы"
+        { name: "Новости", href: "/news" },
+        { name: "Пресс-релизы", href: "/news" },
+        { name: "Видео", href: "/news" },
+        { name: "Отзывы клиентов", href: "/news" },
+        { name: "Кейсы", href: "/news" }
       ]
     }
   ];
@@ -100,13 +101,13 @@ const Footer = () => {
               <h3 className="font-semibold text-white mb-4">{section.title}</h3>
               <ul className="space-y-2">
                 {section.links.map((link) => (
-                  <li key={link}>
-                    <a 
-                      href="#" 
+                  <li key={link.name}>
+                    <Link 
+                      to={link.href} 
                       className="text-white/70 hover:text-white fast-transition text-sm"
                     >
-                      {link}
-                    </a>
+                      {link.name}
+                    </Link>
                   </li>
                 ))}
               </ul>

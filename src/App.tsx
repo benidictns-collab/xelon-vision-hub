@@ -14,6 +14,15 @@ import Support from "./pages/Support";
 import News from "./pages/News";
 import Contacts from "./pages/Contacts";
 import NotFound from "./pages/NotFound";
+import Company from "./pages/Company";
+import History from "./pages/History";
+import Team from "./pages/Team";
+import Careers from "./pages/Careers";
+import Certificates from "./pages/Certificates";
+import KnowledgeBase from "./pages/KnowledgeBase";
+import Documentation from "./pages/Documentation";
+import Training from "./pages/Training";
+import Warranty from "./pages/Warranty";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +44,15 @@ const App = () => (
               <Route path="/support" element={<Support />} />
               <Route path="/news" element={<News />} />
               <Route path="/contacts" element={<Contacts />} />
+              <Route path="/company" element={<Company />} />
+              <Route path="/company/history" element={<History />} />
+              <Route path="/company/team" element={<Team />} />
+              <Route path="/company/careers" element={<Careers />} />
+              <Route path="/company/certificates" element={<Certificates />} />
+              <Route path="/support/knowledge-base" element={<KnowledgeBase />} />
+              <Route path="/support/documentation" element={<Documentation />} />
+              <Route path="/support/training" element={<Training />} />
+              <Route path="/support/warranty" element={<Warranty />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
