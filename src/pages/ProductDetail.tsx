@@ -317,7 +317,7 @@ const ProductDetail = () => {
             <Button 
               variant="outline" 
               onClick={() => navigate('/products')}
-              className="mb-6 border-white/30 text-white hover:bg-white/10"
+              className="mb-6 bg-white/10 border-white/50 text-white hover:bg-white/20 hover:border-white/70"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
               Вернуться к каталогу
