@@ -2,10 +2,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CircleCheck as CheckCircle, ArrowRight, Download } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Solutions = () => {
+  const navigate = useNavigate();
+  
   const solutions = [
     {
+      id: "digital-xray",
       title: "Цифровая рентгенография R&F",
       industry: "Медицина",
       description: "Комплексное решение для перехода от аналоговой к цифровой рентгенографии",
@@ -20,6 +24,7 @@ const Solutions = () => {
       caseStudy: "ГКБ №1 им. Пирогова - модернизация 12 кабинетов"
     },
     {
+      id: "welding-control",
       title: "Контроль качества сварных швов",
       industry: "Промышленность",
       description: "Автоматизированная система контроля сварных соединений для критически важных конструкций",
@@ -34,6 +39,7 @@ const Solutions = () => {
       caseStudy: "Газпром - контроль магистральных трубопроводов"
     },
     {
+      id: "synchrotron-tomography",
       title: "Синхротронная томография",
       industry: "Наука",
       description: "Решение для высокоразрешающей 3D визуализации внутренней структуры материалов",
@@ -48,6 +54,7 @@ const Solutions = () => {
       caseStudy: "РАН - изучение композитных материалов"
     },
     {
+      id: "mobile-xray",
       title: "Мобильная рентгенография",
       industry: "Медицина",
       description: "Беспроводное решение для рентгенографии в палатах и операционных",
@@ -62,6 +69,7 @@ const Solutions = () => {
       caseStudy: "Бурденко - оснащение отделения нейрохирургии"
     },
     {
+      id: "security-screening",
       title: "Досмотр багажа и грузов",
       industry: "Безопасность",
       description: "Высокоскоростная система рентгеновского досмотра для аэропортов и таможни",
@@ -76,6 +84,7 @@ const Solutions = () => {
       caseStudy: "Шереметьево - модернизация системы досмотра"
     },
     {
+      id: "veterinary-imaging",
       title: "Ветеринарная визуализация",
       industry: "Ветеринария",
       description: "Специализированное решение для диагностики мелких и крупных животных",
@@ -168,7 +177,10 @@ const Solutions = () => {
 
                   {/* Actions */}
                   <div className="flex gap-3">
-                    <Button className="flex-1 bg-accent hover:bg-accent-light relative z-20 pointer-events-auto">
+                    <Button 
+                      className="flex-1 bg-accent hover:bg-accent-light relative z-20 pointer-events-auto"
+                      onClick={() => navigate(`/solution/${solution.id}`)}
+                    >
                       Подробнее
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
