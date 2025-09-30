@@ -98,8 +98,7 @@ const SupportSection = () => {
                   
                   {option.actionType === "support" && (
                     <Button 
-                      variant="outline" 
-                      className="w-full"
+                      className="w-full bg-accent hover:bg-accent-light"
                       onClick={() => window.open('mailto:support@xelon-technology.ru')}
                     >
                       <Mail className="mr-2 h-4 w-4" />
