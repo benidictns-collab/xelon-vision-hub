@@ -197,8 +197,7 @@ const SolutionDetail = () => {
           <div className="max-w-4xl mx-auto animate-fade-in-up">
             <div className="mb-6">
               <Button 
-                variant="outline" 
-                className="mb-6 border-white/30 text-white hover:bg-white/10"
+                className="mb-6 bg-accent hover:bg-accent-light text-white"
                 onClick={() => navigate('/solutions')}
               >
                 <ArrowLeft className="mr-2 h-4 w-4" />
