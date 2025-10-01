@@ -1,8 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import detectorImage from "@/assets/detector-hero.png";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import TechnologyModal from "./TechnologyModal";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+  const [isTechnologyModalOpen, setIsTechnologyModalOpen] = useState(false);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
@@ -37,6 +43,7 @@ const HeroSection = () => {
               <Button 
                 size="lg" 
                 className="bg-accent hover:bg-accent-light text-white px-8 py-4 h-auto group"
+                onClick={() => navigate('/products')}
               >
                 Продукция 
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 fast-transition" />
@@ -46,6 +53,7 @@ const HeroSection = () => {
                 variant="outline" 
                 size="lg" 
                 className="border-accent/50 text-accent-light hover:bg-accent/20 backdrop-blur-sm px-8 py-4 h-auto group"
+                onClick={() => setIsTechnologyModalOpen(true)}
               >
                 <Play className="mr-2 h-5 w-5 group-hover:scale-110 fast-transition" />
                 О технологии
@@ -111,6 +119,11 @@ const HeroSection = () => {
           <div className="text-sm">Прокрутите вниз</div>
         </div>
       </div>
+
+      <TechnologyModal 
+        open={isTechnologyModalOpen} 
+        onOpenChange={setIsTechnologyModalOpen} 
+      />
     </section>
   );
 };
