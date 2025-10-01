@@ -2,9 +2,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, ArrowRight, ExternalLink } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import logoImage from "@/assets/logo.png";
 
 const News = () => {
+  const navigate = useNavigate();
+  
   const newsItems = [
     {
       id: 1,
@@ -209,7 +212,10 @@ const News = () => {
                     </div>
                   </div>
                   
-                  <Button className="w-fit bg-accent hover:bg-accent-light">
+                  <Button 
+                    className="w-fit bg-accent hover:bg-accent-light"
+                    onClick={() => navigate(`/news/${item.id}`)}
+                  >
                     Читать полностью
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -275,6 +281,7 @@ const News = () => {
                     variant="outline" 
                     size="sm" 
                     className="w-full relative z-20 pointer-events-auto"
+                    onClick={() => navigate(`/news/${item.id}`)}
                   >
                     Подробнее
                     <ArrowRight className="ml-2 h-3 w-3" />

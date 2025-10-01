@@ -13,6 +13,7 @@ import Solutions from "./pages/Solutions";
 import SolutionDetail from "./pages/SolutionDetail";
 import Support from "./pages/Support";
 import News from "./pages/News";
+import NewsDetail from "./pages/NewsDetail";
 import Contacts from "./pages/Contacts";
 import NotFound from "./pages/NotFound";
 import Company from "./pages/Company";
@@ -45,6 +46,7 @@ const App = () => (
               <Route path="/solution/:solutionId" element={<SolutionDetail />} />
               <Route path="/support" element={<Support />} />
               <Route path="/news" element={<News />} />
+              <Route path="/news/:newsId" element={<NewsDetail />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/company" element={<Company />} />
               <Route path="/company/history" element={<History />} />
