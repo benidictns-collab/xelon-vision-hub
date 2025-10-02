@@ -4,12 +4,10 @@ import detectorImage from "@/assets/detector-hero.png";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import TechnologyModal from "./TechnologyModal";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroSection = () => {
   const navigate = useNavigate();
   const [isTechnologyModalOpen, setIsTechnologyModalOpen] = useState(false);
-  const { t } = useLanguage();
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -38,7 +36,7 @@ const HeroSection = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed max-w-lg">
-              {t("hero.subtitle")}
+              Цифровые плоскопанельные детекторы для медицинской, промышленной и специализированной визуализации
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -47,7 +45,7 @@ const HeroSection = () => {
                 className="bg-accent hover:bg-accent-light text-white px-8 py-4 h-auto group"
                 onClick={() => navigate('/products')}
               >
-                {t("hero.cta.products")} 
+                Продукция 
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 fast-transition" />
               </Button>
               
@@ -58,7 +56,7 @@ const HeroSection = () => {
                 onClick={() => setIsTechnologyModalOpen(true)}
               >
                 <Play className="mr-2 h-5 w-5 group-hover:scale-110 fast-transition" />
-                {t("hero.cta.technology")}
+                О технологии
               </Button>
             </div>
 

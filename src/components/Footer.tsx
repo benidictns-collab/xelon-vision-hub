@@ -3,18 +3,15 @@ import { Separator } from "@/components/ui/separator";
 import { Mail, Phone, MapPin, Linkedin, Youtube, ArrowUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
-  const { t } = useLanguage();
-  
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const footerSections = [
     {
-      title: t("footer.products"),
+      title: "Продукция",
       links: [
         { name: "Медицинские детекторы", href: "/products" },
         { name: "Промышленные решения", href: "/products" },
@@ -24,23 +21,23 @@ const Footer = () => {
       ]
     },
     {
-      title: t("footer.company"),
+      title: "Компания",
       links: [
-        { name: t("footer.about"), href: "/company" },
-        { name: t("footer.history"), href: "/company/history" },
-        { name: t("footer.team"), href: "/company/team" },
-        { name: t("footer.careers"), href: "/company/careers" },
-        { name: t("footer.certificates"), href: "/company/certificates" }
+        { name: "О нас", href: "/company" },
+        { name: "История", href: "/company/history" },
+        { name: "Команда", href: "/company/team" },
+        { name: "Карьера", href: "/company/careers" },
+        { name: "Сертификаты", href: "/company/certificates" }
       ]
     },
     {
-      title: t("footer.support"),
+      title: "Поддержка",
       links: [
-        { name: t("footer.support.kb"), href: "/support/knowledge-base" },
-        { name: t("footer.support.docs"), href: "/support/documentation" },
+        { name: "База знаний", href: "/support/knowledge-base" },
+        { name: "Документация", href: "/support/documentation" },
         { name: "Техподдержка", href: "/support" },
-        { name: t("footer.support.training"), href: "/support/training" },
-        { name: t("footer.support.warranty"), href: "/support/warranty" }
+        { name: "Обучение", href: "/support/training" },
+        { name: "Гарантия", href: "/support/warranty" }
       ]
     },
     {
