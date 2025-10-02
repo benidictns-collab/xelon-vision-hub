@@ -4,32 +4,34 @@ import { Shield, Lightbulb, Award, Globe } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const AdvantagesSection = () => {
+  const { t } = useLanguage();
+  
   const advantages = [
     {
       icon: Shield,
-      title: "Российское производство",
-      description: "Полный производственный цикл на территории России. Резидент Технопарка Бештау. Планируется внесение в Реестр отечественной продукции в соответствии с 719 ПП Минпромторга",
+      title: t("advantages.production.title"),
+      description: t("advantages.production.desc"),
       features: ["Независимость от импорта", "Резидент Технопарка Бештау", "Реестр отечественной продукции"],
       color: "bg-success/10 text-success",
     },
     {
       icon: Lightbulb,
-      title: "Инновации",
-      description: "Собственные НИОКР и патентованные технологии, обеспечивающие превосходные характеристики",
+      title: t("advantages.innovation.title"),
+      description: t("advantages.innovation.desc"),
       features: ["15+ лет R&D", "50+ патентов", "Уникальные алгоритмы"],
       color: "bg-accent/10 text-accent",
     },
     {
       icon: Award,
-      title: "Качество",
-      description: "Международные сертификаты качества и соответствие медицинским и промышленным стандартам. Детекторы обладают повышенной степенью защиты IP67",
+      title: t("advantages.quality.title"),
+      description: t("advantages.quality.desc"),
       features: ["ISO 13485", "CE Mark", "IP67 защита"],
       color: "bg-primary/10 text-primary",
     },
     {
       icon: Globe,
-      title: "Глобальная поддержка",
-      description: "Техническая поддержка и сервис во всех странах СНГ, БРИКС, ЕАЭС",
+      title: t("advantages.support.title"),
+      description: t("advantages.support.desc"),
       features: ["24/7 поддержка", "Локальные партнеры", "Обучение персонала"],
       color: "bg-accent-light/10 text-accent-light",
     },
@@ -40,14 +42,13 @@ const AdvantagesSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
           <Badge variant="outline" className="mb-4 text-accent border-accent">
-            Почему выбирают КСEЛОН
+            {t("advantages.badge")}
           </Badge>
           <h2 className="section-title text-foreground mb-6">
-            Ключевые преимущества
+            {t("advantages.title")}
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Мы предлагаем не просто продукты, а комплексные решения, 
-            основанные на глубоком понимании потребностей каждой отрасли
+            {t("advantages.subtitle")}
           </p>
         </div>
 
@@ -87,10 +88,10 @@ const AdvantagesSection = () => {
         {/* Statistics */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { value: "20+", label: "опытных инженеров" },
-            { value: "10+", label: "патентов" },
-            { value: "40+", label: "моделей детекторов" },
-            { value: "5+", label: "офисов" },
+            { value: "20+", label: t("advantages.stats.engineers") },
+            { value: "10+", label: t("advantages.stats.patents") },
+            { value: "40+", label: t("advantages.stats.models") },
+            { value: "5+", label: t("advantages.stats.offices") },
           ].map((stat, index) => (
             <div 
               key={stat.label} 
