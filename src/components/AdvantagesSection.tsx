@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Lightbulb, Award, Globe } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const AdvantagesSection = () => {
   const advantages = [
