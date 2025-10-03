@@ -372,23 +372,9 @@ const ProductDetail = () => {
                   {/* Bottom gradient overlay */}
                   <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
-                  {/* Image number badge */}
-                  <div className="absolute top-4 right-4 bg-accent text-white px-3 py-1.5 rounded-full text-sm font-semibold shadow-lg transform translate-x-16 group-hover:translate-x-0 transition-transform duration-500 backdrop-blur-sm">
-                    {index + 1} / {product.images.length}
-                  </div>
-                  
                   {/* Corner accent line */}
                   <div className="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-tl-xl" />
                   <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-accent-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-br-xl" />
-                  
-                  {/* Hover icon */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="bg-white/10 backdrop-blur-md rounded-full p-4 transform scale-0 group-hover:scale-100 transition-transform duration-500 border border-white/30">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                      </svg>
-                    </div>
-                  </div>
                 </div>
               </div>
             ))}
