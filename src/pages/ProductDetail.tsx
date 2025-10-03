@@ -346,20 +346,52 @@ const ProductDetail = () => {
       </section>
 
       {/* Product Images */}
-      <section className="py-16">
+      <section className="py-16 bg-secondary/30">
         <div className="container mx-auto px-4">
-          <h2 className="section-title text-center mb-12">Изображения продукта</h2>
+          <h2 className="section-title text-center mb-12">Галерея изображений</h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {product.images.map((image, index) => (
-              <Card key={index} className="overflow-hidden hover-lift">
-                <div className="aspect-square bg-gradient-to-br from-accent/10 to-primary/10 p-6 flex items-center justify-center">
-                  <img 
-                    src={image} 
-                    alt={`${product.name} изображение ${index + 1}`}
-                    className="max-h-full max-w-full object-contain"
-                  />
+              <div 
+                key={index} 
+                className="group relative overflow-hidden rounded-xl cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-translate-y-2"
+              >
+                {/* Animated gradient border */}
+                <div className="absolute inset-0 bg-gradient-to-br from-accent via-primary to-accent-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl p-[2px]">
+                  <div className="h-full w-full bg-background rounded-xl" />
                 </div>
-              </Card>
+                
+                {/* Image container with border */}
+                <div className="relative overflow-hidden rounded-xl border-2 border-border group-hover:border-transparent transition-all duration-500 bg-card">
+                  <div className="aspect-square bg-gradient-to-br from-accent/5 to-primary/5 p-6 flex items-center justify-center">
+                    <img 
+                      src={image} 
+                      alt={`${product.name} изображение ${index + 1}`}
+                      className="max-h-full max-w-full object-contain transform transition-transform duration-700 group-hover:scale-110"
+                    />
+                  </div>
+                  
+                  {/* Bottom gradient overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  {/* Image number badge */}
+                  <div className="absolute top-4 right-4 bg-accent text-white px-3 py-1.5 rounded-full text-sm font-semibold shadow-lg transform translate-x-16 group-hover:translate-x-0 transition-transform duration-500 backdrop-blur-sm">
+                    {index + 1} / {product.images.length}
+                  </div>
+                  
+                  {/* Corner accent line */}
+                  <div className="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-tl-xl" />
+                  <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-accent-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-br-xl" />
+                  
+                  {/* Hover icon */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="bg-white/10 backdrop-blur-md rounded-full p-4 transform scale-0 group-hover:scale-100 transition-transform duration-500 border border-white/30">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
