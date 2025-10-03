@@ -4,18 +4,24 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.png";
 import QuoteModal from "@/components/QuoteModal";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const navItems = [
-    { name: "О компании", href: "/about", hasSubmenu: false },
-    { name: "Продукция", href: "/products", hasSubmenu: false },
-    { name: "Решения", href: "/solutions", hasSubmenu: false },
-    { name: "Поддержка", href: "/support", hasSubmenu: false },
-    { name: "Новости", href: "/news", hasSubmenu: false },
-    { name: "Контакты", href: "/contacts", hasSubmenu: false },
+    { name: t('nav.about'), href: "/about", hasSubmenu: false },
+    { name: t('nav.products'), href: "/products", hasSubmenu: false },
+    { name: t('nav.solutions'), href: "/solutions", hasSubmenu: false },
+    { name: t('nav.support'), href: "/support", hasSubmenu: false },
+    { name: t('nav.news'), href: "/news", hasSubmenu: false },
+    { name: t('nav.contacts'), href: "/contacts", hasSubmenu: false },
   ];
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'ru' ? 'en' : 'ru');
+  };
 
   return (
     <nav className="bg-background/95 backdrop-blur-md border-b border-border sticky top-0 z-50">
@@ -43,12 +49,17 @@ const Navigation = () => {
 
           {/* Language & CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
-              RU / EN
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              className="text-muted-foreground hover:text-foreground"
+              onClick={toggleLanguage}
+            >
+              {language === 'ru' ? 'RU' : 'EN'} / {language === 'ru' ? 'EN' : 'RU'}
             </Button>
             <QuoteModal>
               <Button variant="default" size="sm" className="bg-accent hover:bg-accent-light">
-                Запросить КП
+                {t('nav.quote')}
               </Button>
             </QuoteModal>
           </div>
@@ -80,12 +91,17 @@ const Navigation = () => {
                 </Link>
               ))}
               <div className="flex flex-col space-y-2 pt-4 border-t border-border">
-                <Button variant="ghost" size="sm" className="justify-start">
-                  RU / EN
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className="justify-start"
+                  onClick={toggleLanguage}
+                >
+                  {language === 'ru' ? 'RU' : 'EN'} / {language === 'ru' ? 'EN' : 'RU'}
                 </Button>
                 <QuoteModal>
                   <Button variant="default" size="sm" className="bg-accent hover:bg-accent-light">
-                    Запросить КП
+                    {t('nav.quote')}
                   </Button>
                 </QuoteModal>
               </div>

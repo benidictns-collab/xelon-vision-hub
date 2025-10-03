@@ -5,55 +5,55 @@ import { ArrowRight, Heart, Wrench, Microscope } from "lucide-react";
 import medicalImage from "@/assets/medical-industry.jpg";
 import industrialImage from "@/assets/industrial-ndt.jpg";
 import scientificImage from "@/assets/scientific-research.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const IndustriesSection = () => {
+  const { t } = useLanguage();
+  
   const industries = [
     {
       icon: Heart,
-      title: "Медицина",
-      subtitle: "Диагностическая визуализация",
-      description: "Цифровые детекторы для рентгенографии, маммографии, флюорографии, С-дуги и стоматологии",
+      title: t('industries.medical.title'),
+      subtitle: t('industries.medical.subtitle'),
+      description: t('industries.medical.description'),
       backgroundImage: medicalImage,
       applications: [
-        "Цифровая рентгенография R&F",
-        "Маммография",
-        "Мобильные системы",
-        "Интраоральная стоматология",
-        "Ветеринарная визуализация"
+        t('industries.medical.app1'),
+        t('industries.medical.app2'),
+        t('industries.medical.app3'),
+        t('industries.medical.app4'),
+        t('industries.medical.app5')
       ],
-      
       iconColor: "text-red-500",
     },
     {
       icon: Wrench,
-      title: "Промышленность",
-      subtitle: "Неразрушающий контроль",
-      description: "Решения для контроля качества в авиакосмической, нефтегазовой и машиностроительной отраслях",
+      title: t('industries.industrial.title'),
+      subtitle: t('industries.industrial.subtitle'),
+      description: t('industries.industrial.description'),
       backgroundImage: industrialImage,
       applications: [
-        "Контроль сварных швов",
-        "Дефектоскопия отливок",
-        "Инспекция трубопроводов",
-        "Контроль композитов",
-        "Безопасность и досмотр"
+        t('industries.industrial.app1'),
+        t('industries.industrial.app2'),
+        t('industries.industrial.app3'),
+        t('industries.industrial.app4'),
+        t('industries.industrial.app5')
       ],
-      
       iconColor: "text-blue-500",
     },
     {
       icon: Microscope,
-      title: "Спецвизуализация",
-      subtitle: "Научные исследования",
-      description: "Высокочувствительные детекторы для научных исследований, синхротронного излучения и микротомографии",
+      title: t('industries.scientific.title'),
+      subtitle: t('industries.scientific.subtitle'),
+      description: t('industries.scientific.description'),
       backgroundImage: scientificImage,
       applications: [
-        "Синхротронные исследования",
-        "Микро-КТ",
-        "Нейтронная визуализация",
-        "Высокоэнергетическая физика",
-        "Материаловедение"
+        t('industries.scientific.app1'),
+        t('industries.scientific.app2'),
+        t('industries.scientific.app3'),
+        t('industries.scientific.app4'),
+        t('industries.scientific.app5')
       ],
-      
       iconColor: "text-purple-500",
     },
   ];
@@ -63,14 +63,13 @@ const IndustriesSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
           <Badge variant="outline" className="mb-4 text-accent border-accent">
-            Отрасли применения
+            {t('industries.badge')}
           </Badge>
           <h2 className="section-title text-foreground mb-6">
-            Решения для любых задач визуализации
+            {t('industries.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Наши цифровые плоскопанельные детекторы применяются в самых требовательных 
-            областях от медицинской диагностики до научных исследований
+            {t('industries.description')}
           </p>
         </div>
 
@@ -101,7 +100,7 @@ const IndustriesSection = () => {
                 </p>
 
                 <div className="space-y-3 mb-6">
-                  <h4 className="font-semibold text-foreground">Основные применения:</h4>
+                  <h4 className="font-semibold text-foreground">{t('industries.applications')}</h4>
                   {industry.applications.map((app) => (
                     <div key={app} className="flex items-start">
                       <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></div>
@@ -115,7 +114,7 @@ const IndustriesSection = () => {
                   variant="outline" 
                   className="w-full group hover:bg-accent hover:text-white hover:border-accent relative z-20 pointer-events-auto"
                 >
-                  Подробнее о решениях
+                  {t('industries.learnMore')}
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 fast-transition" />
                 </Button>
               </CardContent>
@@ -126,18 +125,17 @@ const IndustriesSection = () => {
         {/* CTA Section */}
         <div className="text-center bg-gradient-to-r from-accent/10 to-primary/10 rounded-2xl p-8 animate-fade-in-up">
           <h3 className="text-2xl font-bold text-foreground mb-4">
-            Не нашли подходящее решение?
+            {t('industries.cta.title')}
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Наши инженеры разработают индивидуальное решение под ваши задачи. 
-            Консультация и техническая поддержка - бесплатно.
+            {t('industries.cta.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-accent hover:bg-accent-light">
-              Получить консультацию
+              {t('industries.cta.consultation')}
             </Button>
             <Button variant="outline" size="lg">
-              Скачать каталог
+              {t('industries.cta.catalog')}
             </Button>
           </div>
         </div>
