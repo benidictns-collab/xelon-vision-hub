@@ -3,10 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Download, Heart, Wrench, Microscope } from "lucide-react";
-import detectorImage from "@/assets/detector-hero.png";
-import industrialImage from "@/assets/industrial-ndt.jpg";
-import medicalImage from "@/assets/medical-industry.jpg";
-import scientificImage from "@/assets/scientific-research.jpg";
+import xelonImage1 from "@/assets/xelon-1.png";
+import xelonImage2 from "@/assets/xelon-2.png";
+import xelonImage3 from "@/assets/xelon-3.jpeg";
 import QuoteModal from "@/components/QuoteModal";
 
 const ProductDetail = () => {
@@ -32,7 +31,7 @@ const ProductDetail = () => {
         },
         applications: ["Цифровая рентгенография R&F", "Ортопедия", "Педиатрия"],
         isNew: true,
-        images: [detectorImage, medicalImage, industrialImage]
+        images: [xelonImage1, xelonImage2, xelonImage3]
       },
       {
         id: "xelon-xray-1923",
@@ -51,7 +50,7 @@ const ProductDetail = () => {
         },
         applications: ["Общая рентгенография", "Грудная клетка", "Конечности"],
         isNew: false,
-        images: [detectorImage, medicalImage, scientificImage]
+        images: [xelonImage1, xelonImage2, xelonImage3]
       },
       {
         id: "xelon-xray-2020",
@@ -70,7 +69,7 @@ const ProductDetail = () => {
         },
         applications: ["Универсальная рентгенография", "Мобильные системы"],
         isNew: true,
-        images: [detectorImage, medicalImage, industrialImage]
+        images: [xelonImage1, xelonImage2, xelonImage3]
       },
       {
         id: "xelon-xray-2430",
@@ -89,7 +88,7 @@ const ProductDetail = () => {
         },
         applications: ["Рентгенография грудной клетки", "Позвоночник"],
         isNew: false,
-        images: [detectorImage, medicalImage, scientificImage]
+        images: [xelonImage1, xelonImage2, xelonImage3]
       },
       {
         id: "xelon-xray-2530",
@@ -108,7 +107,7 @@ const ProductDetail = () => {
         },
         applications: ["Высокоразрешающая рентгенография", "Детская радиология"],
         isNew: true,
-        images: [detectorImage, medicalImage, industrialImage]
+        images: [xelonImage1, xelonImage2, xelonImage3]
       },
       {
         id: "xelon-xray-3543",
@@ -127,7 +126,7 @@ const ProductDetail = () => {
         },
         applications: ["Полноформатная рентгенография", "Ортопедия"],
         isNew: false,
-        images: [detectorImage, medicalImage, scientificImage]
+        images: [xelonImage1, xelonImage2, xelonImage3]
       }
     ],
     industrial: [
@@ -147,7 +146,7 @@ const ProductDetail = () => {
         },
         applications: ["Контроль микрообъектов", "Электроника", "Ювелирные изделия"],
         isNew: true,
-        images: [detectorImage, industrialImage, scientificImage]
+        images: [xelonImage1, xelonImage2, xelonImage3]
       },
       {
         id: "xelon-xray-1212",
@@ -165,7 +164,7 @@ const ProductDetail = () => {
         },
         applications: ["Контроль сварных швов", "Литье", "Композиты"],
         isNew: false,
-        images: [detectorImage, industrialImage, medicalImage]
+        images: [xelonImage1, xelonImage2, xelonImage3]
       },
       {
         id: "xelon-xray-1723",
@@ -183,7 +182,7 @@ const ProductDetail = () => {
         },
         applications: ["Авиакосмическая отрасль", "Трубопроводы", "Машиностроение"],
         isNew: true,
-        images: [detectorImage, industrialImage, scientificImage]
+        images: [xelonImage1, xelonImage2, xelonImage3]
       },
       {
         id: "xelon-xray-2222",
@@ -201,7 +200,7 @@ const ProductDetail = () => {
         },
         applications: ["Толстые объекты", "Высокоэнергетические системы"],
         isNew: false,
-        images: [detectorImage, industrialImage, medicalImage]
+        images: [xelonImage1, xelonImage2, xelonImage3]
       }
     ],
     scientific: [
@@ -221,7 +220,7 @@ const ProductDetail = () => {
         },
         applications: ["Досмотр багажа", "Безопасность", "Таможня"],
         isNew: true,
-        images: [detectorImage, scientificImage, industrialImage]
+        images: [xelonImage1, xelonImage2, xelonImage3]
       },
       {
         id: "xelon-xray-4343",
@@ -239,7 +238,7 @@ const ProductDetail = () => {
         },
         applications: ["Досмотр транспорта", "Крупногабаритные грузы"],
         isNew: false,
-        images: [detectorImage, scientificImage, medicalImage]
+        images: [xelonImage1, xelonImage2, xelonImage3]
       },
       {
         id: "xelon-xray-3025",
@@ -257,7 +256,7 @@ const ProductDetail = () => {
         },
         applications: ["Аэропорты", "Вокзалы", "Метро"],
         isNew: true,
-        images: [detectorImage, scientificImage, industrialImage]
+        images: [xelonImage1, xelonImage2, xelonImage3]
       },
       {
         id: "xelon-xray-5252",
@@ -275,7 +274,7 @@ const ProductDetail = () => {
         },
         applications: ["Почтовые отправления", "Мелкие предметы"],
         isNew: false,
-        images: [detectorImage, scientificImage, medicalImage]
+        images: [xelonImage1, xelonImage2, xelonImage3]
       }
     ]
   };
