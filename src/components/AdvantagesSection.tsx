@@ -1,54 +1,35 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Lightbulb, Award, Globe } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 const AdvantagesSection = () => {
-  const { t } = useLanguage();
-  
   const advantages = [
     {
       icon: Shield,
-      title: t('advantages.russian.title'),
-      description: t('advantages.russian.description'),
-      features: [
-        t('advantages.russian.feature1'),
-        t('advantages.russian.feature2'),
-        t('advantages.russian.feature3')
-      ],
+      title: "Российское производство",
+      description: "Полный производственный цикл на территории России. Резидент Технопарка Бештау. Планируется внесение в Реестр отечественной продукции в соответствии с 719 ПП Минпромторга",
+      features: ["Независимость от импорта", "Резидент Технопарка Бештау", "Реестр отечественной продукции"],
       color: "bg-success/10 text-success",
     },
     {
       icon: Lightbulb,
-      title: t('advantages.innovation.title'),
-      description: t('advantages.innovation.description'),
-      features: [
-        t('advantages.innovation.feature1'),
-        t('advantages.innovation.feature2'),
-        t('advantages.innovation.feature3')
-      ],
+      title: "Инновации",
+      description: "Собственные НИОКР и патентованные технологии, обеспечивающие превосходные характеристики",
+      features: ["15+ лет R&D", "50+ патентов", "Уникальные алгоритмы"],
       color: "bg-accent/10 text-accent",
     },
     {
       icon: Award,
-      title: t('advantages.quality.title'),
-      description: t('advantages.quality.description'),
-      features: [
-        t('advantages.quality.feature1'),
-        t('advantages.quality.feature2'),
-        t('advantages.quality.feature3')
-      ],
+      title: "Качество",
+      description: "Международные сертификаты качества и соответствие медицинским и промышленным стандартам. Детекторы обладают повышенной степенью защиты IP67",
+      features: ["ISO 13485", "CE Mark", "IP67 защита"],
       color: "bg-primary/10 text-primary",
     },
     {
       icon: Globe,
-      title: t('advantages.support.title'),
-      description: t('advantages.support.description'),
-      features: [
-        t('advantages.support.feature1'),
-        t('advantages.support.feature2'),
-        t('advantages.support.feature3')
-      ],
+      title: "Глобальная поддержка",
+      description: "Техническая поддержка и сервис во всех странах СНГ, БРИКС, ЕАЭС",
+      features: ["24/7 поддержка", "Локальные партнеры", "Обучение персонала"],
       color: "bg-accent-light/10 text-accent-light",
     },
   ];
@@ -58,13 +39,14 @@ const AdvantagesSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
           <Badge variant="outline" className="mb-4 text-accent border-accent">
-            {t('advantages.badge')}
+            Почему выбирают КСEЛОН
           </Badge>
           <h2 className="section-title text-foreground mb-6">
-            {t('advantages.title')}
+            Ключевые преимущества
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            {t('advantages.description')}
+            Мы предлагаем не просто продукты, а комплексные решения, 
+            основанные на глубоком понимании потребностей каждой отрасли
           </p>
         </div>
 
@@ -104,10 +86,10 @@ const AdvantagesSection = () => {
         {/* Statistics */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { value: "20+", label: t('advantages.stat1') },
-            { value: "10+", label: t('advantages.stat2') },
-            { value: "40+", label: t('advantages.stat3') },
-            { value: "5+", label: t('advantages.stat4') },
+            { value: "20+", label: "опытных инженеров" },
+            { value: "10+", label: "патентов" },
+            { value: "40+", label: "моделей детекторов" },
+            { value: "5+", label: "офисов" },
           ].map((stat, index) => (
             <div 
               key={stat.label} 

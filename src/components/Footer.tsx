@@ -3,54 +3,51 @@ import { Separator } from "@/components/ui/separator";
 import { Mail, Phone, MapPin, Linkedin, Youtube, ArrowUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
-  const { t } = useLanguage();
-  
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const footerSections = [
     {
-      title: t('footer.products.title'),
+      title: "Продукция",
       links: [
-        { name: t('footer.products.link1'), href: "/products" },
-        { name: t('footer.products.link2'), href: "/products" },
-        { name: t('footer.products.link3'), href: "/products" },
-        { name: t('footer.products.link4'), href: "/products" },
-        { name: t('footer.products.link5'), href: "/products" }
+        { name: "Медицинские детекторы", href: "/products" },
+        { name: "Промышленные решения", href: "/products" },
+        { name: "Спецвизуализация", href: "/products" },
+        { name: "Запчасти и аксессуары", href: "/products" },
+        { name: "Программное обеспечение", href: "/products" }
       ]
     },
     {
-      title: t('footer.company.title'),
+      title: "Компания",
       links: [
-        { name: t('footer.company.link1'), href: "/company" },
-        { name: t('footer.company.link2'), href: "/company/history" },
-        { name: t('footer.company.link3'), href: "/company/team" },
-        { name: t('footer.company.link4'), href: "/company/careers" },
-        { name: t('footer.company.link5'), href: "/company/certificates" }
+        { name: "О нас", href: "/company" },
+        { name: "История", href: "/company/history" },
+        { name: "Команда", href: "/company/team" },
+        { name: "Карьера", href: "/company/careers" },
+        { name: "Сертификаты", href: "/company/certificates" }
       ]
     },
     {
-      title: t('footer.support.title'),
+      title: "Поддержка",
       links: [
-        { name: t('footer.support.link1'), href: "/support/knowledge-base" },
-        { name: t('footer.support.link2'), href: "/support/documentation" },
-        { name: t('footer.support.link3'), href: "/support" },
-        { name: t('footer.support.link4'), href: "/support/training" },
-        { name: t('footer.support.link5'), href: "/support/warranty" }
+        { name: "База знаний", href: "/support/knowledge-base" },
+        { name: "Документация", href: "/support/documentation" },
+        { name: "Техподдержка", href: "/support" },
+        { name: "Обучение", href: "/support/training" },
+        { name: "Гарантия", href: "/support/warranty" }
       ]
     },
     {
-      title: t('footer.media.title'),
+      title: "Медиа",
       links: [
-        { name: t('footer.media.link1'), href: "/news" },
-        { name: t('footer.media.link2'), href: "/news" },
-        { name: t('footer.media.link3'), href: "/news" },
-        { name: t('footer.media.link4'), href: "/news" },
-        { name: t('footer.media.link5'), href: "/news" }
+        { name: "Новости", href: "/news" },
+        { name: "Пресс-релизы", href: "/news" },
+        { name: "Видео", href: "/news" },
+        { name: "Отзывы клиентов", href: "/news" },
+        { name: "Кейсы", href: "/news" }
       ]
     }
   ];
@@ -67,7 +64,8 @@ const Footer = () => {
             </div>
             
             <p className="text-white/80 mb-6 leading-relaxed">
-              {t('footer.description')}
+              Российский лидер в производстве цифровых плоскопанельных детекторов 
+              для медицинской, промышленной и специализированной визуализации.
             </p>
 
             {/* Contact info */}
@@ -121,21 +119,21 @@ const Footer = () => {
         <div className="mt-12 p-6 bg-white/5 rounded-xl border border-white/10">
           <div className="grid md:grid-cols-2 gap-6 items-center">
             <div>
-              <h3 className="text-xl font-semibold mb-2">{t('footer.newsletter.title')}</h3>
+              <h3 className="text-xl font-semibold mb-2">Новости и обновления</h3>
               <p className="text-white/70">
-                {t('footer.newsletter.description')}
+                Подпишитесь на рассылку, чтобы первыми узнавать о новых продуктах и технологиях
               </p>
             </div>
             <div className="flex gap-3">
               <div className="flex-1">
                 <input 
                   type="email" 
-                  placeholder={t('footer.newsletter.placeholder')}
+                  placeholder="Ваш email"
                   className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-accent"
                 />
               </div>
               <Button className="bg-accent hover:bg-accent-light">
-                {t('footer.newsletter.button')}
+                Подписаться
               </Button>
             </div>
           </div>
@@ -148,10 +146,10 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-6">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm text-white/70">
-            <span>{t('footer.copyright')}</span>
+            <span>© 2025 ООО «КСEЛОН». Все права защищены.</span>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-white fast-transition">{t('footer.privacy')}</a>
-              <a href="#" className="hover:text-white fast-transition">{t('footer.terms')}</a>
+              <a href="#" className="hover:text-white fast-transition">Политика конфиденциальности</a>
+              <a href="#" className="hover:text-white fast-transition">Условия использования</a>
             </div>
           </div>
           
@@ -162,7 +160,7 @@ const Footer = () => {
             className="text-white/60 hover:text-white hover:bg-white/10"
           >
             <ArrowUp className="h-4 w-4 mr-2" />
-            {t('footer.scrollTop')}
+            Наверх
           </Button>
         </div>
       </div>
