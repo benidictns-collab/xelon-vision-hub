@@ -26,38 +26,40 @@
     "feature2Desc": "full cycle"
   },
   "advantages": {
-    "title": "XELON Advantages",
-    "subtitle": "Why leading companies choose our detectors",
+    "badge": "Why Choose XELON",
+    "title": "Key Advantages",
+    "subtitle": "We offer not just products, but comprehensive solutions based on a deep understanding of each industry's needs",
     "quality": "Russian Manufacturing",
-    "qualityDesc": "Full production cycle in Russia with quality control at every stage",
-    "tech": "Advanced Technologies",
-    "techDesc": "Proprietary developments and innovative solutions in digital radiography",
-    "support": "Technical Support",
-    "supportDesc": "Qualified assistance from specialists at all stages of operation",
-    "custom": "Individual Approach",
-    "customDesc": "Development of solutions for specific customer requirements"
+    "qualityDesc": "Full production cycle in Russia. Technopark Beshtau resident. Planned inclusion in the Register of Domestic Products in accordance with Resolution 719 of the Ministry of Industry",
+    "tech": "Innovation",
+    "techDesc": "Proprietary R&D and patented technologies ensuring superior performance",
+    "support": "Quality",
+    "supportDesc": "International quality certificates and compliance with medical and industrial standards. Detectors feature enhanced IP67 protection",
+    "global": "Global Support",
+    "globalDesc": "Technical support and service in all CIS, BRICS, EAEU countries",
+    "stat1": "experienced engineers",
+    "stat2": "patents",
+    "stat3": "detector models",
+    "stat4": "offices"
   },
   "industries": {
-    "title": "Industries",
-    "subtitle": "Our solutions work in the most demanding sectors",
+    "badge": "Industries",
+    "title": "Solutions for Any Imaging Task",
+    "subtitle": "Our digital flat panel detectors are used in the most demanding areas from medical diagnostics to scientific research",
     "medical": "Medicine",
-    "medicalDesc": "Digital detectors for radiography, mammography and fluorography",
+    "medicalSubtitle": "Diagnostic Imaging",
+    "medicalDesc": "Digital detectors for radiography, mammography, fluorography, C-arm and dentistry",
     "industrial": "Industry",
-    "industrialDesc": "Non-destructive testing of product and material quality",
-    "science": "Scientific Research",
-    "scienceDesc": "High-precision imaging for research purposes"
-  },
-  "support": {
-    "title": "Support and Service",
-    "subtitle": "We accompany you at every stage",
-    "knowledge": "Knowledge Base",
-    "knowledgeDesc": "Guides and answers to frequently asked questions",
-    "docs": "Documentation",
-    "docsDesc": "Technical documentation and specifications",
-    "training": "Training",
-    "trainingDesc": "Training programs for specialists",
-    "warranty": "Warranty",
-    "warrantyDesc": "Full warranty service"
+    "industrialSubtitle": "Non-Destructive Testing",
+    "industrialDesc": "Quality control solutions for aerospace, oil & gas, and mechanical engineering industries",
+    "science": "Specialized Imaging",
+    "scienceSubtitle": "Scientific Research",
+    "scienceDesc": "High-sensitivity detectors for scientific research, synchrotron radiation, and microtomography",
+    "learnMore": "Learn more about solutions",
+    "ctaTitle": "Didn't find a suitable solution?",
+    "ctaDesc": "Our engineers will develop a custom solution for your tasks. Consultation and technical support - free.",
+    "ctaBtn1": "Get Consultation",
+    "ctaBtn2": "Download Catalog"
   },
   "footer": {
     "company": "Company",
@@ -75,6 +77,14 @@
     "warranty": "Warranty",
     "contacts": "Contacts",
     "news": "News",
-    "rights": "All rights reserved"
+    "rights": "All rights reserved",
+    "description": "Russian leader in manufacturing digital flat panel detectors for medical, industrial and specialized imaging.",
+    "newsletterTitle": "News and Updates",
+    "newsletterDesc": "Subscribe to be the first to know about new products and technologies",
+    "emailPlaceholder": "Your email",
+    "subscribe": "Subscribe",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "scrollTop": "To Top"
   }
 }

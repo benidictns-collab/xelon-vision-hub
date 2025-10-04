@@ -3,8 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Phone, Mail, MessageCircle, Clock, Users, Wrench } from "lucide-react";
 import QuoteModal from "@/components/QuoteModal";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const SupportSection = () => {
+  const { language } = useLanguage();
+  
   const supportOptions = [
     {
       icon: Phone,

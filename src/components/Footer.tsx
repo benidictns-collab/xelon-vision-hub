@@ -3,52 +3,87 @@ import { Separator } from "@/components/ui/separator";
 import { Mail, Phone, MapPin, Linkedin, Youtube, ArrowUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { t, language } = useLanguage();
+  
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const footerSections = [
     {
-      title: "Продукция",
-      links: [
-        { name: "Медицинские детекторы", href: "/products" },
-        { name: "Промышленные решения", href: "/products" },
-        { name: "Спецвизуализация", href: "/products" },
-        { name: "Запчасти и аксессуары", href: "/products" },
-        { name: "Программное обеспечение", href: "/products" }
-      ]
+      title: t('footer.products'),
+      links: language === 'ru' 
+        ? [
+            { name: "Медицинские детекторы", href: "/products" },
+            { name: "Промышленные решения", href: "/products" },
+            { name: "Спецвизуализация", href: "/products" },
+            { name: "Запчасти и аксессуары", href: "/products" },
+            { name: "Программное обеспечение", href: "/products" }
+          ]
+        : [
+            { name: "Medical detectors", href: "/products" },
+            { name: "Industrial solutions", href: "/products" },
+            { name: "Specialized imaging", href: "/products" },
+            { name: "Parts and accessories", href: "/products" },
+            { name: "Software", href: "/products" }
+          ]
     },
     {
-      title: "Компания",
-      links: [
-        { name: "О нас", href: "/company" },
-        { name: "История", href: "/company/history" },
-        { name: "Команда", href: "/company/team" },
-        { name: "Карьера", href: "/company/careers" },
-        { name: "Сертификаты", href: "/company/certificates" }
-      ]
+      title: t('footer.company'),
+      links: language === 'ru' 
+        ? [
+            { name: t('footer.about'), href: "/about" },
+            { name: t('footer.history'), href: "/about" },
+            { name: t('footer.team'), href: "/about" },
+            { name: t('footer.careers'), href: "/about" },
+            { name: t('footer.certificates'), href: "/about" }
+          ]
+        : [
+            { name: t('footer.about'), href: "/about" },
+            { name: t('footer.history'), href: "/about" },
+            { name: t('footer.team'), href: "/about" },
+            { name: t('footer.careers'), href: "/about" },
+            { name: t('footer.certificates'), href: "/about" }
+          ]
     },
     {
-      title: "Поддержка",
-      links: [
-        { name: "База знаний", href: "/support/knowledge-base" },
-        { name: "Документация", href: "/support/documentation" },
-        { name: "Техподдержка", href: "/support" },
-        { name: "Обучение", href: "/support/training" },
-        { name: "Гарантия", href: "/support/warranty" }
-      ]
+      title: t('footer.support'),
+      links: language === 'ru' 
+        ? [
+            { name: t('footer.knowledge'), href: "/support" },
+            { name: t('footer.docs'), href: "/support" },
+            { name: "Техподдержка", href: "/support" },
+            { name: t('footer.training'), href: "/support" },
+            { name: t('footer.warranty'), href: "/support" }
+          ]
+        : [
+            { name: t('footer.knowledge'), href: "/support" },
+            { name: t('footer.docs'), href: "/support" },
+            { name: "Tech support", href: "/support" },
+            { name: t('footer.training'), href: "/support" },
+            { name: t('footer.warranty'), href: "/support" }
+          ]
     },
     {
-      title: "Медиа",
-      links: [
-        { name: "Новости", href: "/news" },
-        { name: "Пресс-релизы", href: "/news" },
-        { name: "Видео", href: "/news" },
-        { name: "Отзывы клиентов", href: "/news" },
-        { name: "Кейсы", href: "/news" }
-      ]
+      title: language === 'ru' ? "Медиа" : "Media",
+      links: language === 'ru' 
+        ? [
+            { name: t('footer.news'), href: "/news" },
+            { name: "Пресс-релизы", href: "/news" },
+            { name: "Видео", href: "/news" },
+            { name: "Отзывы клиентов", href: "/news" },
+            { name: "Кейсы", href: "/news" }
+          ]
+        : [
+            { name: t('footer.news'), href: "/news" },
+            { name: "Press releases", href: "/news" },
+            { name: "Video", href: "/news" },
+            { name: "Customer reviews", href: "/news" },
+            { name: "Case studies", href: "/news" }
+          ]
     }
   ];
 
@@ -64,8 +99,7 @@ const Footer = () => {
             </div>
             
             <p className="text-white/80 mb-6 leading-relaxed">
-              Российский лидер в производстве цифровых плоскопанельных детекторов 
-              для медицинской, промышленной и специализированной визуализации.
+              {t('footer.description')}
             </p>
 
             {/* Contact info */}
@@ -119,21 +153,21 @@ const Footer = () => {
         <div className="mt-12 p-6 bg-white/5 rounded-xl border border-white/10">
           <div className="grid md:grid-cols-2 gap-6 items-center">
             <div>
-              <h3 className="text-xl font-semibold mb-2">Новости и обновления</h3>
+              <h3 className="text-xl font-semibold mb-2">{t('footer.newsletterTitle')}</h3>
               <p className="text-white/70">
-                Подпишитесь на рассылку, чтобы первыми узнавать о новых продуктах и технологиях
+                {t('footer.newsletterDesc')}
               </p>
             </div>
             <div className="flex gap-3">
               <div className="flex-1">
                 <input 
                   type="email" 
-                  placeholder="Ваш email"
+                  placeholder={t('footer.emailPlaceholder')}
                   className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-accent"
                 />
               </div>
               <Button className="bg-accent hover:bg-accent-light">
-                Подписаться
+                {t('footer.subscribe')}
               </Button>
             </div>
           </div>
@@ -146,10 +180,10 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-6">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm text-white/70">
-            <span>© 2025 ООО «КСEЛОН». Все права защищены.</span>
+            <span>© 2025 ООО «КСEЛОН». {t('footer.rights')}.</span>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-white fast-transition">Политика конфиденциальности</a>
-              <a href="#" className="hover:text-white fast-transition">Условия использования</a>
+              <a href="#" className="hover:text-white fast-transition">{t('footer.privacy')}</a>
+              <a href="#" className="hover:text-white fast-transition">{t('footer.terms')}</a>
             </div>
           </div>
           
@@ -160,7 +194,7 @@ const Footer = () => {
             className="text-white/60 hover:text-white hover:bg-white/10"
           >
             <ArrowUp className="h-4 w-4 mr-2" />
-            Наверх
+            {t('footer.scrollTop')}
           </Button>
         </div>
       </div>

@@ -95,20 +95,20 @@ const HeroSection = () => {
                 
                 {/* Product highlights */}
                 <div className="absolute -top-4 -right-4 bg-success text-white px-3 py-1 rounded-full text-sm font-medium">
-                  Новинка 2025
+                  {t('hero.newBadge')}
                 </div>
               </div>
             </div>
 
             {/* Floating feature cards */}
             <div className="absolute -left-4 top-20 bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 animate-fade-in delay-500">
-              <div className="text-accent-light font-semibold text-sm">Высокое разрешение</div>
-              <div className="text-white/70 text-xs">до 200 мкм</div>
+              <div className="text-accent-light font-semibold text-sm">{t('hero.feature1Title')}</div>
+              <div className="text-white/70 text-xs">{t('hero.feature1Desc')}</div>
             </div>
             
             <div className="absolute -right-4 bottom-20 bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 animate-fade-in delay-700">
-              <div className="text-accent-light font-semibold text-sm">Российское производство</div>
-              <div className="text-white/70 text-xs">полный цикл</div>
+              <div className="text-accent-light font-semibold text-sm">{t('hero.feature2Title')}</div>
+              <div className="text-white/70 text-xs">{t('hero.feature2Desc')}</div>
             </div>
           </div>
         </div>
@@ -118,7 +118,7 @@ const HeroSection = () => {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/60 animate-bounce">
         <div className="flex flex-col items-center">
           <div className="w-px h-12 bg-gradient-to-b from-transparent to-white/60 mb-2"></div>
-          <div className="text-sm">Прокрутите вниз</div>
+          <div className="text-sm">{t('hero.scroll')}</div>
         </div>
       </div>
 
