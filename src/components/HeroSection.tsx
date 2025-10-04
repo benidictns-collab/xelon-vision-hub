@@ -4,10 +4,12 @@ import detectorImage from "@/assets/detector-hero.png";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import TechnologyModal from "./TechnologyModal";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroSection = () => {
   const navigate = useNavigate();
   const [isTechnologyModalOpen, setIsTechnologyModalOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -26,17 +28,17 @@ const HeroSection = () => {
           <div className="text-white animate-fade-in-up">
             <div className="mb-6">
               <span className="inline-block bg-accent/20 backdrop-blur-sm text-accent-light px-4 py-2 rounded-full text-sm font-medium border border-accent/30">
-                Лидер в производстве ЦПД
+                {t('hero.badge')}
               </span>
             </div>
             
             <h1 className="hero-title text-white mb-6">
-              Визуализируем
-              <span className="block text-accent-light">будущее</span>
+              {t('hero.title1')}
+              <span className="block text-accent-light">{t('hero.title2')}</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed max-w-lg">
-              Цифровые плоскопанельные детекторы для медицинской, промышленной и специализированной визуализации
+              {t('hero.subtitle')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -45,7 +47,7 @@ const HeroSection = () => {
                 className="bg-accent hover:bg-accent-light text-white px-8 py-4 h-auto group"
                 onClick={() => navigate('/products')}
               >
-                Продукция 
+                {t('hero.productsBtn')}
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 fast-transition" />
               </Button>
               
@@ -56,7 +58,7 @@ const HeroSection = () => {
                 onClick={() => setIsTechnologyModalOpen(true)}
               >
                 <Play className="mr-2 h-5 w-5 group-hover:scale-110 fast-transition" />
-                О технологии
+                {t('hero.technologyBtn')}
               </Button>
             </div>
 
@@ -64,15 +66,15 @@ const HeroSection = () => {
             <div className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-white/20">
               <div className="text-center">
                 <div className="text-3xl font-bold text-accent-light mb-1">1</div>
-                <div className="text-sm text-white/70">собственный завод</div>
+                <div className="text-sm text-white/70">{t('hero.metric1')}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-accent-light mb-1">100+</div>
-                <div className="text-sm text-white/70">инженеров</div>
+                <div className="text-sm text-white/70">{t('hero.metric2')}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-accent-light mb-1">70%</div>
-                <div className="text-sm text-white/70">отечественных компонентов</div>
+                <div className="text-sm text-white/70">{t('hero.metric3')}</div>
               </div>
             </div>
           </div>

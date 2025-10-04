@@ -1,0 +1,80 @@
+{
+  "nav": {
+    "about": "About",
+    "products": "Products",
+    "solutions": "Solutions",
+    "support": "Support",
+    "news": "News",
+    "contacts": "Contacts",
+    "quote": "Request Quote"
+  },
+  "hero": {
+    "badge": "Leader in FPD Manufacturing",
+    "title1": "Visualizing",
+    "title2": "the future",
+    "subtitle": "Digital flat panel detectors for medical, industrial and specialized imaging",
+    "productsBtn": "Products",
+    "technologyBtn": "About Technology",
+    "metric1": "own factory",
+    "metric2": "engineers",
+    "metric3": "domestic components",
+    "scroll": "Scroll down",
+    "newBadge": "New 2025",
+    "feature1Title": "High Resolution",
+    "feature1Desc": "up to 200 μm",
+    "feature2Title": "Russian Manufacturing",
+    "feature2Desc": "full cycle"
+  },
+  "advantages": {
+    "title": "XELON Advantages",
+    "subtitle": "Why leading companies choose our detectors",
+    "quality": "Russian Manufacturing",
+    "qualityDesc": "Full production cycle in Russia with quality control at every stage",
+    "tech": "Advanced Technologies",
+    "techDesc": "Proprietary developments and innovative solutions in digital radiography",
+    "support": "Technical Support",
+    "supportDesc": "Qualified assistance from specialists at all stages of operation",
+    "custom": "Individual Approach",
+    "customDesc": "Development of solutions for specific customer requirements"
+  },
+  "industries": {
+    "title": "Industries",
+    "subtitle": "Our solutions work in the most demanding sectors",
+    "medical": "Medicine",
+    "medicalDesc": "Digital detectors for radiography, mammography and fluorography",
+    "industrial": "Industry",
+    "industrialDesc": "Non-destructive testing of product and material quality",
+    "science": "Scientific Research",
+    "scienceDesc": "High-precision imaging for research purposes"
+  },
+  "support": {
+    "title": "Support and Service",
+    "subtitle": "We accompany you at every stage",
+    "knowledge": "Knowledge Base",
+    "knowledgeDesc": "Guides and answers to frequently asked questions",
+    "docs": "Documentation",
+    "docsDesc": "Technical documentation and specifications",
+    "training": "Training",
+    "trainingDesc": "Training programs for specialists",
+    "warranty": "Warranty",
+    "warrantyDesc": "Full warranty service"
+  },
+  "footer": {
+    "company": "Company",
+    "about": "About",
+    "history": "History",
+    "team": "Team",
+    "careers": "Careers",
+    "certificates": "Certificates",
+    "products": "Products",
+    "solutions": "Solutions",
+    "support": "Support",
+    "knowledge": "Knowledge Base",
+    "docs": "Documentation",
+    "training": "Training",
+    "warranty": "Warranty",
+    "contacts": "Contacts",
+    "news": "News",
+    "rights": "All rights reserved"
+  }
+}
