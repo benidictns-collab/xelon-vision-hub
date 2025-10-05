@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Calendar, User, ArrowRight, ExternalLink } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import logoImage from "@/assets/logo.png";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const News = () => {
+  const { t } = useLanguage();
   const navigate = useNavigate();
   
   const newsItems = [
@@ -44,7 +46,7 @@ const News = () => {
     },
   ];
 
-  const categories = ["Все", "Продукты", "Бизнес", "Инновации", "Партнерство", "Сертификация", "Награды"];
+  const categories = [t('news.all'), t('news.productsCategory'), t('news.business'), t('news.innovations'), t('news.partnership'), t('news.certification'), t('news.awards')];
 
   const events = [
     // Россия
@@ -164,14 +166,13 @@ const News = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
             <Badge variant="outline" className="mb-6 border-white/30 text-white">
-              Пресс-центр
+              {t('news.badge')}
             </Badge>
             <h1 className="section-title mb-6">
-              Новости и события
+              {t('news.title')}
             </h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Последние новости компании, анонсы продуктов, участие в выставках 
-              и достижения в области инноваций
+              {t('news.subtitle')}
             </p>
           </div>
         </div>
@@ -216,7 +217,7 @@ const News = () => {
                     className="w-fit bg-accent hover:bg-accent-light"
                     onClick={() => navigate(`/news/${item.id}`)}
                   >
-                    Читать полностью
+                    {t('news.readFull')}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </CardContent>
@@ -230,16 +231,16 @@ const News = () => {
       <section className="py-20 bg-subtle-gradient">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 animate-fade-in-up">
-            <h2 className="section-title mb-6">Все новости</h2>
+            <h2 className="section-title mb-6">{t('news.allNews')}</h2>
             
             {/* Category Filter */}
             <div className="flex flex-wrap justify-center gap-2 mb-8">
               {categories.map((category) => (
                 <Button 
                   key={category}
-                  variant={category === "Все" ? "default" : "outline"}
+                  variant={category === t('news.all') ? "default" : "outline"}
                   size="sm"
-                  className={category === "Все" ? "bg-accent hover:bg-accent-light" : ""}
+                  className={category === t('news.all') ? "bg-accent hover:bg-accent-light" : ""}
                 >
                   {category}
                 </Button>
@@ -283,7 +284,7 @@ const News = () => {
                     className="w-full relative z-20 pointer-events-auto"
                     onClick={() => navigate(`/news/${item.id}`)}
                   >
-                    Подробнее
+                    {t('news.details')}
                     <ArrowRight className="ml-2 h-3 w-3" />
                   </Button>
                 </CardContent>
@@ -293,7 +294,7 @@ const News = () => {
 
           <div className="text-center mt-12">
             <Button variant="outline" size="lg">
-              Загрузить еще новости
+              {t('news.loadMore')}
             </Button>
           </div>
         </div>
@@ -304,9 +305,9 @@ const News = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12 animate-fade-in-up">
-              <h2 className="section-title mb-6">Предстоящие события</h2>
+              <h2 className="section-title mb-6">{t('news.upcomingEvents')}</h2>
               <p className="text-lg text-muted-foreground">
-                Встретьтесь с нами на ведущих отраслевых мероприятиях
+                {t('news.upcomingEventsDesc')}
               </p>
             </div>
 
@@ -342,7 +343,7 @@ const News = () => {
                           size="sm"
                           onClick={() => window.open(event.website, '_blank')}
                         >
-                          Подробнее
+                          {t('news.details')}
                           <ExternalLink className="ml-2 h-3 w-3" />
                         </Button>
                         <Button 
@@ -350,7 +351,7 @@ const News = () => {
                           size="sm"
                           onClick={() => window.open(event.website, '_blank')}
                         >
-                          Встретиться с нами
+                          {t('news.meetUs')}
                         </Button>
                       </div>
                     </div>
@@ -365,17 +366,16 @@ const News = () => {
       {/* Press Kit */}
       <section className="py-20 bg-gradient-to-r from-accent/10 to-primary/10">
         <div className="container mx-auto px-4 text-center animate-fade-in-up">
-          <h2 className="section-title mb-6">Пресс-кит</h2>
+          <h2 className="section-title mb-6">{t('news.pressKit')}</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Логотипы, фотографии продукции, пресс-релизы и другие материалы 
-            для СМИ и партнеров
+            {t('news.pressKitDesc')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-accent hover:bg-accent-light">
-              Скачать пресс-кит
+              {t('news.downloadPressKit')}
             </Button>
             <Button variant="outline" size="lg">
-              Связаться с пресс-службой
+              {t('news.contactPress')}
             </Button>
           </div>
         </div>

@@ -3,8 +3,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CircleCheck as CheckCircle, ArrowRight, Download } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Solutions = () => {
+  const { t } = useLanguage();
   const navigate = useNavigate();
   
   const solutions = [
@@ -107,14 +109,13 @@ const Solutions = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
             <Badge variant="outline" className="mb-6 border-white/30 text-white">
-              Готовые решения
+              {t('solutions.badge')}
             </Badge>
             <h1 className="section-title mb-6">
-              Проверенные кейсы и решения
+              {t('solutions.title')}
             </h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Реальные примеры внедрения наших технологий с измеримыми результатами 
-              и конкретной экономической эффективностью
+              {t('solutions.subtitle')}
             </p>
           </div>
         </div>
@@ -143,7 +144,7 @@ const Solutions = () => {
 
                   {/* Benefits */}
                   <div className="mb-6">
-                    <h4 className="font-semibold mb-3">Ключевые преимущества:</h4>
+                    <h4 className="font-semibold mb-3">{t('solutions.benefits')}</h4>
                     <div className="space-y-2">
                       {solution.benefits.map((benefit) => (
                         <div key={benefit} className="flex items-start">
@@ -156,7 +157,7 @@ const Solutions = () => {
 
                   {/* Applications */}
                   <div className="mb-6">
-                    <h4 className="font-semibold mb-2">Применения:</h4>
+                    <h4 className="font-semibold mb-2">{t('solutions.applicationsTitle')}</h4>
                     <div className="flex flex-wrap gap-2">
                       {solution.applications.map((app) => (
                         <Badge key={app} variant="secondary" className="text-xs">
@@ -169,7 +170,7 @@ const Solutions = () => {
                   {/* ROI */}
                   <div className="mb-6 p-4 bg-accent/5 rounded-lg border border-accent/20">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium">Экономический эффект:</span>
+                      <span className="text-sm font-medium">{t('solutions.roi')}</span>
                       <span className="text-accent font-bold">{solution.roi}</span>
                     </div>
                   </div>
@@ -181,7 +182,7 @@ const Solutions = () => {
                       className="flex-1 bg-accent hover:bg-accent-light relative z-20 pointer-events-auto"
                       onClick={() => navigate(`/solution/${solution.id}`)}
                     >
-                      Подробнее
+                      {t('solutions.details')}
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                     <Button variant="outline">
@@ -199,17 +200,16 @@ const Solutions = () => {
       <section className="py-20 bg-gradient-to-r from-accent/10 to-primary/10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
-            <h2 className="section-title mb-6">Индивидуальные решения</h2>
+            <h2 className="section-title mb-6">{t('solutions.customTitle')}</h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Не нашли подходящий кейс? Наши инженеры разработают уникальное решение 
-              специально под ваши требования и бюджет
+              {t('solutions.customDesc')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-accent hover:bg-accent-light">
-                Обсудить проект
+                {t('solutions.discussProject')}
               </Button>
               <Button variant="outline" size="lg">
-                Техническое задание
+                {t('solutions.technicalTask')}
               </Button>
             </div>
           </div>

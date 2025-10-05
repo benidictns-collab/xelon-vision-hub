@@ -7,28 +7,30 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Heart, Wrench, Microscope, Download, Eye, ShoppingCart } from "lucide-react";
 import detectorImage from "@/assets/detector-hero.png";
 import QuoteModal from "@/components/QuoteModal";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Products = () => {
+  const { t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState("medical");
 
   const productCategories = [
     {
       id: "medical",
-      name: "Медицина",
+      name: t('products.medical'),
       icon: Heart,
-      description: "Детекторы для медицинской диагностики"
+      description: t('products.medicalDesc')
     },
     {
       id: "industrial",
-      name: "Промышленность", 
+      name: t('products.industrial'), 
       icon: Wrench,
-      description: "Решения для неразрушающего контроля"
+      description: t('products.industrialDesc')
     },
     {
       id: "scientific",
-      name: "Спецвизуализация",
+      name: t('products.scientific'),
       icon: Microscope,
-      description: "Высокочувствительные детекторы для специальных задач"
+      description: t('products.scientificDesc')
     }
   ];
 
@@ -244,14 +246,13 @@ const Products = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
             <Badge variant="outline" className="mb-6 border-white/30 text-white">
-              Каталог продукции
+              {t('products.badge')}
             </Badge>
             <h1 className="section-title mb-6">
-              Цифровые плоскопанельные детекторы
+              {t('products.title')}
             </h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Полная линейка детекторов для любых задач визуализации - 
-              от медицинской диагностики до специализированных применений
+              {t('products.subtitle')}
             </p>
           </div>
         </div>
@@ -295,7 +296,7 @@ const Products = () => {
                       <div className="relative">
                         {product.isNew && (
                           <Badge className="absolute top-4 right-4 bg-success text-white z-10">
-                            Новинка 2025
+                            {t('products.newBadge')}
                           </Badge>
                         )}
                         
@@ -321,7 +322,7 @@ const Products = () => {
 
                         {/* Specifications */}
                         <div className="mb-4">
-                          <h4 className="font-semibold mb-2 text-sm">Основные характеристики:</h4>
+                          <h4 className="font-semibold mb-2 text-sm">{t('products.specs')}</h4>
                           <div className="grid grid-cols-1 gap-2 text-xs">
                             {Object.entries(product.specs).map(([key, value]) => (
                               <div key={key} className="flex justify-between py-1 border-b border-border/50">
@@ -334,7 +335,7 @@ const Products = () => {
 
                         {/* Applications */}
                         <div className="mb-6">
-                          <h4 className="font-semibold mb-2 text-sm">Применения:</h4>
+                          <h4 className="font-semibold mb-2 text-sm">{t('products.applications')}</h4>
                           <div className="space-y-1">
                             {product.applications.map((app) => (
                               <div key={app} className="flex items-start text-xs">
@@ -350,7 +351,7 @@ const Products = () => {
                           <QuoteModal>
                             <Button size="sm" className="flex-1 bg-accent hover:bg-accent-light">
                               <ShoppingCart className="h-4 w-4 mr-2" />
-                              Запросить КП
+                              {t('products.requestQuote')}
                             </Button>
                           </QuoteModal>
                           <Button variant="outline" size="sm">
@@ -379,19 +380,18 @@ const Products = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-accent/10 to-primary/10">
         <div className="container mx-auto px-4 text-center animate-fade-in-up">
-          <h2 className="section-title mb-6">Нужна консультация?</h2>
+          <h2 className="section-title mb-6">{t('products.ctaTitle')}</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Наши специалисты помогут подобрать оптимальное решение 
-            для ваших задач и предоставят техническую поддержку
+            {t('products.ctaDesc')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <QuoteModal>
               <Button size="lg" className="bg-accent hover:bg-accent-light">
-                Получить консультацию
+                {t('products.consultation')}
               </Button>
             </QuoteModal>
             <Button variant="outline" size="lg">
-              Скачать полный каталог
+              {t('products.downloadCatalog')}
             </Button>
           </div>
         </div>

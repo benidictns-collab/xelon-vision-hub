@@ -2,8 +2,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Users, Award, MapPin, Target } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const About = () => {
+  const { t } = useLanguage();
   const milestones = [
     { year: "2025", event: "Основание компании КСEЛОН в Ростове-на-Дону" },
     { year: "2025", event: "Получение статуса резидента Технопарка Бештау" },
@@ -16,23 +18,23 @@ const About = () => {
   const values = [
     {
       icon: Target,
-      title: "Инновации",
-      description: "Постоянные инвестиции в R&D и разработку передовых технологий"
+      title: t('about.innovation'),
+      description: t('about.innovationDesc')
     },
     {
       icon: Award,
-      title: "Качество",
-      description: "Международные стандарты и строгий контроль на каждом этапе"
+      title: t('about.qualityTitle'),
+      description: t('about.qualityDesc')
     },
     {
       icon: Users,
-      title: "Партнерство",
-      description: "Долгосрочные отношения с клиентами и поставщиками"
+      title: t('about.partnership'),
+      description: t('about.partnershipDesc')
     },
     {
       icon: MapPin,
-      title: "Глобальность",
-      description: "Присутствие на рынках более чем 50 стран мира"
+      title: t('about.globality'),
+      description: t('about.globalityDesc')
     }
   ];
 
@@ -43,15 +45,13 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
             <Badge variant="outline" className="mb-6 border-white/30 text-white">
-              О компании КСEЛОН
+              {t('about.badge')}
             </Badge>
             <h1 className="section-title mb-6">
-              Мировой лидер в производстве цифровых детекторов
+              {t('about.title')}
             </h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Российский лидер в области создания инновационных решений для медицинской, 
-              промышленной и научной визуализации, объединяя современные 
-              инженерные технологии с высоким качеством производства.
+              {t('about.subtitle')}
             </p>
           </div>
         </div>
@@ -62,28 +62,21 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-up">
-              <h2 className="section-title mb-6">Наша миссия</h2>
+              <h2 className="section-title mb-6">{t('about.missionTitle')}</h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Создавать высокотехнологичные решения для визуализации, которые 
-                помогают врачам спасать жизни, инженерам обеспечивать безопасность, 
-                а ученым совершать открытия.
+                {t('about.missionText1')}
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Мы верим, что российские технологии могут конкурировать на мировом 
-                уровне и делаем все для того, чтобы наши продукты становились 
-                эталоном качества и надежности.
+                {t('about.missionText2')}
               </p>
             </div>
             
             <div className="animate-fade-in-up delay-200">
               <Card className="corporate-shadow">
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold mb-4 text-accent">Наше видение</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-accent">{t('about.visionTitle')}</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Стать глобальным технологическим лидером в области цифровой 
-                    визуализации, создавая продукты, которые превосходят 
-                    международные стандарты и делают передовые технологии 
-                    доступными для всех.
+                    {t('about.visionText')}
                   </p>
                 </CardContent>
               </Card>
@@ -96,9 +89,9 @@ const About = () => {
       <section className="py-20 bg-subtle-gradient">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="section-title mb-6">Наши ценности</h2>
+            <h2 className="section-title mb-6">{t('about.valuesTitle')}</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Принципы, которые определяют наш подход к работе и развитию компании
+              {t('about.valuesSubtitle')}
             </p>
           </div>
 
@@ -128,9 +121,9 @@ const About = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="section-title mb-6">История развития</h2>
+            <h2 className="section-title mb-6">{t('about.historyTitle')}</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Ключевые вехи нашего пути к лидерству в индустрии
+              {t('about.historySubtitle')}
             </p>
           </div>
 
@@ -168,17 +161,16 @@ const About = () => {
       {/* Team CTA */}
       <section className="py-20 bg-gradient-to-r from-accent/10 to-primary/10">
         <div className="container mx-auto px-4 text-center animate-fade-in-up">
-          <h2 className="section-title mb-6">Присоединяйтесь к нашей команде</h2>
+          <h2 className="section-title mb-6">{t('about.teamCta')}</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Мы всегда ищем талантливых специалистов, готовых создавать 
-            технологии будущего вместе с нами
+            {t('about.teamText')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-accent hover:bg-accent-light">
-              Открытые вакансии
+              {t('about.openPositions')}
             </Button>
             <Button variant="outline" size="lg">
-              Инициативные предложения
+              {t('about.initiativeOffers')}
             </Button>
           </div>
         </div>

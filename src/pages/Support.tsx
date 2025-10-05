@@ -5,34 +5,37 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BookOpen, MessageCircle, Phone, Mail, Download, Users, Clock, Shield } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Support = () => {
+  const { t } = useLanguage();
+  
   const supportTypes = [
     {
       icon: MessageCircle,
-      title: "Техническая поддержка",
-      description: "Помощь в настройке, эксплуатации и обслуживании оборудования",
+      title: t('support.techSupport'),
+      description: t('support.techSupportDesc'),
       response: "24 часа",
       availability: "24/7"
     },
     {
       icon: BookOpen,
-      title: "База знаний",
-      description: "Документация, руководства и часто задаваемые вопросы",
+      title: t('support.knowledgeBase'),
+      description: t('support.knowledgeBaseDesc'),
       response: "Мгновенно",
       availability: "24/7"
     },
     {
       icon: Users,
-      title: "Обучение персонала",
-      description: "Программы подготовки операторов и инженеров",
+      title: t('support.training'),
+      description: t('support.trainingDesc'),
       response: "7 дней",
       availability: "По расписанию"
     },
     {
       icon: Shield,
-      title: "Гарантийное обслуживание",
-      description: "Полная гарантия на все компоненты и программное обеспечение",
+      title: t('support.warranty'),
+      description: t('support.warrantyDesc'),
       response: "48 часов",
       availability: "Рабочее время"
     }
@@ -81,14 +84,13 @@ const Support = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
             <Badge variant="outline" className="mb-6 border-white/30 text-white">
-              Техническая поддержка
+              {t('support.badge')}
             </Badge>
             <h1 className="section-title mb-6">
-              Всегда готовы помочь
+              {t('support.title')}
             </h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Круглосуточная поддержка, обучение персонала и полная документация 
-              для эффективной работы с нашим оборудованием
+              {t('support.subtitle')}
             </p>
           </div>
         </div>
@@ -98,9 +100,9 @@ const Support = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="section-title mb-6">Виды поддержки</h2>
+            <h2 className="section-title mb-6">{t('support.typesTitle')}</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Комплексная поддержка на всех этапах - от установки до сервисного обслуживания
+              {t('support.typesSubtitle')}
             </p>
           </div>
 
@@ -123,11 +125,11 @@ const Support = () => {
                   
                   <div className="space-y-2 text-xs">
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">Ответ:</span>
+                      <span className="text-muted-foreground">{t('support.response')}</span>
                       <span className="font-medium text-accent">{type.response}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">Доступность:</span>
+                      <span className="text-muted-foreground">{t('support.availability')}</span>
                       <span className="font-medium">{type.availability}</span>
                     </div>
                   </div>
@@ -143,9 +145,9 @@ const Support = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12 animate-fade-in-up">
-              <h2 className="section-title mb-6">Обратиться в поддержку</h2>
+              <h2 className="section-title mb-6">{t('support.contactTitle')}</h2>
               <p className="text-lg text-muted-foreground">
-                Опишите вашу проблему, и мы свяжемся с вами в кратчайшие сроки
+                {t('support.contactSubtitle')}
               </p>
             </div>
 
@@ -258,9 +260,9 @@ const Support = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12 animate-fade-in-up">
-              <h2 className="section-title mb-6">Часто задаваемые вопросы</h2>
+              <h2 className="section-title mb-6">{t('support.faqTitle')}</h2>
               <p className="text-lg text-muted-foreground">
-                Ответы на самые популярные вопросы наших клиентов
+                {t('support.faqSubtitle')}
               </p>
             </div>
 
