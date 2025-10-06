@@ -229,5 +229,31 @@
     "description": "Unfortunately, the requested page does not exist or has been moved",
     "home": "Home",
     "products": "Products"
+  },
+  "supportSection": {
+    "badge": "Customer Support",
+    "title": "We're Always Ready to Help",
+    "subtitle": "Professional technical support at all stages - from solution selection to after-sales service",
+    "hotline": "Hotline",
+    "hotlineSubtitle": "24/7 Support",
+    "hotlineDesc": "Technical support and consultations on all issues",
+    "hotlineContact": "+7 (928) 459-38-00",
+    "hotlineAction": "Call Now",
+    "consultation": "Online Consultation",
+    "consultationSubtitle": "Quick Answers",
+    "consultationDesc": "Get a personalized commercial offer",
+    "consultationContact": "Request Quote",
+    "consultationAction": "Message Us",
+    "technical": "Technical Support",
+    "technicalSubtitle": "Expert Assistance",
+    "technicalDesc": "Support for installation, configuration and maintenance",
+    "technicalContact": "Submit Request",
+    "technicalAction": "Contact Us",
+    "stat1": "24/7",
+    "stat1Desc": "Round-the-clock support",
+    "stat2": "<1h",
+    "stat2Desc": "Response time",
+    "stat3": "99%",
+    "stat3Desc": "Customer satisfaction"
   }
 }

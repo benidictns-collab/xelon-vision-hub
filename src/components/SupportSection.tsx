@@ -6,36 +6,36 @@ import QuoteModal from "@/components/QuoteModal";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const SupportSection = () => {
-  const { language } = useLanguage();
+  const { t } = useLanguage();
   
   const supportOptions = [
     {
       icon: Phone,
-      title: "Горячая линия",
-      subtitle: "Круглосуточная поддержка",
-      description: "Техническая поддержка и консультации по всем вопросам",
-      contact: "+7 (928) 459-38-00",
-      action: "Позвонить",
+      title: t('supportSection.hotline'),
+      subtitle: t('supportSection.hotlineSubtitle'),
+      description: t('supportSection.hotlineDesc'),
+      contact: t('supportSection.hotlineContact'),
+      action: t('supportSection.hotlineAction'),
       actionType: "phone" as const,
       iconColor: "text-green-500",
     },
     {
       icon: MessageCircle,
-      title: "Онлайн консультация",
-      subtitle: "Быстрые ответы",
-      description: "Получите персональное коммерческое предложение",
-      contact: "Запросить КП",
-      action: "Написать",
+      title: t('supportSection.consultation'),
+      subtitle: t('supportSection.consultationSubtitle'),
+      description: t('supportSection.consultationDesc'),
+      contact: t('supportSection.consultationContact'),
+      action: t('supportSection.consultationAction'),
       actionType: "quote" as const,
       iconColor: "text-blue-500",
     },
     {
       icon: Wrench,
-      title: "Техническая поддержка",
-      subtitle: "Экспертная помощь",
-      description: "Поддержка по установке, настройке и обслуживанию",
-      contact: "Оставить заявку",
-      action: "Связаться",
+      title: t('supportSection.technical'),
+      subtitle: t('supportSection.technicalSubtitle'),
+      description: t('supportSection.technicalDesc'),
+      contact: t('supportSection.technicalContact'),
+      action: t('supportSection.technicalAction'),
       actionType: "support" as const,
       iconColor: "text-purple-500",
     }
@@ -46,14 +46,13 @@ const SupportSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
           <Badge variant="outline" className="mb-4 text-accent border-accent">
-            Поддержка клиентов
+            {t('supportSection.badge')}
           </Badge>
           <h2 className="section-title text-foreground mb-6">
-            Мы всегда готовы помочь
+            {t('supportSection.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Профессиональная техническая поддержка на всех этапах - от выбора решения 
-            до послепродажного обслуживания
+            {t('supportSection.subtitle')}
           </p>
         </div>
 
@@ -117,16 +116,16 @@ const SupportSection = () => {
         {/* Support stats */}
         <div className="grid md:grid-cols-3 gap-8 text-center">
           <div className="animate-fade-in-up" style={{ animationDelay: "400ms" }}>
-            <div className="text-3xl font-bold text-accent mb-2">24/7</div>
-            <p className="text-muted-foreground">Круглосуточная поддержка</p>
+            <div className="text-3xl font-bold text-accent mb-2">{t('supportSection.stat1')}</div>
+            <p className="text-muted-foreground">{t('supportSection.stat1Desc')}</p>
           </div>
           <div className="animate-fade-in-up" style={{ animationDelay: "500ms" }}>
-            <div className="text-3xl font-bold text-accent mb-2">&lt;1ч</div>
-            <p className="text-muted-foreground">Время ответа</p>
+            <div className="text-3xl font-bold text-accent mb-2">{t('supportSection.stat2')}</div>
+            <p className="text-muted-foreground">{t('supportSection.stat2Desc')}</p>
           </div>
           <div className="animate-fade-in-up" style={{ animationDelay: "600ms" }}>
-            <div className="text-3xl font-bold text-accent mb-2">99%</div>
-            <p className="text-muted-foreground">Удовлетворенность клиентов</p>
+            <div className="text-3xl font-bold text-accent mb-2">{t('supportSection.stat3')}</div>
+            <p className="text-muted-foreground">{t('supportSection.stat3Desc')}</p>
           </div>
         </div>
       </div>
