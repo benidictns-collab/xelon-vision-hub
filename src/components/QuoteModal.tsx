@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Mail, Package } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const quoteSchema = z.object({
   name: z.string().trim().min(1, "ФИО обязательно").max(100, "ФИО должно быть короче 100 символов"),
@@ -23,6 +24,7 @@ interface QuoteModalProps {
 }
 
 const QuoteModal = ({ children }: QuoteModalProps) => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState<QuoteFormData>({
     name: "",
     company: "",
@@ -67,8 +69,8 @@ const QuoteModal = ({ children }: QuoteModalProps) => {
     
     if (!validateForm()) {
       toast({
-        title: "Ошибка валидации",
-        description: "Пожалуйста, исправьте ошибки в форме",
+        title: t('quoteModal.validationError'),
+        description: t('quoteModal.validationErrorDesc'),
         variant: "destructive"
       });
       return;
@@ -103,8 +105,8 @@ ${formData.message}
 
       // Показываем уведомление об успехе
       toast({
-        title: "Запрос отправлен",
-        description: "Ваш запрос на коммерческое предложение направлен нашему отделу продаж. Мы свяжемся с вами в течение 24 часов."
+        title: t('quoteModal.successTitle'),
+        description: t('quoteModal.successDesc')
       });
 
       // Очищаем форму и закрываем модальное окно
@@ -120,8 +122,8 @@ ${formData.message}
     } catch (error) {
       console.error('Error submitting quote request:', error);
       toast({
-        title: "Ошибка отправки",
-        description: "Не удалось отправить запрос. Пожалуйста, попробуйте еще раз или свяжитесь с нами по телефону.",
+        title: t('quoteModal.errorTitle'),
+        description: t('quoteModal.errorDesc'),
         variant: "destructive"
       });
     } finally {
@@ -138,20 +140,20 @@ ${formData.message}
         <DialogHeader>
           <DialogTitle className="flex items-center space-x-2">
             <Package className="h-5 w-5 text-accent" />
-            <span>Запрос коммерческого предложения</span>
+            <span>{t('quoteModal.title')}</span>
           </DialogTitle>
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <Label htmlFor="name" className="text-sm font-medium">
-              ФИО *
+              {t('quoteModal.name')} {t('quoteModal.required')}
             </Label>
             <Input
               id="name"
               value={formData.name}
               onChange={(e) => handleInputChange('name', e.target.value)}
-              placeholder="Ваше ФИО"
+              placeholder={t('quoteModal.namePlaceholder')}
               className={errors.name ? "border-destructive" : ""}
             />
             {errors.name && (
@@ -161,13 +163,13 @@ ${formData.message}
 
           <div>
             <Label htmlFor="company" className="text-sm font-medium">
-              Компания
+              {t('quoteModal.company')}
             </Label>
             <Input
               id="company"
               value={formData.company}
               onChange={(e) => handleInputChange('company', e.target.value)}
-              placeholder="Название компании"
+              placeholder={t('quoteModal.companyPlaceholder')}
               className={errors.company ? "border-destructive" : ""}
             />
             {errors.company && (
@@ -177,13 +179,13 @@ ${formData.message}
 
           <div>
             <Label htmlFor="phone" className="text-sm font-medium">
-              Телефон *
+              {t('quoteModal.phone')} {t('quoteModal.required')}
             </Label>
             <Input
               id="phone"
               value={formData.phone}
               onChange={(e) => handleInputChange('phone', e.target.value)}
-              placeholder="+7 (928) 459-38-00"
+              placeholder={t('quoteModal.phonePlaceholder')}
               className={errors.phone ? "border-destructive" : ""}
             />
             {errors.phone && (
@@ -193,14 +195,14 @@ ${formData.message}
 
           <div>
             <Label htmlFor="email" className="text-sm font-medium">
-              Email *
+              {t('quoteModal.email')} {t('quoteModal.required')}
             </Label>
             <Input
               id="email"
               type="email"
               value={formData.email}
               onChange={(e) => handleInputChange('email', e.target.value)}
-              placeholder="your@email.com"
+              placeholder={t('quoteModal.emailPlaceholder')}
               className={errors.email ? "border-destructive" : ""}
             />
             {errors.email && (
@@ -210,13 +212,13 @@ ${formData.message}
 
           <div>
             <Label htmlFor="message" className="text-sm font-medium">
-              Текст запроса *
+              {t('quoteModal.message')} {t('quoteModal.required')}
             </Label>
             <Textarea
               id="message"
               value={formData.message}
               onChange={(e) => handleInputChange('message', e.target.value)}
-              placeholder="Опишите ваши требования к продукции..."
+              placeholder={t('quoteModal.messagePlaceholder')}
               rows={3}
               className={errors.message ? "border-destructive" : ""}
             />
@@ -230,7 +232,7 @@ ${formData.message}
             className="w-full bg-accent hover:bg-accent-light"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Отправка..." : "Запросить"}
+            {isSubmitting ? t('quoteModal.submitting') : t('quoteModal.submit')}
             <Mail className="ml-2 h-4 w-4" />
           </Button>
         </form>
