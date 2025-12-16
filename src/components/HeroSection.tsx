@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, Monitor, Cpu } from "lucide-react";
 import detectorImage from "@/assets/detector-hero.png";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -13,28 +13,40 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 hero-gradient"></div>
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 animated-gradient"></div>
+      
+      {/* Mesh gradient overlay */}
+      <div className="absolute inset-0 mesh-gradient"></div>
+      
+      {/* Tech grid pattern */}
+      <div className="absolute inset-0 tech-grid opacity-30"></div>
       
       {/* Animated background elements */}
       <div className="absolute inset-0 top-20">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-pulse-glow"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-primary-light/20 rounded-full blur-3xl animate-pulse-glow delay-1000"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse-subtle"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary-light/20 rounded-full blur-3xl animate-pulse-subtle delay-500"></div>
+        <div className="absolute top-1/2 right-1/3 w-48 h-48 bg-accent-light/15 rounded-full blur-2xl animate-float-slow"></div>
       </div>
+
+      {/* Floating decorative elements */}
+      <div className="absolute top-20 left-10 w-2 h-2 bg-accent rounded-full animate-float opacity-60"></div>
+      <div className="absolute top-40 right-20 w-3 h-3 bg-accent-light rounded-full animate-float delay-300 opacity-40"></div>
+      <div className="absolute bottom-40 left-1/4 w-1.5 h-1.5 bg-white rounded-full animate-float delay-700 opacity-50"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-white animate-fade-in-up">
             <div className="mb-6">
-              <span className="inline-block bg-accent/20 backdrop-blur-sm text-accent-light px-4 py-2 rounded-full text-sm font-medium border border-accent/30">
+              <span className="inline-block glass-accent text-accent-light px-5 py-2.5 rounded-full text-sm font-medium animate-glow-pulse">
                 {t('hero.badge')}
               </span>
             </div>
             
             <h1 className="hero-title text-white mb-6">
               {t('hero.title1')}
-              <span className="block text-accent-light">{t('hero.title2')}</span>
+              <span className="block text-glow text-accent-light">{t('hero.title2')}</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed max-w-lg">
@@ -44,7 +56,7 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg" 
-                className="bg-accent hover:bg-accent-light text-white px-8 py-4 h-auto group"
+                className="bg-accent hover:bg-accent-light text-white px-8 py-4 h-auto group glow-accent hover-scale"
                 onClick={() => navigate('/products')}
               >
                 {t('hero.productsBtn')}
@@ -54,7 +66,7 @@ const HeroSection = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-accent/50 text-accent-light hover:bg-accent/20 backdrop-blur-sm px-8 py-4 h-auto group"
+                className="border-accent/50 text-accent-light hover:bg-accent/20 glass-dark px-8 py-4 h-auto group"
                 onClick={() => setIsTechnologyModalOpen(true)}
               >
                 <Play className="mr-2 h-5 w-5 group-hover:scale-110 fast-transition" />
@@ -79,36 +91,51 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Product Image */}
+          {/* Product Showcase - Detector + Display */}
           <div className="relative animate-fade-in-up delay-300">
             <div className="relative">
-              {/* Glow effect */}
-              <div className="absolute -inset-4 bg-accent/20 rounded-2xl blur-2xl animate-pulse-glow"></div>
+              {/* Main glow effect */}
+              <div className="absolute -inset-8 bg-gradient-to-r from-accent/20 via-accent-light/10 to-primary-light/20 rounded-3xl blur-3xl animate-pulse-subtle"></div>
               
-              {/* Product image */}
-              <div className="relative backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+              {/* Product container with glassmorphism */}
+              <div className="relative glass-dark rounded-2xl p-8 border border-white/10">
+                {/* Detector image */}
                 <img 
                   src={detectorImage} 
                   alt="XELON Digital Detector" 
                   className="w-full h-auto max-w-md mx-auto drop-shadow-2xl hover:scale-105 smooth-transition"
                 />
                 
-                {/* Product highlights */}
-                <div className="absolute -top-4 -right-4 bg-success text-white px-3 py-1 rounded-full text-sm font-medium">
+                {/* New badge */}
+                <div className="absolute -top-4 -right-4 bg-success text-white px-4 py-1.5 rounded-full text-sm font-medium shadow-lg animate-bounce-subtle">
                   {t('hero.newBadge')}
                 </div>
               </div>
             </div>
 
-            {/* Floating feature cards */}
-            <div className="absolute -left-4 top-20 bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 animate-fade-in delay-500">
-              <div className="text-accent-light font-semibold text-sm">{t('hero.feature1Title')}</div>
-              <div className="text-white/70 text-xs">{t('hero.feature1Desc')}</div>
+            {/* Feature cards with glassmorphism */}
+            <div className="absolute -left-4 top-16 glass-dark rounded-xl p-4 border border-white/10 animate-fade-in-left delay-500 hover-scale">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
+                  <Cpu className="h-5 w-5 text-accent-light" />
+                </div>
+                <div>
+                  <div className="text-accent-light font-semibold text-sm">{t('hero.feature1Title')}</div>
+                  <div className="text-white/70 text-xs">{t('hero.feature1Desc')}</div>
+                </div>
+              </div>
             </div>
             
-            <div className="absolute -right-4 bottom-20 bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 animate-fade-in delay-700">
-              <div className="text-accent-light font-semibold text-sm">{t('hero.feature2Title')}</div>
-              <div className="text-white/70 text-xs">{t('hero.feature2Desc')}</div>
+            <div className="absolute -right-4 bottom-16 glass-dark rounded-xl p-4 border border-white/10 animate-fade-in-right delay-700 hover-scale">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
+                  <Monitor className="h-5 w-5 text-accent-light" />
+                </div>
+                <div>
+                  <div className="text-accent-light font-semibold text-sm">{t('hero.feature2Title')}</div>
+                  <div className="text-white/70 text-xs">{t('hero.feature2Desc')}</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
