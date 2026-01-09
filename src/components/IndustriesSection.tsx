@@ -19,18 +19,18 @@ const IndustriesSection = () => {
       backgroundImage: medicalImage,
       applications: language === 'ru' 
         ? [
-            "Цифровая рентгенография R&F",
-            "Маммография",
-            "Мобильные системы",
-            "Интраоральная стоматология",
-            "Ветеринарная визуализация"
+            "Детекторы: рентгенография, маммография",
+            "Дисплеи: радиологические 2-8MP",
+            "Дисплеи: хирургические 4K Touch",
+            "Дисплеи: эндоскопические 4K",
+            "ПО: XELON VISION, DICOM"
           ]
         : [
-            "Digital R&F radiography",
-            "Mammography",
-            "Mobile systems",
-            "Intraoral dentistry",
-            "Veterinary imaging"
+            "Detectors: radiography, mammography",
+            "Displays: radiology 2-8MP",
+            "Displays: surgical 4K Touch",
+            "Displays: endoscopic 4K",
+            "Software: XELON VISION, DICOM"
           ],
       iconColor: "text-red-500",
     },
@@ -42,18 +42,18 @@ const IndustriesSection = () => {
       backgroundImage: industrialImage,
       applications: language === 'ru' 
         ? [
+            "Детекторы: NDT до 50 мкм",
+            "Мониторы: промышленные IP65",
             "Контроль сварных швов",
             "Дефектоскопия отливок",
-            "Инспекция трубопроводов",
-            "Контроль композитов",
-            "Безопасность и досмотр"
+            "Инспекция трубопроводов"
           ]
         : [
+            "Detectors: NDT up to 50 μm",
+            "Monitors: industrial IP65",
             "Weld inspection",
             "Casting defectoscopy",
-            "Pipeline inspection",
-            "Composite testing",
-            "Security screening"
+            "Pipeline inspection"
           ],
       iconColor: "text-blue-500",
     },
@@ -65,18 +65,18 @@ const IndustriesSection = () => {
       backgroundImage: scientificImage,
       applications: language === 'ru' 
         ? [
-            "Синхротронные исследования",
-            "Микро-КТ",
-            "Нейтронная визуализация",
-            "Высокоэнергетическая физика",
-            "Материаловедение"
+            "Командные дисплеи 24/7",
+            "Защищённые мониторы MIL-STD",
+            "Видеостены для ЦУП",
+            "Досмотровые системы",
+            "Оборонные применения"
           ]
         : [
-            "Synchrotron research",
-            "Micro-CT",
-            "Neutron imaging",
-            "High-energy physics",
-            "Materials science"
+            "24/7 command displays",
+            "MIL-STD ruggedized monitors",
+            "Video walls for control centers",
+            "Screening systems",
+            "Defense applications"
           ],
       iconColor: "text-purple-500",
     },
