@@ -12,8 +12,8 @@ const AdvantagesSection = () => {
       title: t('advantages.quality'),
       description: t('advantages.qualityDesc'),
       features: language === 'ru' 
-        ? ["Независимость от импорта", "Резидент Технопарка Бештау", "Реестр отечественной продукции"]
-        : ["Import independence", "Technopark Beshtau resident", "Register of domestic products"],
+        ? ["Резидент Технопарка Бештау", "Реестр отечественной продукции", "Производство в России"]
+        : ["Technopark Beshtau resident", "Domestic products register", "Made in Russia"],
       color: "bg-success/10 text-success",
     },
     {
@@ -21,15 +21,15 @@ const AdvantagesSection = () => {
       title: t('advantages.tech'),
       description: t('advantages.techDesc'),
       features: language === 'ru' 
-        ? ["15+ лет R&D", "50+ патентов", "Уникальные алгоритмы"]
-        : ["15+ years R&D", "50+ patents", "Unique algorithms"],
+        ? ["Детекторы + дисплеи", "Единая экосистема", "DICOM калибровка"]
+        : ["Detectors + displays", "Unified ecosystem", "DICOM calibration"],
       color: "bg-accent/10 text-accent",
     },
     {
       icon: Award,
       title: t('advantages.support'),
       description: t('advantages.supportDesc'),
-      features: ["ISO 13485", "CE Mark", language === 'ru' ? "IP67 защита" : "IP67 protection"],
+      features: ["ISO 13485", "CE Mark", language === 'ru' ? "DICOM Part 14" : "DICOM Part 14"],
       color: "bg-primary/10 text-primary",
     },
     {
@@ -37,8 +37,8 @@ const AdvantagesSection = () => {
       title: t('advantages.global'),
       description: t('advantages.globalDesc'),
       features: language === 'ru' 
-        ? ["24/7 поддержка", "Локальные партнеры", "Обучение персонала"]
-        : ["24/7 support", "Local partners", "Staff training"],
+        ? ["24/7 поддержка", "СНГ, БРИКС, ЕАЭС", "Обучение персонала"]
+        : ["24/7 support", "CIS, BRICS, EAEU", "Staff training"],
       color: "bg-accent-light/10 text-accent-light",
     },
   ];
