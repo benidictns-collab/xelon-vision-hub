@@ -19,16 +19,16 @@ const Footer = () => {
         ? [
             { name: "Медицинские детекторы", href: "/products" },
             { name: "Промышленные решения", href: "/products" },
-            { name: "Спецвизуализация", href: "/products" },
-            { name: "Запчасти и аксессуары", href: "/products" },
-            { name: "Программное обеспечение", href: "/products" }
+            { name: "ПО с ИИ", href: "/software" },
+            { name: "Медицинские дисплеи", href: "/products" },
+            { name: "Спец. дисплеи", href: "/products" }
           ]
         : [
             { name: "Medical detectors", href: "/products" },
             { name: "Industrial solutions", href: "/products" },
-            { name: "Specialized imaging", href: "/products" },
-            { name: "Parts and accessories", href: "/products" },
-            { name: "Software", href: "/products" }
+            { name: "AI Software", href: "/software" },
+            { name: "Medical displays", href: "/products" },
+            { name: "Spec. displays", href: "/products" }
           ]
     },
     {
@@ -55,14 +55,14 @@ const Footer = () => {
         ? [
             { name: t('footer.knowledge'), href: "/support" },
             { name: t('footer.docs'), href: "/support" },
-            { name: "Техподдержка", href: "/support" },
+            { name: "SDK и API", href: "/software" },
             { name: t('footer.training'), href: "/support" },
             { name: t('footer.warranty'), href: "/support" }
           ]
         : [
             { name: t('footer.knowledge'), href: "/support" },
             { name: t('footer.docs'), href: "/support" },
-            { name: "Tech support", href: "/support" },
+            { name: "SDK & API", href: "/software" },
             { name: t('footer.training'), href: "/support" },
             { name: t('footer.warranty'), href: "/support" }
           ]
@@ -74,15 +74,15 @@ const Footer = () => {
             { name: t('footer.news'), href: "/news" },
             { name: "Пресс-релизы", href: "/news" },
             { name: "Видео", href: "/news" },
-            { name: "Отзывы клиентов", href: "/news" },
-            { name: "Кейсы", href: "/news" }
+            { name: "Кейсы ИИ", href: "/news" },
+            { name: "Блог", href: "/news" }
           ]
         : [
             { name: t('footer.news'), href: "/news" },
             { name: "Press releases", href: "/news" },
             { name: "Video", href: "/news" },
-            { name: "Customer reviews", href: "/news" },
-            { name: "Case studies", href: "/news" }
+            { name: "AI Case studies", href: "/news" },
+            { name: "Blog", href: "/news" }
           ]
     }
   ];

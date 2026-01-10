@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Shield, Lightbulb, Award, Globe } from "lucide-react";
+import { Shield, Lightbulb, Award, Globe, Brain, Cpu } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const AdvantagesSection = () => {
@@ -21,15 +21,17 @@ const AdvantagesSection = () => {
       title: t('advantages.tech'),
       description: t('advantages.techDesc'),
       features: language === 'ru' 
-        ? ["Детекторы + дисплеи", "Единая экосистема", "DICOM калибровка"]
-        : ["Detectors + displays", "Unified ecosystem", "DICOM calibration"],
+        ? ["Детекторы + ИИ + дисплеи", "Единая экосистема", "DICOM калибровка"]
+        : ["Detectors + AI + displays", "Unified ecosystem", "DICOM calibration"],
       color: "bg-accent/10 text-accent",
     },
     {
-      icon: Award,
+      icon: Brain,
       title: t('advantages.support'),
       description: t('advantages.supportDesc'),
-      features: ["ISO 13485", "CE Mark", language === 'ru' ? "DICOM Part 14" : "DICOM Part 14"],
+      features: language === 'ru'
+        ? ["Decision support", "Edge AI", "ИИ-детекция патологий"]
+        : ["Decision support", "Edge AI", "AI pathology detection"],
       color: "bg-primary/10 text-primary",
     },
     {
@@ -97,7 +99,7 @@ const AdvantagesSection = () => {
             { value: "20+", label: t('advantages.stat1') },
             { value: "10+", label: t('advantages.stat2') },
             { value: "40+", label: t('advantages.stat3') },
-            { value: "5+", label: t('advantages.stat4') },
+            { value: "6+", label: t('advantages.stat4') },
           ].map((stat, index) => (
             <div 
               key={stat.label} 
