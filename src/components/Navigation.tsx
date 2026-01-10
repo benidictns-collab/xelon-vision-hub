@@ -13,6 +13,7 @@ const Navigation = () => {
   const navItems = [
     { name: t('nav.about'), href: "/about", hasSubmenu: false },
     { name: t('nav.products'), href: "/products", hasSubmenu: false },
+    { name: t('nav.software'), href: "/software", hasSubmenu: false },
     { name: t('nav.solutions'), href: "/solutions", hasSubmenu: false },
     { name: t('nav.support'), href: "/support", hasSubmenu: false },
     { name: t('nav.news'), href: "/news", hasSubmenu: false },

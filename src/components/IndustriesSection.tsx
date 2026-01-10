@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Heart, Wrench, Microscope } from "lucide-react";
+import { ArrowRight, Heart, Wrench, Microscope, Brain } from "lucide-react";
 import medicalImage from "@/assets/medical-industry.jpg";
 import industrialImage from "@/assets/industrial-ndt.jpg";
 import scientificImage from "@/assets/scientific-research.jpg";
@@ -20,16 +20,16 @@ const IndustriesSection = () => {
       applications: language === 'ru' 
         ? [
             "Детекторы: рентгенография, маммография",
+            "ИИ: обнаружение патологий, decision support",
             "Дисплеи: радиологические 2-8MP",
             "Дисплеи: хирургические 4K Touch",
-            "Дисплеи: эндоскопические 4K",
             "ПО: XELON VISION, DICOM"
           ]
         : [
             "Detectors: radiography, mammography",
+            "AI: pathology detection, decision support",
             "Displays: radiology 2-8MP",
             "Displays: surgical 4K Touch",
-            "Displays: endoscopic 4K",
             "Software: XELON VISION, DICOM"
           ],
       iconColor: "text-red-500",
@@ -43,17 +43,17 @@ const IndustriesSection = () => {
       applications: language === 'ru' 
         ? [
             "Детекторы: NDT до 50 мкм",
+            "ИИ: классификация дефектов, разбраковка",
             "Мониторы: промышленные IP65",
             "Контроль сварных швов",
-            "Дефектоскопия отливок",
-            "Инспекция трубопроводов"
+            "ПО: XELON NDT"
           ]
         : [
             "Detectors: NDT up to 50 μm",
+            "AI: defect classification, rejection",
             "Monitors: industrial IP65",
             "Weld inspection",
-            "Casting defectoscopy",
-            "Pipeline inspection"
+            "Software: XELON NDT"
           ],
       iconColor: "text-blue-500",
     },
@@ -66,17 +66,17 @@ const IndustriesSection = () => {
       applications: language === 'ru' 
         ? [
             "Командные дисплеи 24/7",
+            "ИИ: обнаружение угроз, аналитика",
             "Защищённые мониторы MIL-STD",
-            "Видеостены для ЦУП",
             "Досмотровые системы",
-            "Оборонные применения"
+            "ПО: XELON SECURITY"
           ]
         : [
             "24/7 command displays",
+            "AI: threat detection, analytics",
             "MIL-STD ruggedized monitors",
-            "Video walls for control centers",
             "Screening systems",
-            "Defense applications"
+            "Software: XELON SECURITY"
           ],
       iconColor: "text-purple-500",
     },
@@ -114,7 +114,10 @@ const IndustriesSection = () => {
                     <industry.icon className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold">{industry.title}</h3>
-                  <p className="text-white/90 text-sm">{industry.subtitle}</p>
+                  <p className="text-white/90 text-sm flex items-center gap-2">
+                    <Brain className="h-4 w-4" />
+                    {industry.subtitle}
+                  </p>
                 </div>
               </div>
 

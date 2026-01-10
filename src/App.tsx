@@ -26,6 +26,7 @@ import KnowledgeBase from "./pages/KnowledgeBase";
 import Documentation from "./pages/Documentation";
 import Training from "./pages/Training";
 import Warranty from "./pages/Warranty";
+import Software from "./pages/Software";
 
 const queryClient = new QueryClient();
 
@@ -59,6 +60,7 @@ const App = () => (
                 <Route path="/support/documentation" element={<Documentation />} />
                 <Route path="/support/training" element={<Training />} />
                 <Route path="/support/warranty" element={<Warranty />} />
+                <Route path="/software" element={<Software />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>

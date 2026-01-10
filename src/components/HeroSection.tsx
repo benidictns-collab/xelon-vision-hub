@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, Monitor, Cpu } from "lucide-react";
+import { ArrowRight, Play, Monitor, Cpu, Brain } from "lucide-react";
 import detectorImage from "@/assets/detector-hero.png";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -75,23 +75,27 @@ const HeroSection = () => {
             </div>
 
             {/* Key metrics */}
-            <div className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-white/20">
+            <div className="grid grid-cols-4 gap-6 mt-12 pt-8 border-t border-white/20">
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent-light mb-1">1</div>
-                <div className="text-sm text-white/70">{t('hero.metric1')}</div>
+                <div className="text-2xl md:text-3xl font-bold text-accent-light mb-1">1</div>
+                <div className="text-xs md:text-sm text-white/70">{t('hero.metric1')}</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent-light mb-1">100+</div>
-                <div className="text-sm text-white/70">{t('hero.metric2')}</div>
+                <div className="text-2xl md:text-3xl font-bold text-accent-light mb-1">100+</div>
+                <div className="text-xs md:text-sm text-white/70">{t('hero.metric2')}</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent-light mb-1">70%</div>
-                <div className="text-sm text-white/70">{t('hero.metric3')}</div>
+                <div className="text-2xl md:text-3xl font-bold text-accent-light mb-1">70%</div>
+                <div className="text-xs md:text-sm text-white/70">{t('hero.metric3')}</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-accent-light mb-1">6+</div>
+                <div className="text-xs md:text-sm text-white/70">{t('hero.metric4')}</div>
               </div>
             </div>
           </div>
 
-          {/* Product Showcase - Detector + Display */}
+          {/* Product Showcase - Detector + Display + AI */}
           <div className="relative animate-fade-in-up delay-300">
             <div className="relative">
               {/* Main glow effect */}
@@ -113,8 +117,8 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* Feature cards with glassmorphism */}
-            <div className="absolute -left-4 top-16 glass-dark rounded-xl p-4 border border-white/10 animate-fade-in-left delay-500 hover-scale">
+            {/* Feature cards with glassmorphism - 3 cards for Detector, AI, Display */}
+            <div className="absolute -left-4 top-12 glass-dark rounded-xl p-4 border border-white/10 animate-fade-in-left delay-500 hover-scale">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
                   <Cpu className="h-5 w-5 text-accent-light" />
@@ -126,7 +130,20 @@ const HeroSection = () => {
               </div>
             </div>
             
-            <div className="absolute -right-4 bottom-16 glass-dark rounded-xl p-4 border border-white/10 animate-fade-in-right delay-700 hover-scale">
+            {/* AI Feature card - center */}
+            <div className="absolute left-1/2 -translate-x-1/2 -bottom-4 glass-dark rounded-xl p-4 border border-accent/30 animate-fade-in-up delay-600 hover-scale">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-success/20 flex items-center justify-center">
+                  <Brain className="h-5 w-5 text-success" />
+                </div>
+                <div>
+                  <div className="text-success font-semibold text-sm">{t('hero.feature3Title')}</div>
+                  <div className="text-white/70 text-xs">{t('hero.feature3Desc')}</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="absolute -right-4 top-1/2 -translate-y-1/2 glass-dark rounded-xl p-4 border border-white/10 animate-fade-in-right delay-700 hover-scale">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
                   <Monitor className="h-5 w-5 text-accent-light" />
