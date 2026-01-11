@@ -1,443 +1,461 @@
+import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Download, Heart, Wrench, Microscope } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { 
+  ArrowLeft, Download, Heart, Wrench, Microscope, Shield, Monitor,
+  ChevronLeft, ChevronRight, Check, FileText, Package, Cpu, Settings
+} from "lucide-react";
 import xelonImage1 from "@/assets/xelon-1.png";
 import xelonImage2 from "@/assets/xelon-2.png";
 import xelonImage3 from "@/assets/xelon-3.jpeg";
+import detectorHero from "@/assets/detector-hero.png";
 import QuoteModal from "@/components/QuoteModal";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getProductById, type Product } from "@/data/products";
 
 const ProductDetail = () => {
   const { category, productId } = useParams();
   const navigate = useNavigate();
+  const { language } = useLanguage();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const products = {
-    medical: [
-      {
-        id: "xelon-xray-1515",
-        name: "XELON X-RAY-1515",
-        category: "Рентгенография",
-        description: "Активная область 153×153 мм, шаг пикселя 135 мкм",
-        fullDescription: "Компактный цифровой плоскопанельный детектор XELON X-RAY-1515 предназначен для цифровой рентгенографии в медицинских учреждениях. Обеспечивает высокое качество изображения при минимальной лучевой нагрузке на пациента.",
-        specs: {
-          "Активная область": "153×153 мм",
-          "Шаг пикселя": "135 мкм",
-          "Матрица": "1536×1536",
-          "Интерфейс": "USB 3.2, Wi-Fi 6E",
-          "Разрешение": "3.7 ЛП/мм",
-          "Вес": "2.8 кг",
-          "Рабочая температура": "10°C - 40°C"
-        },
-        applications: ["Цифровая рентгенография R&F", "Ортопедия", "Педиатрия"],
-        isNew: true,
-        images: [xelonImage1, xelonImage2, xelonImage3]
-      },
-      {
-        id: "xelon-xray-1923",
-        name: "XELON X-RAY-1923",
-        category: "Рентгенография",
-        description: "Активная область 190×230 мм, шаг пикселя 131 мкм",
-        fullDescription: "Универсальный детектор для общей рентгенографии с оптимальным соотношением размера и разрешения. Идеально подходит для исследования грудной клетки и конечностей.",
-        specs: {
-          "Активная область": "190×230 мм",
-          "Шаг пикселя": "131 мкм",
-          "Матрица": "1900×2304",
-          "Интерфейс": "USB 3.2, Wi-Fi 6E",
-          "Разрешение": "3.8 ЛП/мм",
-          "Вес": "3.2 кг",
-          "Рабочая температура": "10°C - 40°C"
-        },
-        applications: ["Общая рентгенография", "Грудная клетка", "Конечности"],
-        isNew: false,
-        images: [xelonImage1, xelonImage2, xelonImage3]
-      },
-      {
-        id: "xelon-xray-2020",
-        name: "XELON X-RAY-2020",
-        category: "Рентгенография",
-        description: "Активная область 204×204 мм, шаг пикселя 150 мкм",
-        fullDescription: "Универсальный детектор квадратного формата для широкого спектра медицинских применений. Поддерживает как проводные, так и беспроводные интерфейсы.",
-        specs: {
-          "Активная область": "204×204 мм",
-          "Шаг пикселя": "150 мкм",
-          "Матрица": "2048×2048",
-          "Интерфейс": "USB 3.2, CoaXPress",
-          "Разрешение": "3.3 ЛП/мм",
-          "Вес": "3.5 кг",
-          "Рабочая температура": "10°C - 40°C"
-        },
-        applications: ["Универсальная рентгенография", "Мобильные системы"],
-        isNew: true,
-        images: [xelonImage1, xelonImage2, xelonImage3]
-      },
-      {
-        id: "xelon-xray-2430",
-        name: "XELON X-RAY-2430",
-        category: "Рентгенография",
-        description: "Активная область 247×307 мм, шаг пикселя 139 мкм",
-        fullDescription: "Детектор для специализированных исследований грудной клетки и позвоночника. Обеспечивает отличное качество изображения для диагностики органов грудной полости.",
-        specs: {
-          "Активная область": "247×307 мм",
-          "Шаг пикселя": "139 мкм",
-          "Матрица": "2476×3072",
-          "Интерфейс": "USB 3.2, Wi-Fi 6E",
-          "Разрешение": "3.6 ЛП/мм",
-          "Вес": "4.1 кг",
-          "Рабочая температура": "10°C - 40°C"
-        },
-        applications: ["Рентгенография грудной клетки", "Позвоночник"],
-        isNew: false,
-        images: [xelonImage1, xelonImage2, xelonImage3]
-      },
-      {
-        id: "xelon-xray-2530",
-        name: "XELON X-RAY-2530",
-        category: "Рентгенография",
-        description: "Активная область 250×300 мм, шаг пикселя 99 мкм",
-        fullDescription: "Высокоразрешающий детектор для детской радиологии и специализированных исследований, требующих максимальной четкости изображения.",
-        specs: {
-          "Активная область": "250×300 мм",
-          "Шаг пикселя": "99 мкм",
-          "Матрица": "2524×3036",
-          "Интерфейс": "USB 3.2, CoaXPress",
-          "Разрешение": "5.0 ЛП/мм",
-          "Вес": "4.5 кг",
-          "Рабочая температура": "10°C - 40°C"
-        },
-        applications: ["Высокоразрешающая рентгенография", "Детская радиология"],
-        isNew: true,
-        images: [xelonImage1, xelonImage2, xelonImage3]
-      },
-      {
-        id: "xelon-xray-3543",
-        name: "XELON X-RAY-3543",
-        category: "Рентгенография",
-        description: "Активная область 358×430 мм, шаг пикселя 140 мкм",
-        fullDescription: "Полноформатный детектор для ортопедических исследований и общей рентгенографии. Большая активная область позволяет получать изображения всего тела.",
-        specs: {
-          "Активная область": "358×430 мм",
-          "Шаг пикселя": "140 мкм",
-          "Матрица": "2560×3072",
-          "Интерфейс": "CameraLink, USB 3.2",
-          "Разрешение": "3.6 ЛП/мм",
-          "Вес": "6.2 кг",
-          "Рабочая температура": "10°C - 40°C"
-        },
-        applications: ["Полноформатная рентгенография", "Ортопедия"],
-        isNew: false,
-        images: [xelonImage1, xelonImage2, xelonImage3]
-      }
-    ],
-    industrial: [
-      {
-        id: "xelon-xray-55",
-        name: "XELON X-RAY-55",
-        category: "Микродефектоскопия",
-        description: "Активная область 52.8×52.8 мм, шаг пикселя 50 мкм",
-        fullDescription: "Сверхвысокоразрешающий детектор для контроля микрообъектов. Обеспечивает детальную визуализацию внутренней структуры электронных компонентов и ювелирных изделий.",
-        specs: {
-          "Активная область": "52.8×52.8 мм",
-          "Шаг пикселя": "50 мкм",
-          "Матрица": "1056×1056",
-          "Разрешение": "до 10 ЛП/мм",
-          "Вес": "1.8 кг",
-          "Рабочая температура": "15°C - 35°C"
-        },
-        applications: ["Контроль микрообъектов", "Электроника", "Ювелирные изделия"],
-        isNew: true,
-        images: [xelonImage1, xelonImage2, xelonImage3]
-      },
-      {
-        id: "xelon-xray-1212",
-        name: "XELON X-RAY-1212",
-        category: "Дефектоскопия",
-        description: "Активная область 120×120 мм, шаг пикселя 50 мкм",
-        fullDescription: "Детектор для промышленной дефектоскопии средних объектов. Высокое разрешение позволяет выявлять мельчайшие дефекты в сварных швах и литье.",
-        specs: {
-          "Активная область": "120×120 мм",
-          "Шаг пикселя": "50 мкм",
-          "Матрица": "2240×2368",
-          "Разрешение": "до 10 ЛП/мм",
-          "Вес": "2.5 кг",
-          "Рабочая температура": "10°C - 40°C"
-        },
-        applications: ["Контроль сварных швов", "Литье", "Композиты"],
-        isNew: false,
-        images: [xelonImage1, xelonImage2, xelonImage3]
-      },
-      {
-        id: "xelon-xray-1723",
-        name: "XELON X-RAY-1723",
-        category: "Дефектоскопия",
-        description: "Активная область 172.8×230.4 мм, шаг пикселя 75 мкм",
-        fullDescription: "Универсальный детектор для авиакосмической отрасли и машиностроения. Работает в широком диапазоне энергий рентгеновского излучения.",
-        specs: {
-          "Активная область": "172.8×230.4 мм",
-          "Шаг пикселя": "75 мкм",
-          "Матрица": "2304×3072",
-          "Напряжение": "40–200 кВ",
-          "Вес": "3.8 кг",
-          "Рабочая температура": "5°C - 45°C"
-        },
-        applications: ["Авиакосмическая отрасль", "Трубопроводы", "Машиностроение"],
-        isNew: true,
-        images: [xelonImage1, xelonImage2, xelonImage3]
-      },
-      {
-        id: "xelon-xray-2222",
-        name: "XELON X-RAY-2222",
-        category: "Тяжелая промышленность",
-        description: "Активная область 229.1×229.1 мм, высокоэнергетический",
-        fullDescription: "Детектор для контроля толстостенных объектов в тяжелой промышленности. Работает с высокоэнергетическими рентгеновскими системами до 450 кВ.",
-        specs: {
-          "Активная область": "229.1×229.1 мм",
-          "Шаг пикселя": "179 мкм",
-          "Матрица": "1280×1280",
-          "Напряжение": "40–450 кВ",
-          "Вес": "4.2 кг",
-          "Рабочая температура": "0°C - 50°C"
-        },
-        applications: ["Толстые объекты", "Высокоэнергетические системы"],
-        isNew: false,
-        images: [xelonImage1, xelonImage2, xelonImage3]
-      }
-    ],
-    scientific: [
-      {
-        id: "xelon-xray-1723-scientific",
-        name: "XELON X-RAY-1723",
-        category: "Специализированная визуализация",
-        description: "Активная область 172.8×230.4 мм, динамический тип",
-        fullDescription: "Динамический детектор для систем досмотра багажа и грузов. Обеспечивает высокую скорость сканирования при сохранении качества изображения.",
-        specs: {
-          "Активная область": "172.8×230.4 мм",
-          "Шаг пикселя": "95 мкм",
-          "Матрица": "1792×2560",
-          "Тип": "Динамический",
-          "Скорость сканирования": "до 30 кадр/с",
-          "Вес": "4.0 кг"
-        },
-        applications: ["Досмотр багажа", "Безопасность", "Таможня"],
-        isNew: true,
-        images: [xelonImage1, xelonImage2, xelonImage3]
-      },
-      {
-        id: "xelon-xray-4343",
-        name: "XELON X-RAY-4343",
-        category: "Досмотр транспорта",
-        description: "Активная область 430×430 мм, для досмотра грузов",
-        fullDescription: "Крупноформатный детектор для досмотра транспортных средств и крупногабаритных грузов. Работает в экстремальных условиях эксплуатации.",
-        specs: {
-          "Активная область": "430×430 мм",
-          "Шаг пикселя": "139 мкм",
-          "Матрица": "3072×3072",
-          "Напряжение": "80–450 кВ",
-          "Вес": "8.5 кг",
-          "Рабочая температура": "-10°C - 60°C"
-        },
-        applications: ["Досмотр транспорта", "Крупногабаритные грузы"],
-        isNew: false,
-        images: [xelonImage1, xelonImage2, xelonImage3]
-      },
-      {
-        id: "xelon-xray-3025",
-        name: "XELON X-RAY-3025",
-        category: "Досмотр багажа",
-        description: "Активная область 300×250 мм, оптимизирован для багажа",
-        fullDescription: "Специализированный детектор для систем досмотра багажа в аэропортах, на вокзалах и в метро. Оптимизирован для быстрого сканирования при высокой пропускной способности.",
-        specs: {
-          "Активная область": "300×250 мм",
-          "Шаг пикселя": "100 мкм",
-          "Матрица": "3008×2512",
-          "Тип": "Динамический",
-          "Скорость сканирования": "до 25 кадр/с",
-          "Вес": "5.2 кг"
-        },
-        applications: ["Аэропорты", "Вокзалы", "Метро"],
-        isNew: true,
-        images: [xelonImage1, xelonImage2, xelonImage3]
-      },
-      {
-        id: "xelon-xray-5252",
-        name: "XELON X-RAY-5252",
-        category: "Микродосмотр",
-        description: "Активная область 52.8×52.8 мм, для микродосмотра",
-        fullDescription: "Компактный детектор для досмотра мелких предметов и почтовых отправлений. Высокое разрешение обеспечивает детальную визуализацию содержимого.",
-        specs: {
-          "Активная область": "52.8×52.8 мм",
-          "Шаг пикселя": "50 мкм",
-          "Матрица": "1056×1056",
-          "Разрешение": "до 10 ЛП/мм",
-          "Вес": "1.5 кг",
-          "Рабочая температура": "10°C - 40°C"
-        },
-        applications: ["Почтовые отправления", "Мелкие предметы"],
-        isNew: false,
-        images: [xelonImage1, xelonImage2, xelonImage3]
-      }
-    ]
-  };
+  // Get product from unified data
+  const product = productId ? getProductById(productId) : undefined;
 
-  const categoryProducts = products[category as keyof typeof products] || [];
-  const product = categoryProducts.find(p => p.id === productId);
+  // Fallback images
+  const productImages = [xelonImage1, xelonImage2, xelonImage3];
 
   if (!product) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Продукт не найден</h1>
+          <h1 className="text-2xl font-bold mb-4">
+            {language === 'ru' ? 'Продукт не найден' : 'Product not found'}
+          </h1>
           <Button onClick={() => navigate('/products')}>
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Вернуться к каталогу
+            {language === 'ru' ? 'Вернуться к каталогу' : 'Back to catalog'}
           </Button>
         </div>
       </div>
     );
   }
 
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case 'medical': return Heart;
-      case 'industrial': return Wrench;
-      case 'scientific': return Microscope;
-      default: return Heart;
+  const getCategoryIcon = (cat: string) => {
+    switch (cat) {
+      case 'detectors': return Microscope;
+      case 'medDisplays': return Heart;
+      case 'specDisplays': return Shield;
+      default: return Monitor;
     }
   };
 
-  const CategoryIcon = getCategoryIcon(category || 'medical');
+  const CategoryIcon = getCategoryIcon(category || 'detectors');
+
+  const getSubcategoryLabel = (sub: string) => {
+    if (language === 'ru') {
+      const labels: Record<string, string> = {
+        medical: 'Медицина',
+        ndt: 'NDT',
+        security: 'Безопасность',
+        veterinary: 'Ветеринария',
+        radiology: 'Радиология',
+        surgery: 'Хирургия',
+        endoscopy: 'Эндоскопия',
+        clinical: 'Клинический',
+        industrial: 'Промышленность',
+        command: 'Диспетчерские',
+        defense: 'Оборона',
+        transport: 'Транспорт'
+      };
+      return labels[sub] || sub;
+    }
+    return sub.charAt(0).toUpperCase() + sub.slice(1);
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % productImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + productImages.length) % productImages.length);
+  };
 
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
       <section className="py-12 hero-gradient text-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <Button 
               variant="outline" 
               onClick={() => navigate('/products')}
               className="mb-6 bg-white/10 border-white/50 text-white hover:bg-white/20 hover:border-white/70"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
-              Вернуться к каталогу
+              {language === 'ru' ? 'Вернуться к каталогу' : 'Back to catalog'}
             </Button>
             
             <div className="flex items-center space-x-4 mb-6">
               <CategoryIcon className="h-8 w-8" />
-              <div>
-                <Badge variant="outline" className="border-white/30 text-white mb-2">
-                  {product.category}
+              <div className="flex items-center gap-2">
+                <Badge variant="outline" className="border-white/30 text-white">
+                  {getSubcategoryLabel(product.subcategory)}
                 </Badge>
                 {product.isNew && (
-                  <Badge className="bg-success text-white ml-2">
-                    Новинка 2025
+                  <Badge className="bg-success text-white">
+                    {language === 'ru' ? 'Новинка 2025' : 'New 2025'}
                   </Badge>
                 )}
               </div>
             </div>
             
-            <h1 className="section-title mb-4">{product.name}</h1>
-            <p className="text-xl text-white/90 leading-relaxed">
-              {product.fullDescription}
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">{product.name}</h1>
+            <p className="text-xl text-white/90 leading-relaxed max-w-3xl">
+              {product.shortDescription}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Product Images */}
-      <section className="py-16 bg-secondary/30">
+      {/* Main Content */}
+      <section className="py-12">
         <div className="container mx-auto px-4">
-          <h2 className="section-title text-center mb-12">Галерея изображений</h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {product.images.map((image, index) => (
-              <div 
-                key={index} 
-                className="group relative overflow-hidden rounded-xl cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-translate-y-2"
-              >
-                {/* Animated gradient border */}
-                <div className="absolute inset-0 bg-gradient-to-br from-accent via-primary to-accent-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl p-[2px]">
-                  <div className="h-full w-full bg-background rounded-xl" />
-                </div>
-                
-                {/* Image container with border */}
-                <div className="relative overflow-hidden rounded-xl border-2 border-border group-hover:border-transparent transition-all duration-500 bg-card">
-                  <div className="aspect-square bg-gradient-to-br from-accent/5 to-primary/5 p-6 flex items-center justify-center">
-                    <img 
-                      src={image} 
-                      alt={`${product.name} изображение ${index + 1}`}
-                      className="max-h-full max-w-full object-contain transform transition-transform duration-700 group-hover:scale-110"
-                    />
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* Image Gallery */}
+              <div className="space-y-4">
+                {/* Main Image */}
+                <div className="relative aspect-square bg-gradient-to-br from-accent/10 to-primary/10 rounded-2xl overflow-hidden group">
+                  <img 
+                    src={productImages[currentImageIndex]} 
+                    alt={`${product.name} - ${language === 'ru' ? 'Изображение' : 'Image'} ${currentImageIndex + 1}`}
+                    className="w-full h-full object-contain p-8 transition-transform duration-500 group-hover:scale-105"
+                  />
+                  
+                  {/* Navigation arrows */}
+                  <button 
+                    onClick={prevImage}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:bg-white transition-colors"
+                  >
+                    <ChevronLeft className="h-5 w-5 text-foreground" />
+                  </button>
+                  <button 
+                    onClick={nextImage}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:bg-white transition-colors"
+                  >
+                    <ChevronRight className="h-5 w-5 text-foreground" />
+                  </button>
+
+                  {/* Image counter */}
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+                    {currentImageIndex + 1} / {productImages.length}
                   </div>
-                  
-                  {/* Bottom gradient overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  {/* Corner accent line */}
-                  <div className="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-tl-xl" />
-                  <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-accent-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-br-xl" />
+                </div>
+
+                {/* Thumbnails */}
+                <div className="flex gap-3 justify-center">
+                  {productImages.map((img, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentImageIndex(idx)}
+                      className={`w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
+                        idx === currentImageIndex 
+                          ? 'border-accent ring-2 ring-accent/30' 
+                          : 'border-border hover:border-accent/50'
+                      }`}
+                    >
+                      <img 
+                        src={img} 
+                        alt={`${language === 'ru' ? 'Миниатюра' : 'Thumbnail'} ${idx + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
                 </div>
               </div>
-            ))}
+
+              {/* Product Info */}
+              <div className="space-y-6">
+                {/* Description */}
+                <div>
+                  <h2 className="text-2xl font-bold mb-4">
+                    {language === 'ru' ? 'Описание' : 'Description'}
+                  </h2>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {product.fullDescription}
+                  </p>
+                </div>
+
+                {/* Key Features */}
+                <div>
+                  <h3 className="text-lg font-semibold mb-3">
+                    {language === 'ru' ? 'Ключевые особенности' : 'Key Features'}
+                  </h3>
+                  <ul className="space-y-2">
+                    {product.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <Check className="h-5 w-5 text-success mt-0.5 flex-shrink-0" />
+                        <span className="text-muted-foreground">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Applications */}
+                <div>
+                  <h3 className="text-lg font-semibold mb-3">
+                    {language === 'ru' ? 'Области применения' : 'Applications'}
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {product.applications.map((app, idx) => (
+                      <Badge key={idx} variant="secondary" className="px-3 py-1">
+                        {app}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Actions */}
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  <QuoteModal>
+                    <Button size="lg" className="flex-1 bg-accent hover:bg-accent-light">
+                      {language === 'ru' ? 'Запросить цену' : 'Request Quote'}
+                    </Button>
+                  </QuoteModal>
+                  <Button variant="outline" size="lg" className="flex-1">
+                    <Download className="h-4 w-4 mr-2" />
+                    {language === 'ru' ? 'Скачать спецификацию' : 'Download Spec'}
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Technical Specifications */}
-      <section className="py-16 bg-gradient-to-r from-accent/5 to-primary/5">
+      {/* Detailed Tabs */}
+      <section className="py-12 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="section-title text-center mb-12">Технические характеристики</h2>
-            
-            <Card className="mb-8">
-              <CardContent className="p-8">
-                <div className="grid md:grid-cols-2 gap-6">
-                  {Object.entries(product.specs).map(([key, value]) => (
-                    <div key={key} className="flex justify-between items-center py-3 border-b border-border/50">
-                      <span className="font-medium">{key}:</span>
-                      <span className="text-muted-foreground">{String(value)}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+          <div className="max-w-6xl mx-auto">
+            <Tabs defaultValue="specs" className="w-full">
+              <TabsList className="grid w-full grid-cols-4 mb-8 h-auto p-1">
+                <TabsTrigger value="specs" className="py-3 flex items-center gap-2">
+                  <Settings className="h-4 w-4" />
+                  <span className="hidden sm:inline">{language === 'ru' ? 'Характеристики' : 'Specifications'}</span>
+                </TabsTrigger>
+                <TabsTrigger value="features" className="py-3 flex items-center gap-2">
+                  <Cpu className="h-4 w-4" />
+                  <span className="hidden sm:inline">{language === 'ru' ? 'ИИ-функции' : 'AI Features'}</span>
+                </TabsTrigger>
+                <TabsTrigger value="docs" className="py-3 flex items-center gap-2">
+                  <FileText className="h-4 w-4" />
+                  <span className="hidden sm:inline">{language === 'ru' ? 'Документация' : 'Documentation'}</span>
+                </TabsTrigger>
+                <TabsTrigger value="accessories" className="py-3 flex items-center gap-2">
+                  <Package className="h-4 w-4" />
+                  <span className="hidden sm:inline">{language === 'ru' ? 'Аксессуары' : 'Accessories'}</span>
+                </TabsTrigger>
+              </TabsList>
 
-            {/* Applications */}
-            <Card>
-              <CardContent className="p-8">
-                <h3 className="text-xl font-bold mb-6">Области применения</h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {product.applications.map((app) => (
-                    <div key={app} className="flex items-center space-x-3 p-3 bg-gradient-to-r from-accent/10 to-primary/10 rounded-lg">
-                      <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0"></div>
-                      <span className="text-sm font-medium">{app}</span>
+              <TabsContent value="specs">
+                <Card>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-bold mb-6">
+                      {language === 'ru' ? 'Технические характеристики' : 'Technical Specifications'}
+                    </h3>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      {Object.entries(product.specs).map(([key, value]) => (
+                        <div key={key} className="flex justify-between py-3 border-b border-border">
+                          <span className="text-muted-foreground">{key}</span>
+                          <span className="font-medium">{value}</span>
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+
+              <TabsContent value="features">
+                <Card>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-bold mb-6">
+                      {language === 'ru' ? 'Функции на базе ИИ' : 'AI-Powered Features'}
+                    </h3>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-4">
+                        <h4 className="font-semibold text-accent">
+                          {language === 'ru' ? 'Обработка изображений' : 'Image Processing'}
+                        </h4>
+                        <ul className="space-y-2">
+                          <li className="flex items-start gap-2">
+                            <Check className="h-4 w-4 text-success mt-1" />
+                            <span className="text-sm text-muted-foreground">
+                              {language === 'ru' ? 'ИИ-шумоподавление без потери информации' : 'AI noise reduction without information loss'}
+                            </span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <Check className="h-4 w-4 text-success mt-1" />
+                            <span className="text-sm text-muted-foreground">
+                              {language === 'ru' ? 'Super-resolution для повышения разрешения' : 'Super-resolution for enhanced detail'}
+                            </span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <Check className="h-4 w-4 text-success mt-1" />
+                            <span className="text-sm text-muted-foreground">
+                              {language === 'ru' ? 'Автоматическая оптимизация параметров' : 'Automatic parameter optimization'}
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="space-y-4">
+                        <h4 className="font-semibold text-accent">
+                          {language === 'ru' ? 'Анализ и интерпретация' : 'Analysis & Interpretation'}
+                        </h4>
+                        <ul className="space-y-2">
+                          <li className="flex items-start gap-2">
+                            <Check className="h-4 w-4 text-success mt-1" />
+                            <span className="text-sm text-muted-foreground">
+                              {language === 'ru' ? 'Автоматическое обнаружение патологий/дефектов' : 'Automatic pathology/defect detection'}
+                            </span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <Check className="h-4 w-4 text-success mt-1" />
+                            <span className="text-sm text-muted-foreground">
+                              {language === 'ru' ? 'Классификация по типу и критичности' : 'Classification by type and severity'}
+                            </span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <Check className="h-4 w-4 text-success mt-1" />
+                            <span className="text-sm text-muted-foreground">
+                              {language === 'ru' ? 'Decision support для специалистов' : 'Decision support for specialists'}
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+
+              <TabsContent value="docs">
+                <Card>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-bold mb-6">
+                      {language === 'ru' ? 'Документация' : 'Documentation'}
+                    </h3>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <Button variant="outline" className="justify-start h-auto py-4">
+                        <FileText className="h-5 w-5 mr-3" />
+                        <div className="text-left">
+                          <div className="font-medium">{language === 'ru' ? 'Спецификация' : 'Specification'}</div>
+                          <div className="text-xs text-muted-foreground">PDF, 2.4 MB</div>
+                        </div>
+                      </Button>
+                      <Button variant="outline" className="justify-start h-auto py-4">
+                        <FileText className="h-5 w-5 mr-3" />
+                        <div className="text-left">
+                          <div className="font-medium">{language === 'ru' ? 'Руководство пользователя' : 'User Manual'}</div>
+                          <div className="text-xs text-muted-foreground">PDF, 8.1 MB</div>
+                        </div>
+                      </Button>
+                      <Button variant="outline" className="justify-start h-auto py-4">
+                        <FileText className="h-5 w-5 mr-3" />
+                        <div className="text-left">
+                          <div className="font-medium">{language === 'ru' ? 'Сертификаты' : 'Certificates'}</div>
+                          <div className="text-xs text-muted-foreground">PDF, 1.2 MB</div>
+                        </div>
+                      </Button>
+                      <Button variant="outline" className="justify-start h-auto py-4">
+                        <FileText className="h-5 w-5 mr-3" />
+                        <div className="text-left">
+                          <div className="font-medium">{language === 'ru' ? 'API документация' : 'API Documentation'}</div>
+                          <div className="text-xs text-muted-foreground">PDF, 3.5 MB</div>
+                        </div>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+
+              <TabsContent value="accessories">
+                <Card>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-bold mb-6">
+                      {language === 'ru' ? 'Совместимые аксессуары' : 'Compatible Accessories'}
+                    </h3>
+                    <div className="grid md:grid-cols-3 gap-4">
+                      <Card className="p-4">
+                        <div className="aspect-square bg-muted rounded-lg mb-3 flex items-center justify-center">
+                          <Package className="h-12 w-12 text-muted-foreground" />
+                        </div>
+                        <h4 className="font-medium mb-1">
+                          {language === 'ru' ? 'Защитный кейс' : 'Protective Case'}
+                        </h4>
+                        <p className="text-xs text-muted-foreground">
+                          {language === 'ru' ? 'Для транспортировки' : 'For transportation'}
+                        </p>
+                      </Card>
+                      <Card className="p-4">
+                        <div className="aspect-square bg-muted rounded-lg mb-3 flex items-center justify-center">
+                          <Package className="h-12 w-12 text-muted-foreground" />
+                        </div>
+                        <h4 className="font-medium mb-1">
+                          {language === 'ru' ? 'Кабельный комплект' : 'Cable Kit'}
+                        </h4>
+                        <p className="text-xs text-muted-foreground">
+                          {language === 'ru' ? 'USB 3.2 + питание' : 'USB 3.2 + power'}
+                        </p>
+                      </Card>
+                      <Card className="p-4">
+                        <div className="aspect-square bg-muted rounded-lg mb-3 flex items-center justify-center">
+                          <Package className="h-12 w-12 text-muted-foreground" />
+                        </div>
+                        <h4 className="font-medium mb-1">
+                          {language === 'ru' ? 'Держатель' : 'Mounting Kit'}
+                        </h4>
+                        <p className="text-xs text-muted-foreground">
+                          {language === 'ru' ? 'Настенный/настольный' : 'Wall/desk mount'}
+                        </p>
+                      </Card>
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+            </Tabs>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="section-title mb-6">Заинтересовались продуктом?</h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Получите подробную консультацию по продукту {product.name} 
-            и индивидуальное коммерческое предложение
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <QuoteModal>
-              <Button size="lg" className="bg-accent hover:bg-accent-light">
-                Запросить КП
-              </Button>
-            </QuoteModal>
-            <Button variant="outline" size="lg">
-              <Download className="h-4 w-4 mr-2" />
-              Скачать техническую документацию
-            </Button>
+      {/* Related Products */}
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl font-bold mb-8">
+              {language === 'ru' ? 'Похожие продукты' : 'Related Products'}
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Placeholder for related products */}
+              {[1, 2, 3].map((i) => (
+                <Card key={i} className="hover-lift">
+                  <div className="aspect-video bg-gradient-to-br from-accent/10 to-primary/10 flex items-center justify-center">
+                    <Monitor className="h-12 w-12 text-accent/50" />
+                  </div>
+                  <CardContent className="p-4">
+                    <h4 className="font-bold mb-1">XELON Product {i}</h4>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      {language === 'ru' ? 'Краткое описание продукта' : 'Brief product description'}
+                    </p>
+                    <Button variant="outline" size="sm" className="w-full">
+                      {language === 'ru' ? 'Подробнее' : 'Learn More'}
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
