@@ -10,7 +10,26 @@ import {
   ChevronRight, Grid3X3, List
 } from "lucide-react";
 import detectorImage from "@/assets/detector-hero.png";
+import xelon1 from "@/assets/xelon-1.png";
+import xelon2 from "@/assets/xelon-2.png";
+import xelon3 from "@/assets/xelon-3.jpeg";
+import industrialNdt from "@/assets/industrial-ndt.jpg";
+import medicalIndustry from "@/assets/medical-industry.jpg";
 import QuoteModal from "@/components/QuoteModal";
+
+// Image mapping for products
+const productImages: Record<string, string> = {
+  'xelon-1.png': xelon1,
+  'xelon-2.png': xelon2,
+  'xelon-3.jpeg': xelon3,
+  'detector-hero.png': detectorImage,
+  'industrial-ndt.jpg': industrialNdt,
+  'medical-industry.jpg': medicalIndustry,
+};
+
+const getProductImage = (imageName: string): string => {
+  return productImages[imageName] || detectorImage;
+};
 import { useLanguage } from "@/contexts/LanguageContext";
 import { 
   detectorProducts, 
@@ -407,18 +426,11 @@ const ProductCard = ({ product, categoryId, index, language, t }: ProductCardPro
         
         <div className="h-48 bg-gradient-to-br from-accent/10 to-primary/10 p-6 flex items-center justify-center relative overflow-hidden group-hover:from-accent/20 group-hover:to-primary/20 transition-all duration-500">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
-          {categoryId === 'detectors' ? (
-            <img 
-              src={`/src/assets/${product.images[0]}`} 
-              alt={product.name}
-              className="max-h-32 max-w-32 object-contain opacity-80 group-hover:scale-110 transition-transform duration-500"
-              onError={(e) => {
-                (e.target as HTMLImageElement).src = '/src/assets/detector-hero.png';
-              }}
-            />
-          ) : (
-            <Monitor className="h-24 w-24 text-accent/50 group-hover:scale-110 transition-transform duration-500" />
-          )}
+          <img 
+            src={getProductImage(product.images[0])} 
+            alt={product.name}
+            className="max-h-32 max-w-32 object-contain opacity-90 group-hover:scale-110 transition-transform duration-500"
+          />
         </div>
       </div>
 
@@ -516,18 +528,11 @@ const ProductListItem = ({ product, categoryId, index, language, t }: ProductCar
     >
       <div className="flex flex-col md:flex-row">
         <div className="md:w-48 h-48 md:h-auto bg-gradient-to-br from-accent/10 to-primary/10 p-4 flex items-center justify-center flex-shrink-0">
-          {categoryId === 'detectors' ? (
-            <img 
-              src={`/src/assets/${product.images[0]}`} 
-              alt={product.name}
-              className="max-h-24 max-w-24 object-contain opacity-80"
-              onError={(e) => {
-                (e.target as HTMLImageElement).src = '/src/assets/detector-hero.png';
-              }}
-            />
-          ) : (
-            <Monitor className="h-16 w-16 text-accent/50" />
-          )}
+          <img 
+            src={getProductImage(product.images[0])} 
+            alt={product.name}
+            className="max-h-24 max-w-24 object-contain opacity-90"
+          />
         </div>
 
         <CardContent className="p-6 flex-1">
