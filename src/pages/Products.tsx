@@ -428,12 +428,12 @@ const ProductCard = ({ product, categoryId, index, language, t }: ProductCardPro
           </Badge>
         )}
         
-        <div className="h-48 bg-gradient-to-br from-accent/10 to-primary/10 p-6 flex items-center justify-center relative overflow-hidden group-hover:from-accent/20 group-hover:to-primary/20 transition-all duration-500">
+        <div className="h-56 bg-gradient-to-br from-accent/5 to-primary/5 relative overflow-hidden group-hover:from-accent/10 group-hover:to-primary/10 transition-all duration-500">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
           <img 
             src={getProductImage(product.images[0])} 
             alt={product.name}
-            className="max-h-32 max-w-32 object-contain opacity-90 group-hover:scale-110 transition-transform duration-500"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
         </div>
       </div>
@@ -531,11 +531,11 @@ const ProductListItem = ({ product, categoryId, index, language, t }: ProductCar
       style={{ animationDelay: `${index * 50}ms` }}
     >
       <div className="flex flex-col md:flex-row">
-        <div className="md:w-48 h-48 md:h-auto bg-gradient-to-br from-accent/10 to-primary/10 p-4 flex items-center justify-center flex-shrink-0">
+        <div className="md:w-56 h-48 md:h-auto bg-gradient-to-br from-accent/5 to-primary/5 flex-shrink-0 overflow-hidden">
           <img 
             src={getProductImage(product.images[0])} 
             alt={product.name}
-            className="max-h-24 max-w-24 object-contain opacity-90"
+            className="w-full h-full object-cover"
           />
         </div>
 
