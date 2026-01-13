@@ -8,13 +8,28 @@ import {
   ArrowLeft, Download, Heart, Wrench, Microscope, Shield, Monitor,
   ChevronLeft, ChevronRight, Check, FileText, Package, Cpu, Settings
 } from "lucide-react";
-import xelonImage1 from "@/assets/xelon-1.png";
-import xelonImage2 from "@/assets/xelon-2.png";
-import xelonImage3 from "@/assets/xelon-3.jpeg";
+import xelon1515 from "@/assets/xelon-1515.png";
+import xelon1613 from "@/assets/xelon-1613.png";
+import xelon1930 from "@/assets/xelon-1930.png";
+import xelon2430 from "@/assets/xelon-2430.png";
+import xelon3543 from "@/assets/xelon-3543.png";
 import detectorHero from "@/assets/detector-hero.png";
 import QuoteModal from "@/components/QuoteModal";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getProductById, type Product } from "@/data/products";
+
+// Image mapping for product detail
+const productImageMap: Record<string, string> = {
+  'xelon-1515.png': xelon1515,
+  'xelon-1613.png': xelon1613,
+  'xelon-1930.png': xelon1930,
+  'xelon-2430.png': xelon2430,
+  'xelon-3543.png': xelon3543,
+};
+
+const getProductImage = (imageName: string): string => {
+  return productImageMap[imageName] || detectorHero;
+};
 
 const ProductDetail = () => {
   const { category, productId } = useParams();
@@ -25,8 +40,8 @@ const ProductDetail = () => {
   // Get product from unified data
   const product = productId ? getProductById(productId) : undefined;
 
-  // Fallback images
-  const productImages = [xelonImage1, xelonImage2, xelonImage3];
+  // Get images for current product
+  const productImages = product ? product.images.map(img => getProductImage(img)) : [detectorHero];
 
   if (!product) {
     return (

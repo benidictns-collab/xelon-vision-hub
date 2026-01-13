@@ -143,15 +143,15 @@ export const specDisplaySubcategories: IndustrySubcategory[] = [
 
 // Detector Products with Full Details
 export const detectorProducts: Product[] = [
-  // Medical Detectors
+// Medical Detectors
   {
     id: 'xelon-xray-1515',
-    name: 'XELON X-RAY-1515',
+    name: 'XELON X-RAY 1515',
     category: 'detectors',
     subcategory: 'medical',
     industryApplication: 'medical',
     shortDescription: 'Активная область 153×153 мм, шаг пикселя 135 мкм',
-    fullDescription: 'Компактный цифровой плоскопанельный детектор XELON X-RAY-1515 предназначен для цифровой рентгенографии в медицинских учреждениях. Сочетает высокое разрешение с минимальной дозовой нагрузкой. Интегрированные алгоритмы ИИ обеспечивают автоматическую оптимизацию качества изображения и предварительный анализ патологий.',
+    fullDescription: 'Компактный цифровой плоскопанельный детектор XELON X-RAY 1515 предназначен для цифровой рентгенографии в медицинских учреждениях. Сочетает высокое разрешение с минимальной дозовой нагрузкой. Интегрированные алгоритмы ИИ обеспечивают автоматическую оптимизацию качества изображения и предварительный анализ патологий.',
     specs: {
       'Активная область': '153×153 мм',
       'Шаг пикселя': '135 мкм',
@@ -170,19 +170,19 @@ export const detectorProducts: Product[] = [
       'Интеграция с PACS/RIS'
     ],
     applications: ['Цифровая рентгенография R&F', 'Ортопедия', 'Педиатрия', 'Травматология'],
-    images: ['xelon-1.png', 'xelon-2.png', 'xelon-3.jpeg'],
+    images: ['xelon-1515.png', 'xelon-1930.png', 'xelon-2430.png'],
     isNew: true
   },
   {
-    id: 'xelon-xray-1923',
-    name: 'XELON X-RAY-1923',
+    id: 'xelon-xray-1930',
+    name: 'XELON X-RAY 1930',
     category: 'detectors',
     subcategory: 'medical',
     industryApplication: 'medical',
-    shortDescription: 'Активная область 190×230 мм, шаг пикселя 131 мкм',
+    shortDescription: 'Активная область 190×300 мм, шаг пикселя 131 мкм',
     fullDescription: 'Универсальный детектор для общей рентгенографии с оптимальным соотношением размера и разрешения. Идеально подходит для исследования грудной клетки и конечностей. Поддерживает как проводное, так и беспроводное подключение.',
     specs: {
-      'Активная область': '190×230 мм',
+      'Активная область': '190×300 мм',
       'Шаг пикселя': '131 мкм',
       'Матрица': '1900×2304',
       'Интерфейс': 'USB 3.2, Wi-Fi 6E',
@@ -198,12 +198,12 @@ export const detectorProducts: Product[] = [
       'Поддержка мобильных аппаратов'
     ],
     applications: ['Общая рентгенография', 'Грудная клетка', 'Конечности', 'Мобильные системы'],
-    images: ['xelon-1.png', 'xelon-2.png', 'xelon-3.jpeg'],
+    images: ['xelon-1930.png', 'xelon-1515.png', 'xelon-2430.png'],
     isNew: false
   },
   {
     id: 'xelon-xray-3543',
-    name: 'XELON X-RAY-3543',
+    name: 'XELON X-RAY 3543',
     category: 'detectors',
     subcategory: 'medical',
     industryApplication: 'medical',
@@ -226,50 +226,50 @@ export const detectorProducts: Product[] = [
       'Сравнение с предыдущими исследованиями'
     ],
     applications: ['Полноформатная рентгенография', 'Ортопедия', 'Травматология', 'Ревматология'],
-    images: ['xelon-1.png', 'xelon-2.png', 'xelon-3.jpeg'],
+    images: ['xelon-3543.png', 'xelon-1930.png', 'xelon-2430.png'],
     isNew: true
   },
   {
-    id: 'xelon-mammo-2430',
-    name: 'XELON MAMMO-2430',
+    id: 'xelon-xray-2430',
+    name: 'XELON X-RAY 2430',
     category: 'detectors',
     subcategory: 'medical',
     industryApplication: 'medical',
-    shortDescription: 'Специализированный маммографический детектор 240×300 мм',
-    fullDescription: 'Высокоразрешающий детектор для цифровой маммографии с ИИ-модулем обнаружения образований. Обеспечивает максимальную детализацию при минимальной дозе облучения.',
+    shortDescription: 'Универсальный детектор 240×300 мм, шаг пикселя 100 мкм',
+    fullDescription: 'Высокоразрешающий детектор для цифровой рентгенографии с ИИ-модулем оптимизации изображений. Обеспечивает максимальную детализацию при минимальной дозе облучения.',
     specs: {
       'Активная область': '240×300 мм',
-      'Шаг пикселя': '70 мкм',
-      'Матрица': '3429×4286',
+      'Шаг пикселя': '100 мкм',
+      'Матрица': '2400×3000',
       'Интерфейс': 'CameraLink HS',
-      'Разрешение': '7.1 ЛП/мм',
+      'Разрешение': '5.0 ЛП/мм',
       'Вес': '4.5 кг',
       'Рабочая температура': '18°C - 28°C',
-      'Энергия рентгена': '20–49 кВ'
+      'Энергия рентгена': '40–150 кВ'
     },
     features: [
-      'ИИ-обнаружение образований и микрокальцинатов',
+      'ИИ-оптимизация качества изображений',
       'CAD-подсказки для врача',
-      'Томосинтез 3D',
-      'Автоматическое определение плотности ткани'
+      'Высокое разрешение 5 ЛП/мм',
+      'Автоматическое определение области исследования'
     ],
-    applications: ['Цифровая маммография', 'Томосинтез', 'Скрининг', 'Диагностика'],
-    images: ['xelon-1.png', 'xelon-2.png', 'xelon-3.jpeg'],
+    applications: ['Цифровая рентгенография', 'Общая диагностика', 'Скрининг', 'Диагностика'],
+    images: ['xelon-2430.png', 'xelon-1930.png', 'xelon-3543.png'],
     isNew: true
   },
   // Veterinary Detectors
   {
-    id: 'xelon-vet-1417',
-    name: 'XELON VET-1417',
+    id: 'xelon-xray-1613',
+    name: 'XELON X-RAY 1613',
     category: 'detectors',
     subcategory: 'veterinary',
     industryApplication: 'veterinary',
-    shortDescription: 'Портативный ветеринарный детектор 140×170 мм',
+    shortDescription: 'Портативный ветеринарный детектор 160×130 мм',
     fullDescription: 'Компактный и прочный детектор для ветеринарной рентгенографии. Водонепроницаемый корпус, устойчивость к ударам, беспроводная передача данных.',
     specs: {
-      'Активная область': '140×170 мм',
+      'Активная область': '160×130 мм',
       'Шаг пикселя': '140 мкм',
-      'Матрица': '1000×1214',
+      'Матрица': '1143×929',
       'Интерфейс': 'Wi-Fi 6, USB 3.0',
       'Защита': 'IP65, ударопрочный',
       'Вес': '2.1 кг',
@@ -282,12 +282,12 @@ export const detectorProducts: Product[] = [
       'Специализированные протоколы для животных'
     ],
     applications: ['Мелкие животные', 'Лошади', 'Экзотические животные', 'Полевые условия'],
-    images: ['xelon-1.png', 'xelon-2.png', 'xelon-3.jpeg'],
+    images: ['xelon-1613.png', 'xelon-1515.png', 'xelon-1930.png'],
     isNew: true
   },
   {
     id: 'xelon-vet-3543',
-    name: 'XELON VET-3543',
+    name: 'XELON VET 3543',
     category: 'detectors',
     subcategory: 'veterinary',
     industryApplication: 'veterinary',
@@ -309,13 +309,13 @@ export const detectorProducts: Product[] = [
       'ИИ-оптимизация качества'
     ],
     applications: ['Крупные животные', 'Лошади', 'Зоопарки', 'Конные клубы'],
-    images: ['xelon-1.png', 'xelon-2.png', 'xelon-3.jpeg'],
+    images: ['xelon-3543.png', 'xelon-2430.png', 'xelon-1930.png'],
     isNew: false
   },
   // NDT Detectors
   {
-    id: 'xelon-xray-55',
-    name: 'XELON X-RAY-55',
+    id: 'xelon-ndt-55',
+    name: 'XELON NDT 55',
     category: 'detectors',
     subcategory: 'ndt',
     industryApplication: 'ndt',
@@ -338,12 +338,12 @@ export const detectorProducts: Product[] = [
       'Интеграция с промышленными системами'
     ],
     applications: ['Микрообъекты', 'Электроника', 'Ювелирные изделия', 'Прецизионные детали'],
-    images: ['xelon-1.png', 'xelon-2.png', 'xelon-3.jpeg'],
+    images: ['xelon-1515.png', 'xelon-1930.png', 'xelon-2430.png'],
     isNew: true
   },
   {
-    id: 'xelon-xray-1212',
-    name: 'XELON X-RAY-1212',
+    id: 'xelon-ndt-1212',
+    name: 'XELON NDT 1212',
     category: 'detectors',
     subcategory: 'ndt',
     industryApplication: 'ndt',
@@ -366,12 +366,12 @@ export const detectorProducts: Product[] = [
       'Соответствие стандартам EN, ASTM'
     ],
     applications: ['Контроль сварных швов', 'Литье', 'Композиты', 'Авиакомпоненты'],
-    images: ['xelon-1.png', 'xelon-2.png', 'xelon-3.jpeg'],
+    images: ['xelon-1930.png', 'xelon-1515.png', 'xelon-2430.png'],
     isNew: false
   },
   {
     id: 'xelon-ndt-2222',
-    name: 'XELON NDT-2222',
+    name: 'XELON NDT 2222',
     category: 'detectors',
     subcategory: 'ndt',
     industryApplication: 'ndt',
@@ -393,12 +393,12 @@ export const detectorProducts: Product[] = [
       'Промышленный корпус IP54'
     ],
     applications: ['Толстостенные объекты', 'Трубопроводы', 'Сосуды давления', 'Металлургия'],
-    images: ['xelon-1.png', 'xelon-2.png', 'xelon-3.jpeg'],
+    images: ['xelon-2430.png', 'xelon-3543.png', 'xelon-1930.png'],
     isNew: false
   },
   {
     id: 'xelon-ndt-aero-1723',
-    name: 'XELON AERO-1723',
+    name: 'XELON AERO 1723',
     category: 'detectors',
     subcategory: 'ndt',
     industryApplication: 'ndt',
@@ -420,13 +420,13 @@ export const detectorProducts: Product[] = [
       'Полная трассируемость результатов'
     ],
     applications: ['Авиакосмос', 'Турбины', 'Лопатки двигателей', 'Композитные конструкции'],
-    images: ['xelon-1.png', 'xelon-2.png', 'xelon-3.jpeg'],
+    images: ['xelon-1930.png', 'xelon-2430.png', 'xelon-3543.png'],
     isNew: true
   },
   // Security Detectors
   {
-    id: 'xelon-xray-4343',
-    name: 'XELON X-RAY-4343',
+    id: 'xelon-sec-4343',
+    name: 'XELON SEC 4343',
     category: 'detectors',
     subcategory: 'security',
     industryApplication: 'security',
@@ -448,12 +448,12 @@ export const detectorProducts: Product[] = [
       'Интеграция с системами безопасности'
     ],
     applications: ['Досмотр транспорта', 'Крупногабаритные грузы', 'Контейнеры', 'Пограничный контроль'],
-    images: ['xelon-1.png', 'xelon-2.png', 'xelon-3.jpeg'],
+    images: ['xelon-3543.png', 'xelon-2430.png', 'xelon-1930.png'],
     isNew: false
   },
   {
     id: 'xelon-sec-3025',
-    name: 'XELON SEC-3025',
+    name: 'XELON SEC 3025',
     category: 'detectors',
     subcategory: 'security',
     industryApplication: 'security',
@@ -475,7 +475,7 @@ export const detectorProducts: Product[] = [
       'Интеграция с EDS системами'
     ],
     applications: ['Аэропорты', 'Вокзалы', 'Метро', 'Стадионы'],
-    images: ['xelon-1.png', 'xelon-2.png', 'xelon-3.jpeg'],
+    images: ['xelon-2430.png', 'xelon-1930.png', 'xelon-3543.png'],
     isNew: true
   },
   {
