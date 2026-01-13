@@ -534,7 +534,7 @@ export const medicalDisplayProducts: Product[] = [
       'Антибликовое покрытие'
     ],
     applications: ['PACS рабочие станции', 'Рентгенология', 'КТ', 'МРТ'],
-    images: ['xelon-1.png', 'xelon-2.png', 'xelon-3.jpeg'],
+    images: ['display-21.png', 'display-21b.png', 'display-27.png'],
     isNew: false
   },
   {
@@ -562,7 +562,7 @@ export const medicalDisplayProducts: Product[] = [
       'Интеграция с PACS'
     ],
     applications: ['Маммография', 'Рентгенология', 'Денситометрия'],
-    images: ['xelon-1.png', 'xelon-2.png', 'xelon-3.jpeg'],
+    images: ['display-21.png', 'display-21b.png', 'display-27.png'],
     isNew: true
   },
   {
@@ -590,7 +590,7 @@ export const medicalDisplayProducts: Product[] = [
       'Поддержка HDR'
     ],
     applications: ['Мультимодальная диагностика', 'Консилиумы', 'Телерадиология'],
-    images: ['xelon-1.png', 'xelon-2.png', 'xelon-3.jpeg'],
+    images: ['display-31.png', 'display-31b.png', 'display-27.png'],
     isNew: true
   },
   // Surgery
@@ -619,7 +619,7 @@ export const medicalDisplayProducts: Product[] = [
       'Интеграция с навигацией'
     ],
     applications: ['Операционные', 'Хирургические роботы', 'Нейрохирургия', 'Кардиохирургия'],
-    images: ['xelon-1.png', 'xelon-2.png', 'xelon-3.jpeg'],
+    images: ['display-27.png', 'display-27b.png', 'display-31.png'],
     isNew: true
   },
   {
@@ -646,7 +646,7 @@ export const medicalDisplayProducts: Product[] = [
       'Поддержка картинка-в-картинке'
     ],
     applications: ['Операционные', 'Гибридные залы', 'Обучение', 'Трансляции'],
-    images: ['xelon-1.png', 'xelon-2.png', 'xelon-3.jpeg'],
+    images: ['display-31.png', 'display-31b.png', 'display-27.png'],
     isNew: true
   },
   // Endoscopy
@@ -674,7 +674,7 @@ export const medicalDisplayProducts: Product[] = [
       'ИИ-улучшение эндоскопического изображения'
     ],
     applications: ['Эндоскопия', 'Лапароскопия', 'Колоноскопия', 'Гастроскопия'],
-    images: ['xelon-1.png', 'xelon-2.png', 'xelon-3.jpeg'],
+    images: ['display-27.png', 'display-27b.png', 'display-21.png'],
     isNew: true
   },
   {
@@ -702,7 +702,7 @@ export const medicalDisplayProducts: Product[] = [
       'Настенный/мобильный монтаж'
     ],
     applications: ['Эндоскопические центры', 'Обучение', 'Конференции', 'Сложные операции'],
-    images: ['xelon-1.png', 'xelon-2.png', 'xelon-3.jpeg'],
+    images: ['display-55.png', 'display-55b.png', 'display-31.png'],
     isNew: true
   },
   // Clinical
@@ -731,7 +731,7 @@ export const medicalDisplayProducts: Product[] = [
       'Металлический корпус'
     ],
     applications: ['Палаты', 'Процедурные', 'Рабочие станции', 'Регистратуры'],
-    images: ['xelon-1.png', 'xelon-2.png', 'xelon-3.jpeg'],
+    images: ['display-21.png', 'display-21b.png', 'display-27.png'],
     isNew: true
   },
   {
@@ -757,7 +757,7 @@ export const medicalDisplayProducts: Product[] = [
       'Энергоэффективность'
     ],
     applications: ['Клинические рабочие станции', 'HIS/RIS', 'Телемедицина', 'Обучение'],
-    images: ['xelon-1.png', 'xelon-2.png', 'xelon-3.jpeg'],
+    images: ['display-27.png', 'display-27b.png', 'display-21.png'],
     isNew: true
   }
 ];
@@ -789,7 +789,7 @@ export const specialDisplayProducts: Product[] = [
       'Антивандальное стекло'
     ],
     applications: ['Заводы', 'Производственные линии', 'ЦУП', 'Наружное размещение'],
-    images: ['xelon-1.png', 'xelon-2.png', 'xelon-3.jpeg'],
+    images: ['display-27.png', 'display-27b.png', 'display-31.png'],
     isNew: true
   },
   {
