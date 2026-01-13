@@ -10,18 +10,22 @@ import {
   ChevronRight, Grid3X3, List
 } from "lucide-react";
 import detectorImage from "@/assets/detector-hero.png";
-import xelon1 from "@/assets/xelon-1.png";
-import xelon2 from "@/assets/xelon-2.png";
-import xelon3 from "@/assets/xelon-3.jpeg";
+import xelon1515 from "@/assets/xelon-1515.png";
+import xelon1613 from "@/assets/xelon-1613.png";
+import xelon1930 from "@/assets/xelon-1930.png";
+import xelon2430 from "@/assets/xelon-2430.png";
+import xelon3543 from "@/assets/xelon-3543.png";
 import industrialNdt from "@/assets/industrial-ndt.jpg";
 import medicalIndustry from "@/assets/medical-industry.jpg";
 import QuoteModal from "@/components/QuoteModal";
 
 // Image mapping for products
 const productImages: Record<string, string> = {
-  'xelon-1.png': xelon1,
-  'xelon-2.png': xelon2,
-  'xelon-3.jpeg': xelon3,
+  'xelon-1515.png': xelon1515,
+  'xelon-1613.png': xelon1613,
+  'xelon-1930.png': xelon1930,
+  'xelon-2430.png': xelon2430,
+  'xelon-3543.png': xelon3543,
   'detector-hero.png': detectorImage,
   'industrial-ndt.jpg': industrialNdt,
   'medical-industry.jpg': medicalIndustry,
