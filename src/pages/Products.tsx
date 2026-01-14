@@ -15,6 +15,14 @@ import xelon1613 from "@/assets/xelon-1613.png";
 import xelon1930 from "@/assets/xelon-1930.png";
 import xelon2430 from "@/assets/xelon-2430.png";
 import xelon3543 from "@/assets/xelon-3543.png";
+import display21 from "@/assets/display-21.png";
+import display21b from "@/assets/display-21b.png";
+import display27 from "@/assets/display-27.png";
+import display27b from "@/assets/display-27b.png";
+import display31 from "@/assets/display-31.png";
+import display31b from "@/assets/display-31b.png";
+import display55 from "@/assets/display-55.png";
+import display55b from "@/assets/display-55b.png";
 import industrialNdt from "@/assets/industrial-ndt.jpg";
 import medicalIndustry from "@/assets/medical-industry.jpg";
 import QuoteModal from "@/components/QuoteModal";
@@ -29,6 +37,14 @@ const productImages: Record<string, string> = {
   'detector-hero.png': detectorImage,
   'industrial-ndt.jpg': industrialNdt,
   'medical-industry.jpg': medicalIndustry,
+  'display-21.png': display21,
+  'display-21b.png': display21b,
+  'display-27.png': display27,
+  'display-27b.png': display27b,
+  'display-31.png': display31,
+  'display-31b.png': display31b,
+  'display-55.png': display55,
+  'display-55b.png': display55b,
 };
 
 const getProductImage = (imageName: string): string => {
