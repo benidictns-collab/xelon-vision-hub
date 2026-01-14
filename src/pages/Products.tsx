@@ -449,11 +449,7 @@ const ProductCard = ({ product, categoryId, index, language, t }: ProductCardPro
           <img 
             src={getProductImage(product.images[0])} 
             alt={product.name}
-            className={`w-full h-full group-hover:scale-105 transition-transform duration-500 ${
-              product.images[0].includes('3543') || product.images[0].includes('55') 
-                ? 'object-contain p-4' 
-                : 'object-cover'
-            }`}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
         </div>
       </div>
@@ -555,11 +551,7 @@ const ProductListItem = ({ product, categoryId, index, language, t }: ProductCar
           <img 
             src={getProductImage(product.images[0])} 
             alt={product.name}
-            className={`w-full h-full ${
-              product.images[0].includes('3543') || product.images[0].includes('55') 
-                ? 'object-contain p-2' 
-                : 'object-cover'
-            }`}
+            className="w-full h-full object-cover"
           />
         </div>
 
