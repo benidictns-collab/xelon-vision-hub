@@ -584,5 +584,31 @@
       "integration": "Integration",
       "integrationDesc": "PACS/RIS/HIS, DICOM, HL7, OPC UA"
     }
+  },
+  "specs": {
+    "Активная область": "Active Area",
+    "Шаг пикселя": "Pixel Pitch",
+    "Матрица": "Matrix",
+    "Интерфейс": "Interface",
+    "Интерфейсы": "Interfaces",
+    "Разрешение": "Resolution",
+    "Вес": "Weight",
+    "Рабочая температура": "Operating Temperature",
+    "Энергия рентгена": "X-ray Energy",
+    "Защита": "Protection",
+    "Диагональ": "Diagonal",
+    "Яркость": "Brightness",
+    "Контраст": "Contrast",
+    "Цветовой охват": "Color Gamut",
+    "Питание": "Power",
+    "Калибровка": "Calibration",
+    "Градаций серого": "Grayscale",
+    "Сенсор": "Sensor",
+    "Покрытие": "Coating",
+    "Угол обзора": "Viewing Angle",
+    "Стекло": "Glass",
+    "Корпус": "Housing",
+    "Температура": "Temperature",
+    "Вибростойкость": "Vibration Resistance"
   }
 }

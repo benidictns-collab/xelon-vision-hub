@@ -50,7 +50,7 @@ const getProductImage = (imageName: string): string => {
 const ProductDetail = () => {
   const { category, productId } = useParams();
   const navigate = useNavigate();
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Get product from unified data
@@ -301,7 +301,7 @@ const ProductDetail = () => {
                     <div className="grid md:grid-cols-2 gap-4">
                       {Object.entries(product.specs).map(([key, value]) => (
                         <div key={key} className="flex justify-between py-3 border-b border-border">
-                          <span className="text-muted-foreground">{key}</span>
+                          <span className="text-muted-foreground">{t(`specs.${key}`)}</span>
                           <span className="font-medium">{value}</span>
                         </div>
                       ))}

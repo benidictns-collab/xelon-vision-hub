@@ -488,7 +488,7 @@ const ProductCard = ({ product, categoryId, index, language, t }: ProductCardPro
           <div className="grid grid-cols-1 gap-1 text-xs">
             {Object.entries(product.specs).slice(0, 4).map(([key, value]) => (
               <div key={key} className="flex justify-between py-1 border-b border-border/50">
-                <span className="text-muted-foreground">{key}:</span>
+                <span className="text-muted-foreground">{t(`specs.${key}`)}:</span>
                 <span className="font-medium">{value}</span>
               </div>
             ))}
